@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Group5HotelsProject.Presentation
 {
-    public partial class BookingEnquiry : Form
+    public partial class BookingEnquiryForm : Form
     {
-        public BookingEnquiry()
+        public BookingEnquiryForm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Group5HotelsProject.Presentation
 {
-    partial class BookingEnquiry
+    partial class BookingEnquiryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             bookingEnquiryHeadingPanel = new Panel();
+            backToMenuButton = new Button();
             bookingConfirmationHeader = new Label();
             searchGuestPanel = new Panel();
-            searchGuestHeadingLabel = new Label();
-            seachByLabel = new Label();
-            searchTermLabel = new Label();
-            filterLabel = new Label();
-            dataRangeLabel = new Label();
-            searchButton = new Button();
-            searchTermTextBox = new TextBox();
-            searchByComboBox = new ComboBox();
-            statusComboBox = new ComboBox();
-            dateFromPicker = new DateTimePicker();
-            dateToPicker = new DateTimePicker();
-            dateFromLabel = new Label();
             dateToLabel = new Label();
+            dateFromLabel = new Label();
+            dateToPicker = new DateTimePicker();
+            dateFromPicker = new DateTimePicker();
+            statusComboBox = new ComboBox();
+            searchByComboBox = new ComboBox();
+            searchTermTextBox = new TextBox();
+            searchButton = new Button();
+            dataRangeLabel = new Label();
+            filterLabel = new Label();
+            searchTermLabel = new Label();
+            seachByLabel = new Label();
+            searchGuestHeadingLabel = new Label();
             bookingResultsPanel = new Panel();
-            bookinSearchResultsLabel = new Label();
             bookingResultsGrid = new DataGridView();
             referenceColumn = new DataGridViewTextBoxColumn();
             nameColumn = new DataGridViewTextBoxColumn();
@@ -54,15 +54,15 @@
             totalColumn = new DataGridViewTextBoxColumn();
             balanceColumn = new DataGridViewTextBoxColumn();
             actionsColumn = new DataGridViewTextBoxColumn();
+            bookinSearchResultsLabel = new Label();
             bookingSummaryPanel = new Panel();
-            bookingSummarLabel = new Label();
-            totalBookingsLabel = new Label();
-            confirmedLabel = new Label();
-            pendingLabel = new Label();
-            totalBookingsTextBox = new TextBox();
-            confirmedTextBox = new TextBox();
             pendingTextBox = new TextBox();
-            backToMenuButton = new Button();
+            confirmedTextBox = new TextBox();
+            totalBookingsTextBox = new TextBox();
+            pendingLabel = new Label();
+            confirmedLabel = new Label();
+            totalBookingsLabel = new Label();
+            bookingSummarLabel = new Label();
             bookingEnquiryHeadingPanel.SuspendLayout();
             searchGuestPanel.SuspendLayout();
             bookingResultsPanel.SuspendLayout();
@@ -79,6 +79,15 @@
             bookingEnquiryHeadingPanel.Name = "bookingEnquiryHeadingPanel";
             bookingEnquiryHeadingPanel.Size = new Size(878, 69);
             bookingEnquiryHeadingPanel.TabIndex = 10;
+            // 
+            // backToMenuButton
+            // 
+            backToMenuButton.Location = new Point(762, 11);
+            backToMenuButton.Name = "backToMenuButton";
+            backToMenuButton.Size = new Size(111, 29);
+            backToMenuButton.TabIndex = 1;
+            backToMenuButton.Text = "Back to Menu";
+            backToMenuButton.UseVisualStyleBackColor = true;
             // 
             // bookingConfirmationHeader
             // 
@@ -111,45 +120,69 @@
             searchGuestPanel.Size = new Size(814, 206);
             searchGuestPanel.TabIndex = 11;
             // 
-            // searchGuestHeadingLabel
+            // dateToLabel
             // 
-            searchGuestHeadingLabel.AutoSize = true;
-            searchGuestHeadingLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            searchGuestHeadingLabel.Location = new Point(12, 9);
-            searchGuestHeadingLabel.Name = "searchGuestHeadingLabel";
-            searchGuestHeadingLabel.Size = new Size(117, 23);
-            searchGuestHeadingLabel.TabIndex = 0;
-            searchGuestHeadingLabel.Text = "Search Guests";
+            dateToLabel.AutoSize = true;
+            dateToLabel.Location = new Point(254, 163);
+            dateToLabel.Name = "dateToLabel";
+            dateToLabel.Size = new Size(28, 20);
+            dateToLabel.TabIndex = 16;
+            dateToLabel.Text = "To:";
             // 
-            // seachByLabel
+            // dateFromLabel
             // 
-            seachByLabel.AutoSize = true;
-            seachByLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            seachByLabel.Location = new Point(12, 44);
-            seachByLabel.Name = "seachByLabel";
-            seachByLabel.Size = new Size(80, 20);
-            seachByLabel.TabIndex = 1;
-            seachByLabel.Text = "Search by:";
+            dateFromLabel.AutoSize = true;
+            dateFromLabel.Location = new Point(254, 130);
+            dateFromLabel.Name = "dateFromLabel";
+            dateFromLabel.Size = new Size(46, 20);
+            dateFromLabel.TabIndex = 15;
+            dateFromLabel.Text = "From:";
             // 
-            // searchTermLabel
+            // dateToPicker
             // 
-            searchTermLabel.AutoSize = true;
-            searchTermLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            searchTermLabel.Location = new Point(254, 44);
-            searchTermLabel.Name = "searchTermLabel";
-            searchTermLabel.Size = new Size(99, 20);
-            searchTermLabel.TabIndex = 2;
-            searchTermLabel.Text = "Search Term:";
+            dateToPicker.Location = new Point(306, 158);
+            dateToPicker.Name = "dateToPicker";
+            dateToPicker.Size = new Size(259, 27);
+            dateToPicker.TabIndex = 14;
             // 
-            // filterLabel
+            // dateFromPicker
             // 
-            filterLabel.AutoSize = true;
-            filterLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            filterLabel.Location = new Point(12, 99);
-            filterLabel.Name = "filterLabel";
-            filterLabel.Size = new Size(118, 20);
-            filterLabel.TabIndex = 3;
-            filterLabel.Text = "Filter by Status:";
+            dateFromPicker.Location = new Point(306, 125);
+            dateFromPicker.Name = "dateFromPicker";
+            dateFromPicker.Size = new Size(259, 27);
+            dateFromPicker.TabIndex = 13;
+            // 
+            // statusComboBox
+            // 
+            statusComboBox.FormattingEnabled = true;
+            statusComboBox.Location = new Point(14, 122);
+            statusComboBox.Name = "statusComboBox";
+            statusComboBox.Size = new Size(116, 28);
+            statusComboBox.TabIndex = 12;
+            // 
+            // searchByComboBox
+            // 
+            searchByComboBox.FormattingEnabled = true;
+            searchByComboBox.Location = new Point(14, 69);
+            searchByComboBox.Name = "searchByComboBox";
+            searchByComboBox.Size = new Size(116, 28);
+            searchByComboBox.TabIndex = 7;
+            // 
+            // searchTermTextBox
+            // 
+            searchTermTextBox.Location = new Point(254, 67);
+            searchTermTextBox.Name = "searchTermTextBox";
+            searchTermTextBox.Size = new Size(125, 27);
+            searchTermTextBox.TabIndex = 6;
+            // 
+            // searchButton
+            // 
+            searchButton.Location = new Point(690, 149);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(94, 36);
+            searchButton.TabIndex = 5;
+            searchButton.Text = "Search";
+            searchButton.UseVisualStyleBackColor = true;
             // 
             // dataRangeLabel
             // 
@@ -161,69 +194,45 @@
             dataRangeLabel.TabIndex = 4;
             dataRangeLabel.Text = "Data Range:";
             // 
-            // searchButton
+            // filterLabel
             // 
-            searchButton.Location = new Point(690, 149);
-            searchButton.Name = "searchButton";
-            searchButton.Size = new Size(94, 36);
-            searchButton.TabIndex = 5;
-            searchButton.Text = "Search";
-            searchButton.UseVisualStyleBackColor = true;
+            filterLabel.AutoSize = true;
+            filterLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            filterLabel.Location = new Point(12, 99);
+            filterLabel.Name = "filterLabel";
+            filterLabel.Size = new Size(118, 20);
+            filterLabel.TabIndex = 3;
+            filterLabel.Text = "Filter by Status:";
             // 
-            // searchTermTextBox
+            // searchTermLabel
             // 
-            searchTermTextBox.Location = new Point(254, 67);
-            searchTermTextBox.Name = "searchTermTextBox";
-            searchTermTextBox.Size = new Size(125, 27);
-            searchTermTextBox.TabIndex = 6;
+            searchTermLabel.AutoSize = true;
+            searchTermLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchTermLabel.Location = new Point(254, 44);
+            searchTermLabel.Name = "searchTermLabel";
+            searchTermLabel.Size = new Size(99, 20);
+            searchTermLabel.TabIndex = 2;
+            searchTermLabel.Text = "Search Term:";
             // 
-            // searchByComboBox
+            // seachByLabel
             // 
-            searchByComboBox.FormattingEnabled = true;
-            searchByComboBox.Location = new Point(14, 69);
-            searchByComboBox.Name = "searchByComboBox";
-            searchByComboBox.Size = new Size(116, 28);
-            searchByComboBox.TabIndex = 7;
+            seachByLabel.AutoSize = true;
+            seachByLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            seachByLabel.Location = new Point(12, 44);
+            seachByLabel.Name = "seachByLabel";
+            seachByLabel.Size = new Size(80, 20);
+            seachByLabel.TabIndex = 1;
+            seachByLabel.Text = "Search by:";
             // 
-            // statusComboBox
+            // searchGuestHeadingLabel
             // 
-            statusComboBox.FormattingEnabled = true;
-            statusComboBox.Location = new Point(14, 122);
-            statusComboBox.Name = "statusComboBox";
-            statusComboBox.Size = new Size(116, 28);
-            statusComboBox.TabIndex = 12;
-            // 
-            // dateFromPicker
-            // 
-            dateFromPicker.Location = new Point(306, 125);
-            dateFromPicker.Name = "dateFromPicker";
-            dateFromPicker.Size = new Size(259, 27);
-            dateFromPicker.TabIndex = 13;
-            // 
-            // dateToPicker
-            // 
-            dateToPicker.Location = new Point(306, 158);
-            dateToPicker.Name = "dateToPicker";
-            dateToPicker.Size = new Size(259, 27);
-            dateToPicker.TabIndex = 14;
-            // 
-            // dateFromLabel
-            // 
-            dateFromLabel.AutoSize = true;
-            dateFromLabel.Location = new Point(254, 130);
-            dateFromLabel.Name = "dateFromLabel";
-            dateFromLabel.Size = new Size(46, 20);
-            dateFromLabel.TabIndex = 15;
-            dateFromLabel.Text = "From:";
-            // 
-            // dateToLabel
-            // 
-            dateToLabel.AutoSize = true;
-            dateToLabel.Location = new Point(254, 163);
-            dateToLabel.Name = "dateToLabel";
-            dateToLabel.Size = new Size(28, 20);
-            dateToLabel.TabIndex = 16;
-            dateToLabel.Text = "To:";
+            searchGuestHeadingLabel.AutoSize = true;
+            searchGuestHeadingLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            searchGuestHeadingLabel.Location = new Point(12, 9);
+            searchGuestHeadingLabel.Name = "searchGuestHeadingLabel";
+            searchGuestHeadingLabel.Size = new Size(117, 23);
+            searchGuestHeadingLabel.TabIndex = 0;
+            searchGuestHeadingLabel.Text = "Search Guests";
             // 
             // bookingResultsPanel
             // 
@@ -234,16 +243,6 @@
             bookingResultsPanel.Name = "bookingResultsPanel";
             bookingResultsPanel.Size = new Size(814, 246);
             bookingResultsPanel.TabIndex = 12;
-            // 
-            // bookinSearchResultsLabel
-            // 
-            bookinSearchResultsLabel.AutoSize = true;
-            bookinSearchResultsLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            bookinSearchResultsLabel.Location = new Point(13, 13);
-            bookinSearchResultsLabel.Name = "bookinSearchResultsLabel";
-            bookinSearchResultsLabel.Size = new Size(130, 23);
-            bookinSearchResultsLabel.TabIndex = 1;
-            bookinSearchResultsLabel.Text = "Booking Results";
             // 
             // bookingResultsGrid
             // 
@@ -304,6 +303,16 @@
             actionsColumn.Name = "actionsColumn";
             actionsColumn.Width = 125;
             // 
+            // bookinSearchResultsLabel
+            // 
+            bookinSearchResultsLabel.AutoSize = true;
+            bookinSearchResultsLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            bookinSearchResultsLabel.Location = new Point(13, 13);
+            bookinSearchResultsLabel.Name = "bookinSearchResultsLabel";
+            bookinSearchResultsLabel.Size = new Size(130, 23);
+            bookinSearchResultsLabel.TabIndex = 1;
+            bookinSearchResultsLabel.Text = "Booking Results";
+            // 
             // bookingSummaryPanel
             // 
             bookingSummaryPanel.BorderStyle = BorderStyle.FixedSingle;
@@ -319,35 +328,26 @@
             bookingSummaryPanel.Size = new Size(814, 148);
             bookingSummaryPanel.TabIndex = 13;
             // 
-            // bookingSummarLabel
+            // pendingTextBox
             // 
-            bookingSummarLabel.AutoSize = true;
-            bookingSummarLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            bookingSummarLabel.Location = new Point(12, 13);
-            bookingSummarLabel.Name = "bookingSummarLabel";
-            bookingSummarLabel.Size = new Size(149, 23);
-            bookingSummarLabel.TabIndex = 1;
-            bookingSummarLabel.Text = "Booking Summary";
+            pendingTextBox.Location = new Point(507, 74);
+            pendingTextBox.Name = "pendingTextBox";
+            pendingTextBox.Size = new Size(163, 27);
+            pendingTextBox.TabIndex = 7;
             // 
-            // totalBookingsLabel
+            // confirmedTextBox
             // 
-            totalBookingsLabel.AutoSize = true;
-            totalBookingsLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            totalBookingsLabel.Location = new Point(12, 51);
-            totalBookingsLabel.Name = "totalBookingsLabel";
-            totalBookingsLabel.Size = new Size(165, 20);
-            totalBookingsLabel.TabIndex = 2;
-            totalBookingsLabel.Text = "Total Bookings Found:";
+            confirmedTextBox.Location = new Point(261, 74);
+            confirmedTextBox.Name = "confirmedTextBox";
+            confirmedTextBox.Size = new Size(163, 27);
+            confirmedTextBox.TabIndex = 6;
             // 
-            // confirmedLabel
+            // totalBookingsTextBox
             // 
-            confirmedLabel.AutoSize = true;
-            confirmedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            confirmedLabel.Location = new Point(261, 51);
-            confirmedLabel.Name = "confirmedLabel";
-            confirmedLabel.Size = new Size(87, 20);
-            confirmedLabel.TabIndex = 3;
-            confirmedLabel.Text = "Confirmed:";
+            totalBookingsTextBox.Location = new Point(14, 74);
+            totalBookingsTextBox.Name = "totalBookingsTextBox";
+            totalBookingsTextBox.Size = new Size(163, 27);
+            totalBookingsTextBox.TabIndex = 5;
             // 
             // pendingLabel
             // 
@@ -359,37 +359,37 @@
             pendingLabel.TabIndex = 4;
             pendingLabel.Text = "Pending:";
             // 
-            // totalBookingsTextBox
+            // confirmedLabel
             // 
-            totalBookingsTextBox.Location = new Point(14, 74);
-            totalBookingsTextBox.Name = "totalBookingsTextBox";
-            totalBookingsTextBox.Size = new Size(163, 27);
-            totalBookingsTextBox.TabIndex = 5;
+            confirmedLabel.AutoSize = true;
+            confirmedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            confirmedLabel.Location = new Point(261, 51);
+            confirmedLabel.Name = "confirmedLabel";
+            confirmedLabel.Size = new Size(87, 20);
+            confirmedLabel.TabIndex = 3;
+            confirmedLabel.Text = "Confirmed:";
             // 
-            // confirmedTextBox
+            // totalBookingsLabel
             // 
-            confirmedTextBox.Location = new Point(261, 74);
-            confirmedTextBox.Name = "confirmedTextBox";
-            confirmedTextBox.Size = new Size(163, 27);
-            confirmedTextBox.TabIndex = 6;
+            totalBookingsLabel.AutoSize = true;
+            totalBookingsLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            totalBookingsLabel.Location = new Point(12, 51);
+            totalBookingsLabel.Name = "totalBookingsLabel";
+            totalBookingsLabel.Size = new Size(165, 20);
+            totalBookingsLabel.TabIndex = 2;
+            totalBookingsLabel.Text = "Total Bookings Found:";
             // 
-            // pendingTextBox
+            // bookingSummarLabel
             // 
-            pendingTextBox.Location = new Point(507, 74);
-            pendingTextBox.Name = "pendingTextBox";
-            pendingTextBox.Size = new Size(163, 27);
-            pendingTextBox.TabIndex = 7;
+            bookingSummarLabel.AutoSize = true;
+            bookingSummarLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            bookingSummarLabel.Location = new Point(12, 13);
+            bookingSummarLabel.Name = "bookingSummarLabel";
+            bookingSummarLabel.Size = new Size(149, 23);
+            bookingSummarLabel.TabIndex = 1;
+            bookingSummarLabel.Text = "Booking Summary";
             // 
-            // backToMenuButton
-            // 
-            backToMenuButton.Location = new Point(762, 11);
-            backToMenuButton.Name = "backToMenuButton";
-            backToMenuButton.Size = new Size(111, 29);
-            backToMenuButton.TabIndex = 1;
-            backToMenuButton.Text = "Back to Menu";
-            backToMenuButton.UseVisualStyleBackColor = true;
-            // 
-            // BookingEnquiry
+            // BookingEnquiryForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -398,7 +398,7 @@
             Controls.Add(bookingResultsPanel);
             Controls.Add(searchGuestPanel);
             Controls.Add(bookingEnquiryHeadingPanel);
-            Name = "BookingEnquiry";
+            Name = "BookingEnquiryForm";
             Text = "BookingEnquiry";
             bookingEnquiryHeadingPanel.ResumeLayout(false);
             bookingEnquiryHeadingPanel.PerformLayout();
