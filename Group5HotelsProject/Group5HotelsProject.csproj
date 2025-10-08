@@ -12,8 +12,4 @@
     <None Remove="Business\NewFile1.txt" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Presentation\" />
-  </ItemGroup>
-
 </Project>
