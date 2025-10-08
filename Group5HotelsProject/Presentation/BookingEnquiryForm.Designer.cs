@@ -44,9 +44,9 @@
             dateToPicker = new DateTimePicker();
             dateFromLabel = new Label();
             dateToLabel = new Label();
-            panel1 = new Panel();
+            bookingResultsPanel = new Panel();
             bookinSearchResultsLabel = new Label();
-            dataGridView1 = new DataGridView();
+            bookingResultsGrid = new DataGridView();
             referenceColumn = new DataGridViewTextBoxColumn();
             nameColumn = new DataGridViewTextBoxColumn();
             checkInColumn = new DataGridViewTextBoxColumn();
@@ -60,13 +60,13 @@
             confirmedLabel = new Label();
             pendingLabel = new Label();
             totalBookingsTextBox = new TextBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            confirmedTextBox = new TextBox();
+            pendingTextBox = new TextBox();
             backToMenuButton = new Button();
             bookingEnquiryHeadingPanel.SuspendLayout();
             searchGuestPanel.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            bookingResultsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bookingResultsGrid).BeginInit();
             bookingSummaryPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -225,15 +225,15 @@
             dateToLabel.TabIndex = 16;
             dateToLabel.Text = "To:";
             // 
-            // panel1
+            // bookingResultsPanel
             // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(dataGridView1);
-            panel1.Controls.Add(bookinSearchResultsLabel);
-            panel1.Location = new Point(49, 299);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(814, 246);
-            panel1.TabIndex = 12;
+            bookingResultsPanel.BorderStyle = BorderStyle.FixedSingle;
+            bookingResultsPanel.Controls.Add(bookingResultsGrid);
+            bookingResultsPanel.Controls.Add(bookinSearchResultsLabel);
+            bookingResultsPanel.Location = new Point(49, 299);
+            bookingResultsPanel.Name = "bookingResultsPanel";
+            bookingResultsPanel.Size = new Size(814, 246);
+            bookingResultsPanel.TabIndex = 12;
             // 
             // bookinSearchResultsLabel
             // 
@@ -245,15 +245,15 @@
             bookinSearchResultsLabel.TabIndex = 1;
             bookinSearchResultsLabel.Text = "Booking Results";
             // 
-            // dataGridView1
+            // bookingResultsGrid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { referenceColumn, nameColumn, checkInColumn, checkOutColumn, totalColumn, balanceColumn, actionsColumn });
-            dataGridView1.Location = new Point(14, 39);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(781, 188);
-            dataGridView1.TabIndex = 2;
+            bookingResultsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            bookingResultsGrid.Columns.AddRange(new DataGridViewColumn[] { referenceColumn, nameColumn, checkInColumn, checkOutColumn, totalColumn, balanceColumn, actionsColumn });
+            bookingResultsGrid.Location = new Point(14, 39);
+            bookingResultsGrid.Name = "bookingResultsGrid";
+            bookingResultsGrid.RowHeadersWidth = 51;
+            bookingResultsGrid.Size = new Size(781, 188);
+            bookingResultsGrid.TabIndex = 2;
             // 
             // referenceColumn
             // 
@@ -307,8 +307,8 @@
             // bookingSummaryPanel
             // 
             bookingSummaryPanel.BorderStyle = BorderStyle.FixedSingle;
-            bookingSummaryPanel.Controls.Add(textBox2);
-            bookingSummaryPanel.Controls.Add(textBox1);
+            bookingSummaryPanel.Controls.Add(pendingTextBox);
+            bookingSummaryPanel.Controls.Add(confirmedTextBox);
             bookingSummaryPanel.Controls.Add(totalBookingsTextBox);
             bookingSummaryPanel.Controls.Add(pendingLabel);
             bookingSummaryPanel.Controls.Add(confirmedLabel);
@@ -366,19 +366,19 @@
             totalBookingsTextBox.Size = new Size(163, 27);
             totalBookingsTextBox.TabIndex = 5;
             // 
-            // textBox1
+            // confirmedTextBox
             // 
-            textBox1.Location = new Point(261, 74);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(163, 27);
-            textBox1.TabIndex = 6;
+            confirmedTextBox.Location = new Point(261, 74);
+            confirmedTextBox.Name = "confirmedTextBox";
+            confirmedTextBox.Size = new Size(163, 27);
+            confirmedTextBox.TabIndex = 6;
             // 
-            // textBox2
+            // pendingTextBox
             // 
-            textBox2.Location = new Point(507, 74);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(163, 27);
-            textBox2.TabIndex = 7;
+            pendingTextBox.Location = new Point(507, 74);
+            pendingTextBox.Name = "pendingTextBox";
+            pendingTextBox.Size = new Size(163, 27);
+            pendingTextBox.TabIndex = 7;
             // 
             // backToMenuButton
             // 
@@ -395,7 +395,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(907, 714);
             Controls.Add(bookingSummaryPanel);
-            Controls.Add(panel1);
+            Controls.Add(bookingResultsPanel);
             Controls.Add(searchGuestPanel);
             Controls.Add(bookingEnquiryHeadingPanel);
             Name = "BookingEnquiry";
@@ -404,9 +404,9 @@
             bookingEnquiryHeadingPanel.PerformLayout();
             searchGuestPanel.ResumeLayout(false);
             searchGuestPanel.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            bookingResultsPanel.ResumeLayout(false);
+            bookingResultsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)bookingResultsGrid).EndInit();
             bookingSummaryPanel.ResumeLayout(false);
             bookingSummaryPanel.PerformLayout();
             ResumeLayout(false);
@@ -430,9 +430,9 @@
         private DateTimePicker dateFromPicker;
         private ComboBox statusComboBox;
         private ComboBox searchByComboBox;
-        private Panel panel1;
+        private Panel bookingResultsPanel;
         private Label bookinSearchResultsLabel;
-        private DataGridView dataGridView1;
+        private DataGridView bookingResultsGrid;
         private DataGridViewTextBoxColumn referenceColumn;
         private DataGridViewTextBoxColumn nameColumn;
         private DataGridViewTextBoxColumn checkInColumn;
@@ -443,8 +443,8 @@
         private Panel bookingSummaryPanel;
         private Label totalBookingsLabel;
         private Label bookingSummarLabel;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox pendingTextBox;
+        private TextBox confirmedTextBox;
         private TextBox totalBookingsTextBox;
         private Label pendingLabel;
         private Label confirmedLabel;

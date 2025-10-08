@@ -84,6 +84,7 @@
             bookingConfirmationHeadingPanel = new Panel();
             bookingConfirmationHeader = new Label();
             bookingNumberRichTextBox = new RichTextBox();
+            backToMenuButton = new Button();
             bookingDetailsPanel.SuspendLayout();
             importantInfoPanel.SuspendLayout();
             bookingCreatedPanel.SuspendLayout();
@@ -580,6 +581,7 @@
             // bookingConfirmationHeadingPanel
             // 
             bookingConfirmationHeadingPanel.BorderStyle = BorderStyle.FixedSingle;
+            bookingConfirmationHeadingPanel.Controls.Add(backToMenuButton);
             bookingConfirmationHeadingPanel.Controls.Add(bookingConfirmationHeader);
             bookingConfirmationHeadingPanel.Location = new Point(12, 12);
             bookingConfirmationHeadingPanel.Name = "bookingConfirmationHeadingPanel";
@@ -603,6 +605,15 @@
             bookingNumberRichTextBox.Size = new Size(284, 76);
             bookingNumberRichTextBox.TabIndex = 2;
             bookingNumberRichTextBox.Text = "";
+            // 
+            // backToMenuButton
+            // 
+            backToMenuButton.Location = new Point(622, 10);
+            backToMenuButton.Name = "backToMenuButton";
+            backToMenuButton.Size = new Size(111, 29);
+            backToMenuButton.TabIndex = 2;
+            backToMenuButton.Text = "Back to Menu";
+            backToMenuButton.UseVisualStyleBackColor = true;
             // 
             // BookingConfirmationForm
             // 
@@ -694,5 +705,6 @@
         private Panel bookingConfirmationHeadingPanel;
         private Label bookingConfirmationHeader;
         private RichTextBox bookingNumberRichTextBox;
+        private Button backToMenuButton;
     }
 }
