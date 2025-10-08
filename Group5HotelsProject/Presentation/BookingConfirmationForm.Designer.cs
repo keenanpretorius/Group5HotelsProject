@@ -44,7 +44,6 @@
             label1 = new Label();
             importantInfoPanel = new Panel();
             bookingCreatedPanel = new Panel();
-            bookingNumberRichTextBox = new RichTextBox();
             referenceNumberLabel = new Label();
             bookingSuccessfulLabel = new Label();
             paymentSummaryPanel = new Panel();
@@ -84,6 +83,7 @@
             confirmationLetterRichTextBox = new RichTextBox();
             bookingConfirmationHeadingPanel = new Panel();
             bookingConfirmationHeader = new Label();
+            bookingNumberRichTextBox = new RichTextBox();
             bookingDetailsPanel.SuspendLayout();
             importantInfoPanel.SuspendLayout();
             bookingCreatedPanel.SuspendLayout();
@@ -254,14 +254,6 @@
             bookingCreatedPanel.Name = "bookingCreatedPanel";
             bookingCreatedPanel.Size = new Size(606, 146);
             bookingCreatedPanel.TabIndex = 2;
-            // 
-            // bookingNumberRichTextBox
-            // 
-            bookingNumberRichTextBox.Location = new Point(12, 57);
-            bookingNumberRichTextBox.Name = "bookingNumberRichTextBox";
-            bookingNumberRichTextBox.Size = new Size(284, 76);
-            bookingNumberRichTextBox.TabIndex = 2;
-            bookingNumberRichTextBox.Text = "";
             // 
             // referenceNumberLabel
             // 
@@ -604,6 +596,14 @@
             bookingConfirmationHeader.TabIndex = 0;
             bookingConfirmationHeader.Text = "Booking Confirmation";
             // 
+            // bookingNumberRichTextBox
+            // 
+            bookingNumberRichTextBox.Location = new Point(12, 57);
+            bookingNumberRichTextBox.Name = "bookingNumberRichTextBox";
+            bookingNumberRichTextBox.Size = new Size(284, 76);
+            bookingNumberRichTextBox.TabIndex = 2;
+            bookingNumberRichTextBox.Text = "";
+            // 
             // BookingConfirmationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -655,7 +655,6 @@
         private Label phoneLabel;
         private Label nameLabel;
         private Label label1;
-        private RichTextBox bookingNumberRichTextBox;
         private Label numberOfGuestsLabel;
         private Label roomTypeLabel;
         private Label nightsLabel;
@@ -694,5 +693,6 @@
         private Label confirmationLetterLabel;
         private Panel bookingConfirmationHeadingPanel;
         private Label bookingConfirmationHeader;
+        private RichTextBox bookingNumberRichTextBox;
     }
 }
