@@ -1,3 +1,5 @@
+using Group5HotelsProject.Presentation;
+
 namespace Group5HotelsProject
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace Group5HotelsProject
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new ProgramMDI());
         }
     }
 }

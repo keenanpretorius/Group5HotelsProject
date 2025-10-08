@@ -5,6 +5,6 @@
     private DateTime checkIn, checkOut;
 
 
-    public Booking{}
+    public Booking(){}
 
 }

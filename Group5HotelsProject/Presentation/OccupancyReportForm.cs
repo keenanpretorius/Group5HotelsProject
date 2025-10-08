@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace Group5HotelsProject.Presentation
 {
-    public partial class OccupancyReport : Form
+    public partial class OccupancyReportForm : Form
     {
-        public OccupancyReport()
+        public OccupancyReportForm()
         {
             InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titlePanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
