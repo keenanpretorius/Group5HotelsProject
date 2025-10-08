@@ -16,5 +16,6 @@ namespace Group5HotelsProject.Presentation
         {
             InitializeComponent();
         }
+
     }
 }
