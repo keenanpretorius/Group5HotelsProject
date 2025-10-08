@@ -10,29 +10,14 @@ using System.Windows.Forms;
 
 namespace Group5HotelsProject.Presentation
 {
-    public partial class NewBookingForm : Form
+    public partial class OccupancyReport : Form
     {
-        public NewBookingForm()
+        public OccupancyReport()
         {
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NewBookingForm_Load(object sender, EventArgs e)
         {
 
         }
