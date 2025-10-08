@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            checkAvalablityButton = new Button();
+            checkAvailablityButton = new Button();
             roomsComboBox = new ComboBox();
             roomsLabel = new Label();
             dateTimePicker2 = new DateTimePicker();
@@ -68,7 +68,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(checkAvalablityButton);
+            panel1.Controls.Add(checkAvailablityButton);
             panel1.Controls.Add(roomsComboBox);
             panel1.Controls.Add(roomsLabel);
             panel1.Controls.Add(dateTimePicker2);
@@ -81,14 +81,14 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // checkAvalablityButton
+            // checkAvailablityButton
             // 
-            checkAvalablityButton.Location = new Point(440, 141);
-            checkAvalablityButton.Name = "checkAvalablityButton";
-            checkAvalablityButton.Size = new Size(161, 23);
-            checkAvalablityButton.TabIndex = 8;
-            checkAvalablityButton.Text = "Check Avalablity";
-            checkAvalablityButton.UseVisualStyleBackColor = true;
+            checkAvailablityButton.Location = new Point(440, 141);
+            checkAvailablityButton.Name = "checkAvailablityButton";
+            checkAvailablityButton.Size = new Size(161, 23);
+            checkAvailablityButton.TabIndex = 8;
+            checkAvailablityButton.Text = "Check Availablity";
+            checkAvailablityButton.UseVisualStyleBackColor = true;
             // 
             // roomsComboBox
             // 
@@ -402,7 +402,7 @@
         private ComboBox roomsComboBox;
         private Label roomsLabel;
         private Label guestLabel;
-        private Button checkAvalablityButton;
+        private Button checkAvailablityButton;
         private Label guestNameLabel;
         private Label addressLabel;
         private Label IDLabel;
