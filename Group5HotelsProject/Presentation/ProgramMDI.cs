@@ -103,5 +103,10 @@ namespace Group5HotelsProject.Presentation
                 childForm.Close();
             }
         }
+
+        private void newBookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
