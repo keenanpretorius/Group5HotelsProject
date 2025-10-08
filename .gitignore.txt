@@ -1,0 +1,74 @@
+# =========================
+# Visual Studio .gitignore
+# =========================
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+Debug/
+Release/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Visual Studio cache/options
+.vs/
+.vscode/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Database files
+*.mdf
+*.ldf
+
+# Backup & temporary files
+*.bak
+*.tmp
+*.temp
+
+# NuGet packages
+*.nupkg
+# Exclude the packages folder if using package restore
+packages/
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Auto-generated files
+*.log
+*.tlog
+*.idb
+*.pdb
+
+# Publish output
+publish/
+app.publish/
+
+# IIS
+_IISExpress/
+*.vspscc
+*.vssscc
+*.scc
+
+# Rider / JetBrains IDEs
+.idea/
+
+# Others
+*.dbmdl
+*.jfm
+*.pfx
+*.snk
+
+
