@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            bookingDatesPanel = new Panel();
             checkAvailablityButton = new Button();
             roomsComboBox = new ComboBox();
             roomsLabel = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            checkOutDatePicker = new DateTimePicker();
+            checkInDatePicker = new DateTimePicker();
             checkInLabel = new Label();
             checkOutLabel = new Label();
-            panel2 = new Panel();
+            paymentPanel = new Panel();
             CVVLabel = new Label();
-            label1 = new Label();
-            ExpirtyLabel = new Label();
-            CardNameLabel = new Label();
-            ExpiryDateTimePicker = new DateTimePicker();
-            CardNoTextBox = new TextBox();
-            CardNameTextBox = new TextBox();
+            cardNumberLabel = new Label();
+            expiryDateLabel = new Label();
+            cardNameLabel = new Label();
+            expiryDatePicker = new DateTimePicker();
+            cardNumberTextBox = new TextBox();
+            cardNameTextBox = new TextBox();
             CVVTextBox = new TextBox();
-            panel3 = new Panel();
-            button1 = new Button();
+            guestInformationPanel = new Panel();
+            searchGuestButton = new Button();
             emailTextBox = new TextBox();
             addressTextBox = new TextBox();
-            PhoneTextBox = new TextBox();
+            phoneTextBox = new TextBox();
             IDTextBox = new TextBox();
             nameTextBox = new TextBox();
             phoneLabel = new Label();
@@ -57,35 +57,58 @@
             guestNameLabel = new Label();
             addressLabel = new Label();
             IDLabel = new Label();
-            comboBox1 = new ComboBox();
-            guestLabel = new Label();
             clearButton = new Button();
             submitButton = new Button();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
+            makeNewBookingHeadingPanel = new Panel();
+            backToMenuButton = new Button();
+            makeNewBookingHeader = new Label();
+            roomAvailabilityPanel = new Panel();
+            roomAvailabilityGrid = new DataGridView();
+            roomAvailabilityLabel = new Label();
+            dateColumn = new DataGridViewTextBoxColumn();
+            seasonColumn = new DataGridViewTextBoxColumn();
+            ratePerNightColumn = new DataGridViewTextBoxColumn();
+            availableRoomsColumn = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            totalCostTextBox = new TextBox();
+            totalCostLabel = new Label();
+            textBox2 = new TextBox();
+            depositRequiredLabel = new Label();
+            guestInformationLabel = new Label();
+            addNewGuestButton = new Button();
+            paymentInformationLabel = new Label();
+            bookingDatesPanel.SuspendLayout();
+            paymentPanel.SuspendLayout();
+            guestInformationPanel.SuspendLayout();
+            makeNewBookingHeadingPanel.SuspendLayout();
+            roomAvailabilityPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)roomAvailabilityGrid).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // bookingDatesPanel
             // 
-            panel1.Controls.Add(checkAvailablityButton);
-            panel1.Controls.Add(roomsComboBox);
-            panel1.Controls.Add(roomsLabel);
-            panel1.Controls.Add(dateTimePicker2);
-            panel1.Controls.Add(dateTimePicker1);
-            panel1.Controls.Add(checkInLabel);
-            panel1.Controls.Add(checkOutLabel);
-            panel1.Location = new Point(39, 273);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(614, 177);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
+            bookingDatesPanel.BorderStyle = BorderStyle.FixedSingle;
+            bookingDatesPanel.Controls.Add(label1);
+            bookingDatesPanel.Controls.Add(checkAvailablityButton);
+            bookingDatesPanel.Controls.Add(roomsComboBox);
+            bookingDatesPanel.Controls.Add(roomsLabel);
+            bookingDatesPanel.Controls.Add(checkOutDatePicker);
+            bookingDatesPanel.Controls.Add(checkInDatePicker);
+            bookingDatesPanel.Controls.Add(checkInLabel);
+            bookingDatesPanel.Controls.Add(checkOutLabel);
+            bookingDatesPanel.Location = new Point(59, 100);
+            bookingDatesPanel.Margin = new Padding(3, 4, 3, 4);
+            bookingDatesPanel.Name = "bookingDatesPanel";
+            bookingDatesPanel.Size = new Size(679, 167);
+            bookingDatesPanel.TabIndex = 0;
+            bookingDatesPanel.Paint += panel1_Paint;
             // 
             // checkAvailablityButton
             // 
-            checkAvailablityButton.Location = new Point(440, 141);
+            checkAvailablityButton.Location = new Point(489, 117);
+            checkAvailablityButton.Margin = new Padding(3, 4, 3, 4);
             checkAvailablityButton.Name = "checkAvailablityButton";
-            checkAvailablityButton.Size = new Size(161, 23);
+            checkAvailablityButton.Size = new Size(152, 31);
             checkAvailablityButton.TabIndex = 8;
             checkAvailablityButton.Text = "Check Availablity";
             checkAvailablityButton.UseVisualStyleBackColor = true;
@@ -93,339 +116,529 @@
             // roomsComboBox
             // 
             roomsComboBox.FormattingEnabled = true;
-            roomsComboBox.Location = new Point(358, 99);
+            roomsComboBox.Location = new Point(392, 69);
+            roomsComboBox.Margin = new Padding(3, 4, 3, 4);
             roomsComboBox.Name = "roomsComboBox";
-            roomsComboBox.Size = new Size(121, 23);
+            roomsComboBox.Size = new Size(138, 28);
             roomsComboBox.TabIndex = 7;
             // 
             // roomsLabel
             // 
             roomsLabel.AutoSize = true;
-            roomsLabel.Location = new Point(358, 81);
+            roomsLabel.Location = new Point(392, 45);
             roomsLabel.Name = "roomsLabel";
-            roomsLabel.Size = new Size(47, 15);
+            roomsLabel.Size = new Size(58, 20);
             roomsLabel.TabIndex = 6;
             roomsLabel.Text = "Rooms:";
             // 
-            // dateTimePicker2
+            // checkOutDatePicker
             // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(184, 99);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(144, 23);
-            dateTimePicker2.TabIndex = 4;
-            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
+            checkOutDatePicker.Format = DateTimePickerFormat.Short;
+            checkOutDatePicker.Location = new Point(193, 69);
+            checkOutDatePicker.Margin = new Padding(3, 4, 3, 4);
+            checkOutDatePicker.Name = "checkOutDatePicker";
+            checkOutDatePicker.Size = new Size(164, 27);
+            checkOutDatePicker.TabIndex = 4;
+            checkOutDatePicker.ValueChanged += dateTimePicker2_ValueChanged;
             // 
-            // dateTimePicker1
+            // checkInDatePicker
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(20, 99);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(149, 23);
-            dateTimePicker1.TabIndex = 3;
+            checkInDatePicker.Format = DateTimePickerFormat.Short;
+            checkInDatePicker.Location = new Point(6, 69);
+            checkInDatePicker.Margin = new Padding(3, 4, 3, 4);
+            checkInDatePicker.Name = "checkInDatePicker";
+            checkInDatePicker.Size = new Size(170, 27);
+            checkInDatePicker.TabIndex = 3;
             // 
             // checkInLabel
             // 
             checkInLabel.AutoSize = true;
-            checkInLabel.Location = new Point(20, 81);
+            checkInLabel.Location = new Point(6, 45);
             checkInLabel.Name = "checkInLabel";
-            checkInLabel.Size = new Size(85, 15);
+            checkInLabel.Size = new Size(105, 20);
             checkInLabel.TabIndex = 2;
             checkInLabel.Text = "Check-in Date:";
             // 
             // checkOutLabel
             // 
             checkOutLabel.AutoSize = true;
-            checkOutLabel.Location = new Point(184, 81);
+            checkOutLabel.Location = new Point(193, 45);
             checkOutLabel.Name = "checkOutLabel";
-            checkOutLabel.Size = new Size(93, 15);
+            checkOutLabel.Size = new Size(115, 20);
             checkOutLabel.TabIndex = 1;
             checkOutLabel.Text = "Check-out Date:";
             // 
-            // panel2
+            // paymentPanel
             // 
-            panel2.Controls.Add(CVVLabel);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(ExpirtyLabel);
-            panel2.Controls.Add(CardNameLabel);
-            panel2.Controls.Add(ExpiryDateTimePicker);
-            panel2.Controls.Add(CardNoTextBox);
-            panel2.Controls.Add(CardNameTextBox);
-            panel2.Controls.Add(CVVTextBox);
-            panel2.Location = new Point(39, 473);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(614, 154);
-            panel2.TabIndex = 1;
+            paymentPanel.BorderStyle = BorderStyle.FixedSingle;
+            paymentPanel.Controls.Add(paymentInformationLabel);
+            paymentPanel.Controls.Add(CVVLabel);
+            paymentPanel.Controls.Add(cardNumberLabel);
+            paymentPanel.Controls.Add(expiryDateLabel);
+            paymentPanel.Controls.Add(cardNameLabel);
+            paymentPanel.Controls.Add(expiryDatePicker);
+            paymentPanel.Controls.Add(cardNumberTextBox);
+            paymentPanel.Controls.Add(cardNameTextBox);
+            paymentPanel.Controls.Add(CVVTextBox);
+            paymentPanel.Location = new Point(59, 819);
+            paymentPanel.Margin = new Padding(3, 4, 3, 4);
+            paymentPanel.Name = "paymentPanel";
+            paymentPanel.Size = new Size(679, 197);
+            paymentPanel.TabIndex = 1;
             // 
             // CVVLabel
             // 
             CVVLabel.AutoSize = true;
-            CVVLabel.Location = new Point(379, 24);
+            CVVLabel.Location = new Point(424, 60);
             CVVLabel.Name = "CVVLabel";
-            CVVLabel.Size = new Size(32, 15);
+            CVVLabel.Size = new Size(39, 20);
             CVVLabel.TabIndex = 8;
             CVVLabel.Text = "CVV:";
             // 
-            // label1
+            // cardNumberLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(20, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(117, 15);
-            label1.TabIndex = 7;
-            label1.Text = "Credit Card Number:";
+            cardNumberLabel.AutoSize = true;
+            cardNumberLabel.Location = new Point(14, 60);
+            cardNumberLabel.Name = "cardNumberLabel";
+            cardNumberLabel.Size = new Size(145, 20);
+            cardNumberLabel.TabIndex = 7;
+            cardNumberLabel.Text = "Credit Card Number:";
             // 
-            // ExpirtyLabel
+            // expiryDateLabel
             // 
-            ExpirtyLabel.AutoSize = true;
-            ExpirtyLabel.Location = new Point(227, 24);
-            ExpirtyLabel.Name = "ExpirtyLabel";
-            ExpirtyLabel.Size = new Size(68, 15);
-            ExpirtyLabel.TabIndex = 6;
-            ExpirtyLabel.Text = "Expiry Date:";
+            expiryDateLabel.AutoSize = true;
+            expiryDateLabel.Location = new Point(250, 60);
+            expiryDateLabel.Name = "expiryDateLabel";
+            expiryDateLabel.Size = new Size(88, 20);
+            expiryDateLabel.TabIndex = 6;
+            expiryDateLabel.Text = "Expiry Date:";
             // 
-            // CardNameLabel
+            // cardNameLabel
             // 
-            CardNameLabel.AutoSize = true;
-            CardNameLabel.Location = new Point(20, 86);
-            CardNameLabel.Name = "CardNameLabel";
-            CardNameLabel.Size = new Size(109, 15);
-            CardNameLabel.TabIndex = 5;
-            CardNameLabel.Text = "Card Holder Name:";
-            CardNameLabel.Click += label1_Click;
+            cardNameLabel.AutoSize = true;
+            cardNameLabel.Location = new Point(17, 127);
+            cardNameLabel.Name = "cardNameLabel";
+            cardNameLabel.Size = new Size(137, 20);
+            cardNameLabel.TabIndex = 5;
+            cardNameLabel.Text = "Card Holder Name:";
+            cardNameLabel.Click += label1_Click;
             // 
-            // ExpiryDateTimePicker
+            // expiryDatePicker
             // 
-            ExpiryDateTimePicker.Format = DateTimePickerFormat.Custom;
-            ExpiryDateTimePicker.Location = new Point(227, 42);
-            ExpiryDateTimePicker.Name = "ExpiryDateTimePicker";
-            ExpiryDateTimePicker.Size = new Size(101, 23);
-            ExpiryDateTimePicker.TabIndex = 4;
+            expiryDatePicker.Format = DateTimePickerFormat.Custom;
+            expiryDatePicker.Location = new Point(250, 84);
+            expiryDatePicker.Margin = new Padding(3, 4, 3, 4);
+            expiryDatePicker.Name = "expiryDatePicker";
+            expiryDatePicker.Size = new Size(115, 27);
+            expiryDatePicker.TabIndex = 4;
             // 
-            // CardNoTextBox
+            // cardNumberTextBox
             // 
-            CardNoTextBox.Location = new Point(20, 42);
-            CardNoTextBox.Name = "CardNoTextBox";
-            CardNoTextBox.Size = new Size(164, 23);
-            CardNoTextBox.TabIndex = 3;
+            cardNumberTextBox.Location = new Point(14, 84);
+            cardNumberTextBox.Margin = new Padding(3, 4, 3, 4);
+            cardNumberTextBox.Name = "cardNumberTextBox";
+            cardNumberTextBox.Size = new Size(187, 27);
+            cardNumberTextBox.TabIndex = 3;
             // 
-            // CardNameTextBox
+            // cardNameTextBox
             // 
-            CardNameTextBox.Location = new Point(20, 104);
-            CardNameTextBox.Name = "CardNameTextBox";
-            CardNameTextBox.Size = new Size(164, 23);
-            CardNameTextBox.TabIndex = 1;
+            cardNameTextBox.Location = new Point(14, 151);
+            cardNameTextBox.Margin = new Padding(3, 4, 3, 4);
+            cardNameTextBox.Name = "cardNameTextBox";
+            cardNameTextBox.Size = new Size(187, 27);
+            cardNameTextBox.TabIndex = 1;
             // 
             // CVVTextBox
             // 
-            CVVTextBox.Location = new Point(379, 42);
+            CVVTextBox.Location = new Point(424, 84);
+            CVVTextBox.Margin = new Padding(3, 4, 3, 4);
             CVVTextBox.Name = "CVVTextBox";
-            CVVTextBox.Size = new Size(136, 23);
+            CVVTextBox.Size = new Size(155, 27);
             CVVTextBox.TabIndex = 0;
             // 
-            // panel3
+            // guestInformationPanel
             // 
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(emailTextBox);
-            panel3.Controls.Add(addressTextBox);
-            panel3.Controls.Add(PhoneTextBox);
-            panel3.Controls.Add(IDTextBox);
-            panel3.Controls.Add(nameTextBox);
-            panel3.Controls.Add(phoneLabel);
-            panel3.Controls.Add(emailLabel);
-            panel3.Controls.Add(guestNameLabel);
-            panel3.Controls.Add(addressLabel);
-            panel3.Controls.Add(IDLabel);
-            panel3.Controls.Add(comboBox1);
-            panel3.Controls.Add(guestLabel);
-            panel3.Location = new Point(39, 40);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(614, 208);
-            panel3.TabIndex = 1;
+            guestInformationPanel.BorderStyle = BorderStyle.FixedSingle;
+            guestInformationPanel.Controls.Add(addNewGuestButton);
+            guestInformationPanel.Controls.Add(guestInformationLabel);
+            guestInformationPanel.Controls.Add(searchGuestButton);
+            guestInformationPanel.Controls.Add(emailTextBox);
+            guestInformationPanel.Controls.Add(addressTextBox);
+            guestInformationPanel.Controls.Add(phoneTextBox);
+            guestInformationPanel.Controls.Add(IDTextBox);
+            guestInformationPanel.Controls.Add(nameTextBox);
+            guestInformationPanel.Controls.Add(phoneLabel);
+            guestInformationPanel.Controls.Add(emailLabel);
+            guestInformationPanel.Controls.Add(IDLabel);
+            guestInformationPanel.Controls.Add(guestNameLabel);
+            guestInformationPanel.Controls.Add(addressLabel);
+            guestInformationPanel.Location = new Point(59, 589);
+            guestInformationPanel.Margin = new Padding(3, 4, 3, 4);
+            guestInformationPanel.Name = "guestInformationPanel";
+            guestInformationPanel.Size = new Size(679, 222);
+            guestInformationPanel.TabIndex = 1;
             // 
-            // button1
+            // searchGuestButton
             // 
-            button1.Location = new Point(526, 172);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 19;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            searchGuestButton.Location = new Point(288, 176);
+            searchGuestButton.Margin = new Padding(3, 4, 3, 4);
+            searchGuestButton.Name = "searchGuestButton";
+            searchGuestButton.Size = new Size(162, 31);
+            searchGuestButton.TabIndex = 19;
+            searchGuestButton.Text = "Search Existing Guest";
+            searchGuestButton.UseVisualStyleBackColor = true;
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(228, 153);
+            emailTextBox.Location = new Point(288, 125);
+            emailTextBox.Margin = new Padding(3, 4, 3, 4);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(148, 23);
+            emailTextBox.Size = new Size(169, 27);
             emailTextBox.TabIndex = 18;
             // 
             // addressTextBox
             // 
-            addressTextBox.Location = new Point(20, 153);
+            addressTextBox.Location = new Point(18, 125);
+            addressTextBox.Margin = new Padding(3, 4, 3, 4);
             addressTextBox.Name = "addressTextBox";
-            addressTextBox.Size = new Size(100, 23);
+            addressTextBox.Size = new Size(200, 27);
             addressTextBox.TabIndex = 17;
             // 
-            // PhoneTextBox
+            // phoneTextBox
             // 
-            PhoneTextBox.Location = new Point(379, 83);
-            PhoneTextBox.Name = "PhoneTextBox";
-            PhoneTextBox.Size = new Size(100, 23);
-            PhoneTextBox.TabIndex = 16;
+            phoneTextBox.Location = new Point(288, 70);
+            phoneTextBox.Margin = new Padding(3, 4, 3, 4);
+            phoneTextBox.Name = "phoneTextBox";
+            phoneTextBox.Size = new Size(178, 27);
+            phoneTextBox.TabIndex = 16;
             // 
             // IDTextBox
             // 
-            IDTextBox.Location = new Point(228, 83);
+            IDTextBox.Location = new Point(23, 180);
+            IDTextBox.Margin = new Padding(3, 4, 3, 4);
             IDTextBox.Name = "IDTextBox";
-            IDTextBox.Size = new Size(100, 23);
+            IDTextBox.Size = new Size(178, 27);
             IDTextBox.TabIndex = 15;
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(20, 83);
+            nameTextBox.Location = new Point(18, 70);
+            nameTextBox.Margin = new Padding(3, 4, 3, 4);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(100, 23);
+            nameTextBox.Size = new Size(200, 27);
             nameTextBox.TabIndex = 14;
             // 
             // phoneLabel
             // 
             phoneLabel.AutoSize = true;
-            phoneLabel.Location = new Point(379, 65);
+            phoneLabel.Location = new Point(288, 46);
             phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new Size(91, 15);
+            phoneLabel.Size = new Size(111, 20);
             phoneLabel.TabIndex = 13;
             phoneLabel.Text = "Phone Number:";
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new Point(228, 135);
+            emailLabel.Location = new Point(288, 101);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(39, 15);
+            emailLabel.Size = new Size(49, 20);
             emailLabel.TabIndex = 12;
             emailLabel.Text = "Email:";
             // 
             // guestNameLabel
             // 
             guestNameLabel.AutoSize = true;
-            guestNameLabel.Location = new Point(20, 65);
+            guestNameLabel.Location = new Point(18, 46);
             guestNameLabel.Name = "guestNameLabel";
-            guestNameLabel.Size = new Size(75, 15);
+            guestNameLabel.Size = new Size(93, 20);
             guestNameLabel.TabIndex = 11;
             guestNameLabel.Text = "Guest Name:";
             // 
             // addressLabel
             // 
             addressLabel.AutoSize = true;
-            addressLabel.Location = new Point(20, 126);
+            addressLabel.Location = new Point(18, 101);
             addressLabel.Name = "addressLabel";
-            addressLabel.Size = new Size(52, 15);
+            addressLabel.Size = new Size(65, 20);
             addressLabel.TabIndex = 10;
             addressLabel.Text = "Address:";
             // 
             // IDLabel
             // 
             IDLabel.AutoSize = true;
-            IDLabel.Location = new Point(228, 65);
+            IDLabel.Location = new Point(23, 156);
             IDLabel.Name = "IDLabel";
-            IDLabel.Size = new Size(71, 15);
+            IDLabel.Size = new Size(88, 20);
             IDLabel.TabIndex = 9;
             IDLabel.Text = "ID/Passport:";
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Exsisting", "New" });
-            comboBox1.Location = new Point(63, 20);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 8;
-            // 
-            // guestLabel
-            // 
-            guestLabel.AutoSize = true;
-            guestLabel.Location = new Point(20, 23);
-            guestLabel.Name = "guestLabel";
-            guestLabel.Size = new Size(37, 15);
-            guestLabel.TabIndex = 5;
-            guestLabel.Text = "Guest";
-            // 
             // clearButton
             // 
-            clearButton.Location = new Point(492, 672);
+            clearButton.Location = new Point(474, 1032);
+            clearButton.Margin = new Padding(3, 4, 3, 4);
             clearButton.Name = "clearButton";
-            clearButton.Size = new Size(75, 23);
+            clearButton.Size = new Size(97, 31);
             clearButton.TabIndex = 20;
-            clearButton.Text = "Clear";
+            clearButton.Text = "Clear Form";
             clearButton.UseVisualStyleBackColor = true;
             // 
             // submitButton
             // 
-            submitButton.Location = new Point(591, 672);
+            submitButton.Location = new Point(577, 1032);
+            submitButton.Margin = new Padding(3, 4, 3, 4);
             submitButton.Name = "submitButton";
-            submitButton.Size = new Size(75, 23);
+            submitButton.Size = new Size(156, 31);
             submitButton.TabIndex = 21;
-            submitButton.Text = "Submit";
+            submitButton.Text = "Create Booking";
             submitButton.UseVisualStyleBackColor = true;
+            // 
+            // makeNewBookingHeadingPanel
+            // 
+            makeNewBookingHeadingPanel.BorderStyle = BorderStyle.FixedSingle;
+            makeNewBookingHeadingPanel.Controls.Add(backToMenuButton);
+            makeNewBookingHeadingPanel.Controls.Add(makeNewBookingHeader);
+            makeNewBookingHeadingPanel.Location = new Point(23, 24);
+            makeNewBookingHeadingPanel.Name = "makeNewBookingHeadingPanel";
+            makeNewBookingHeadingPanel.Size = new Size(738, 69);
+            makeNewBookingHeadingPanel.TabIndex = 22;
+            // 
+            // backToMenuButton
+            // 
+            backToMenuButton.Location = new Point(622, 10);
+            backToMenuButton.Name = "backToMenuButton";
+            backToMenuButton.Size = new Size(111, 29);
+            backToMenuButton.TabIndex = 2;
+            backToMenuButton.Text = "Back to Menu";
+            backToMenuButton.UseVisualStyleBackColor = true;
+            // 
+            // makeNewBookingHeader
+            // 
+            makeNewBookingHeader.AutoSize = true;
+            makeNewBookingHeader.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            makeNewBookingHeader.Location = new Point(197, 10);
+            makeNewBookingHeader.Name = "makeNewBookingHeader";
+            makeNewBookingHeader.Size = new Size(333, 46);
+            makeNewBookingHeader.TabIndex = 0;
+            makeNewBookingHeader.Text = "Make New Booking";
+            // 
+            // roomAvailabilityPanel
+            // 
+            roomAvailabilityPanel.BorderStyle = BorderStyle.FixedSingle;
+            roomAvailabilityPanel.Controls.Add(textBox2);
+            roomAvailabilityPanel.Controls.Add(depositRequiredLabel);
+            roomAvailabilityPanel.Controls.Add(totalCostTextBox);
+            roomAvailabilityPanel.Controls.Add(totalCostLabel);
+            roomAvailabilityPanel.Controls.Add(roomAvailabilityGrid);
+            roomAvailabilityPanel.Controls.Add(roomAvailabilityLabel);
+            roomAvailabilityPanel.Location = new Point(59, 274);
+            roomAvailabilityPanel.Name = "roomAvailabilityPanel";
+            roomAvailabilityPanel.Size = new Size(679, 308);
+            roomAvailabilityPanel.TabIndex = 23;
+            // 
+            // roomAvailabilityGrid
+            // 
+            roomAvailabilityGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            roomAvailabilityGrid.Columns.AddRange(new DataGridViewColumn[] { dateColumn, seasonColumn, ratePerNightColumn, availableRoomsColumn });
+            roomAvailabilityGrid.Location = new Point(40, 39);
+            roomAvailabilityGrid.Name = "roomAvailabilityGrid";
+            roomAvailabilityGrid.RowHeadersWidth = 51;
+            roomAvailabilityGrid.Size = new Size(551, 188);
+            roomAvailabilityGrid.TabIndex = 2;
+            // 
+            // roomAvailabilityLabel
+            // 
+            roomAvailabilityLabel.AutoSize = true;
+            roomAvailabilityLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            roomAvailabilityLabel.Location = new Point(13, 13);
+            roomAvailabilityLabel.Name = "roomAvailabilityLabel";
+            roomAvailabilityLabel.Size = new Size(232, 23);
+            roomAvailabilityLabel.TabIndex = 1;
+            roomAvailabilityLabel.Text = "Room Availability and Pricing";
+            // 
+            // dateColumn
+            // 
+            dateColumn.HeaderText = "Date";
+            dateColumn.MinimumWidth = 6;
+            dateColumn.Name = "dateColumn";
+            dateColumn.Width = 125;
+            // 
+            // seasonColumn
+            // 
+            seasonColumn.HeaderText = "Season";
+            seasonColumn.MinimumWidth = 6;
+            seasonColumn.Name = "seasonColumn";
+            seasonColumn.Width = 125;
+            // 
+            // ratePerNightColumn
+            // 
+            ratePerNightColumn.HeaderText = "Rate/Night";
+            ratePerNightColumn.MinimumWidth = 6;
+            ratePerNightColumn.Name = "ratePerNightColumn";
+            ratePerNightColumn.Width = 125;
+            // 
+            // availableRoomsColumn
+            // 
+            availableRoomsColumn.HeaderText = "Available Rooms";
+            availableRoomsColumn.MinimumWidth = 6;
+            availableRoomsColumn.Name = "availableRoomsColumn";
+            availableRoomsColumn.Width = 125;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            label1.Location = new Point(6, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(278, 23);
+            label1.TabIndex = 9;
+            label1.Text = "Booking Dates and Room Selection";
+            // 
+            // totalCostTextBox
+            // 
+            totalCostTextBox.Location = new Point(40, 266);
+            totalCostTextBox.Margin = new Padding(3, 4, 3, 4);
+            totalCostTextBox.Name = "totalCostTextBox";
+            totalCostTextBox.Size = new Size(114, 27);
+            totalCostTextBox.TabIndex = 16;
+            // 
+            // totalCostLabel
+            // 
+            totalCostLabel.AutoSize = true;
+            totalCostLabel.Location = new Point(40, 242);
+            totalCostLabel.Name = "totalCostLabel";
+            totalCostLabel.Size = new Size(108, 20);
+            totalCostLabel.TabIndex = 15;
+            totalCostLabel.Text = "Total stay Cost:";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(252, 266);
+            textBox2.Margin = new Padding(3, 4, 3, 4);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(114, 27);
+            textBox2.TabIndex = 18;
+            // 
+            // depositRequiredLabel
+            // 
+            depositRequiredLabel.AutoSize = true;
+            depositRequiredLabel.Location = new Point(252, 242);
+            depositRequiredLabel.Name = "depositRequiredLabel";
+            depositRequiredLabel.Size = new Size(170, 20);
+            depositRequiredLabel.TabIndex = 17;
+            depositRequiredLabel.Text = "Deposit Required (10%):";
+            // 
+            // guestInformationLabel
+            // 
+            guestInformationLabel.AutoSize = true;
+            guestInformationLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            guestInformationLabel.Location = new Point(18, 10);
+            guestInformationLabel.Name = "guestInformationLabel";
+            guestInformationLabel.Size = new Size(149, 23);
+            guestInformationLabel.TabIndex = 20;
+            guestInformationLabel.Text = "Guest Information";
+            // 
+            // addNewGuestButton
+            // 
+            addNewGuestButton.Location = new Point(468, 176);
+            addNewGuestButton.Margin = new Padding(3, 4, 3, 4);
+            addNewGuestButton.Name = "addNewGuestButton";
+            addNewGuestButton.Size = new Size(148, 31);
+            addNewGuestButton.TabIndex = 21;
+            addNewGuestButton.Text = "Add new Guest";
+            addNewGuestButton.UseVisualStyleBackColor = true;
+            // 
+            // paymentInformationLabel
+            // 
+            paymentInformationLabel.AutoSize = true;
+            paymentInformationLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            paymentInformationLabel.Location = new Point(14, 13);
+            paymentInformationLabel.Name = "paymentInformationLabel";
+            paymentInformationLabel.Size = new Size(171, 23);
+            paymentInformationLabel.TabIndex = 21;
+            paymentInformationLabel.Text = "Payment Information";
             // 
             // NewBookingForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(708, 717);
+            ClientSize = new Size(800, 1084);
+            Controls.Add(roomAvailabilityPanel);
+            Controls.Add(makeNewBookingHeadingPanel);
             Controls.Add(submitButton);
             Controls.Add(clearButton);
-            Controls.Add(panel2);
-            Controls.Add(panel3);
-            Controls.Add(panel1);
+            Controls.Add(paymentPanel);
+            Controls.Add(guestInformationPanel);
+            Controls.Add(bookingDatesPanel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "NewBookingForm";
             Text = "New Booking";
             Load += NewBookingForm_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            bookingDatesPanel.ResumeLayout(false);
+            bookingDatesPanel.PerformLayout();
+            paymentPanel.ResumeLayout(false);
+            paymentPanel.PerformLayout();
+            guestInformationPanel.ResumeLayout(false);
+            guestInformationPanel.PerformLayout();
+            makeNewBookingHeadingPanel.ResumeLayout(false);
+            makeNewBookingHeadingPanel.PerformLayout();
+            roomAvailabilityPanel.ResumeLayout(false);
+            roomAvailabilityPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)roomAvailabilityGrid).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
+        private Panel bookingDatesPanel;
+        private Panel paymentPanel;
+        private Panel guestInformationPanel;
         private Label checkInLabel;
         private Label checkOutLabel;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker checkOutDatePicker;
+        private DateTimePicker checkInDatePicker;
         private ComboBox roomsComboBox;
         private Label roomsLabel;
-        private Label guestLabel;
         private Button checkAvailablityButton;
         private Label guestNameLabel;
         private Label addressLabel;
         private Label IDLabel;
-        private ComboBox comboBox1;
         private TextBox addressTextBox;
-        private TextBox PhoneTextBox;
+        private TextBox phoneTextBox;
         private TextBox IDTextBox;
         private TextBox nameTextBox;
         private Label phoneLabel;
         private Label emailLabel;
         private TextBox emailTextBox;
-        private TextBox CardNoTextBox;
-        private TextBox CardNameTextBox;
+        private TextBox cardNumberTextBox;
+        private TextBox cardNameTextBox;
         private TextBox TextBox;
         private TextBox textBox2;
         private TextBox CVVTextBox;
-        private Button button1;
+        private Button searchGuestButton;
         private Button clearButton;
         private Button submitButton;
-        private DateTimePicker ExpiryDateTimePicker;
-        private Label CardNameLabel;
-        private Label ExpirtyLabel;
+        private DateTimePicker expiryDatePicker;
+        private Label cardNameLabel;
+        private Label expiryDateLabel;
         private Label CVVLabel;
+        private Label cardNumberLabel;
+        private Panel makeNewBookingHeadingPanel;
+        private Button backToMenuButton;
+        private Label makeNewBookingHeader;
+        private Panel roomAvailabilityPanel;
+        private DataGridView roomAvailabilityGrid;
+        private DataGridViewTextBoxColumn dateColumn;
+        private DataGridViewTextBoxColumn seasonColumn;
+        private DataGridViewTextBoxColumn ratePerNightColumn;
+        private DataGridViewTextBoxColumn availableRoomsColumn;
+        private Label roomAvailabilityLabel;
         private Label label1;
+        private Label depositRequiredLabel;
+        private TextBox totalCostTextBox;
+        private Label totalCostLabel;
+        private Label guestInformationLabel;
+        private Label paymentInformationLabel;
+        private Button addNewGuestButton;
     }
 }
