@@ -40,10 +40,10 @@ namespace Group5HotelsProject.Data
                         Address = row["_Address"].ToString(),
                         City = row["City"].ToString(),
                         PostalCode = row["PostalCode"].ToString(),
-                        Phonenumber = Convert.ToInt32(row["Phonenumber"]),
+                        PhoneNumber = (row["Phonenumber"]).ToString(),
                         Email = row["Email"].ToString(),
-                        IdPassportNumber = Convert.ToInt32(row["Id_PassportNumber"])
-                    };
+                        IDPassportNumber = (row["idpassportnumber"]).ToString()
+                    }
                     guests.Add(guest);
                 }
             }
