@@ -14,30 +14,64 @@ namespace Group5HotelsProject.Business
         #endregion
 
         #region Properties
-        public int RoomID { get => roomID; set => roomID = value; }
-        public string RoomNumber { get => roomNumber; set => roomNumber = value; }
-        public string RoomType { get => roomType; set => roomType = value; }
-        public int MaxOccupancy { get => maxOccupancy; set => maxOccupancy = value; }
-        public string RoomStatus { get => roomStatus; set => roomStatus = value; }
-        public string Description { get => description; set => description = value; }
+        public int RoomID
+        {
+            get { return roomID; }
+            set { roomID = value; }
+        }
+
+        public string RoomNumber
+        {
+            get { return roomNumber; }
+            set { roomNumber = value; }
+        }
+
+        public string RoomType
+        {
+            get { return roomType; }
+            set { roomType = value; }
+        }
+
+        public int MaxOccupancy
+        {
+            get { return maxOccupancy; }
+            set { maxOccupancy = value; }
+        }
+
+        public string RoomStatus
+        {
+            get { return roomStatus; }
+            set { roomStatus = value; }
+        }
+
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
         #endregion
 
         #region Constructors
-        public Room() { }
+        public Room()
+        {
+        }
 
         public Room(int roomID, string roomNumber, string roomType, int maxOccupancy, string roomStatus, string description)
         {
-            RoomID = roomID;
-            RoomNumber = roomNumber;
-            RoomType = roomType;
-            MaxOccupancy = maxOccupancy;
-            RoomStatus = roomStatus;
-            Description = description;
+            this.roomID = roomID;
+            this.roomNumber = roomNumber;
+            this.roomType = roomType;
+            this.maxOccupancy = maxOccupancy;
+            this.roomStatus = roomStatus;
+            this.description = description;
         }
         #endregion
 
         #region Methods
-        public override string ToString() => $"{RoomNumber} - {RoomType} ({RoomStatus})";
+        public override string ToString()
+        {
+            return roomNumber + " - " + roomType + " (" + roomStatus + ")";
+        }
         #endregion
     }
 }

@@ -13,28 +13,58 @@ namespace Group5HotelsProject.Business
         #endregion
 
         #region Properties
-        public int PaymentID { get => paymentID; set => paymentID = value; }
-        public int BookingID { get => bookingID; set => bookingID = value; }
-        public DateTime PaymentDate { get => paymentDate; set => paymentDate = value; }
-        public decimal AmountPaid { get => amountPaid; set => amountPaid = value; }
-        public string PaymentMethod { get => paymentMethod; set => paymentMethod = value; }
+        public int PaymentID
+        {
+            get { return paymentID; }
+            set { paymentID = value; }
+        }
+
+        public int BookingID
+        {
+            get { return bookingID; }
+            set { bookingID = value; }
+        }
+
+        public DateTime PaymentDate
+        {
+            get { return paymentDate; }
+            set { paymentDate = value; }
+        }
+
+        public decimal AmountPaid
+        {
+            get { return amountPaid; }
+            set { amountPaid = value; }
+        }
+
+        public string PaymentMethod
+        {
+            get { return paymentMethod; }
+            set { paymentMethod = value; }
+        }
         #endregion
 
         #region Constructors
-        public Payment() { }
+        public Payment()
+        {
+        }
 
         public Payment(int paymentID, int bookingID, DateTime paymentDate, decimal amountPaid, string paymentMethod)
         {
-            PaymentID = paymentID;
-            BookingID = bookingID;
-            PaymentDate = paymentDate;
-            AmountPaid = amountPaid;
-            PaymentMethod = paymentMethod;
+            this.paymentID = paymentID;
+            this.bookingID = bookingID;
+            this.paymentDate = paymentDate;
+            this.amountPaid = amountPaid;
+            this.paymentMethod = paymentMethod;
         }
         #endregion
 
         #region Methods
-        public override string ToString() => $"Payment #{PaymentID}: {AmountPaid:C} via {PaymentMethod} on {PaymentDate:d}";
+        public override string ToString()
+        {
+            return "Payment #" + paymentID + ": " + amountPaid.ToString("C") +
+                   " via " + paymentMethod + " on " + paymentDate.ToShortDateString();
+        }
         #endregion
     }
 }

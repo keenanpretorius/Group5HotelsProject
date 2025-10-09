@@ -12,26 +12,50 @@ namespace Group5HotelsProject.Business
         #endregion
 
         #region Properties
-        public int RateID { get => rateID; set => rateID = value; }
-        public string RoomType { get => roomType; set => roomType = value; }
-        public decimal DailyRate { get => dailyRate; set => dailyRate = value; }
-        public int SeasonID { get => seasonID; set => seasonID = value; }
+        public int RateID
+        {
+            get { return rateID; }
+            set { rateID = value; }
+        }
+
+        public string RoomType
+        {
+            get { return roomType; }
+            set { roomType = value; }
+        }
+
+        public decimal DailyRate
+        {
+            get { return dailyRate; }
+            set { dailyRate = value; }
+        }
+
+        public int SeasonID
+        {
+            get { return seasonID; }
+            set { seasonID = value; }
+        }
         #endregion
 
         #region Constructors
-        public Rate() { }
+        public Rate()
+        {
+        }
 
         public Rate(int rateID, string roomType, decimal dailyRate, int seasonID)
         {
-            RateID = rateID;
-            RoomType = roomType;
-            DailyRate = dailyRate;
-            SeasonID = seasonID;
+            this.rateID = rateID;
+            this.roomType = roomType;
+            this.dailyRate = dailyRate;
+            this.seasonID = seasonID;
         }
         #endregion
 
         #region Methods
-        public override string ToString() => $"{RoomType}: {DailyRate:C} (Season {SeasonID})";
+        public override string ToString()
+        {
+            return roomType + ": " + dailyRate.ToString("C") + " (Season " + seasonID + ")";
+        }
         #endregion
     }
 }

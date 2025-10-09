@@ -12,14 +12,35 @@ namespace Group5HotelsProject.Business
         #endregion
 
         #region Properties
-        public int GuestID { get => guestID; set => guestID = value; }
-        public string PostalCode { get => postalCode; set => postalCode = value; }
-        public string IDPassportNumber { get => idPassportNumber; set => idPassportNumber = value; }
-        public string LoyaltyStatus { get => loyaltyStatus; set => loyaltyStatus = value; }
+        public int GuestID
+        {
+            get { return guestID; }
+            set { guestID = value; }
+        }
+
+        public string PostalCode
+        {
+            get { return postalCode; }
+            set { postalCode = value; }
+        }
+
+        public string IDPassportNumber
+        {
+            get { return idPassportNumber; }
+            set { idPassportNumber = value; }
+        }
+
+        public string LoyaltyStatus
+        {
+            get { return loyaltyStatus; }
+            set { loyaltyStatus = value; }
+        }
         #endregion
 
         #region Constructors
-        public Guest() { }
+        public Guest()
+        {
+        }
 
         public Guest(
             int guestID,
@@ -34,15 +55,18 @@ namespace Group5HotelsProject.Business
             string loyaltyStatus
         ) : base(guestID, firstName, lastName, phoneNumber, email, address, city)
         {
-            GuestID = guestID;
-            PostalCode = postalCode;
-            IDPassportNumber = idPassportNumber;
-            LoyaltyStatus = loyaltyStatus;
+            this.guestID = guestID;
+            this.postalCode = postalCode;
+            this.idPassportNumber = idPassportNumber;
+            this.loyaltyStatus = loyaltyStatus;
         }
         #endregion
 
         #region Methods
-        public override string ToString() => $"{FullName} (Guest - {Email})";
+        public override string ToString()
+        {
+            return FullName + " (Guest - " + Email + ")";
+        }
         #endregion
     }
 }

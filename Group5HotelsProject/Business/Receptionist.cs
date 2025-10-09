@@ -13,15 +13,41 @@ namespace Group5HotelsProject.Business
         #endregion
 
         #region Properties
-        public int ReceptionistID { get => receptionistID; set => receptionistID = value; }
-        public string EmployeeNumber { get => employeeNumber; set => employeeNumber = value; }
-        public string Username { get => username; set => username = value; }
-        public string PasswordHash { get => passwordHash; set => passwordHash = value; }
-        public DateTime DateHired { get => dateHired; set => dateHired = value; }
+        public int ReceptionistID
+        {
+            get { return receptionistID; }
+            set { receptionistID = value; }
+        }
+
+        public string EmployeeNumber
+        {
+            get { return employeeNumber; }
+            set { employeeNumber = value; }
+        }
+
+        public string Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
+
+        public string PasswordHash
+        {
+            get { return passwordHash; }
+            set { passwordHash = value; }
+        }
+
+        public DateTime DateHired
+        {
+            get { return dateHired; }
+            set { dateHired = value; }
+        }
         #endregion
 
         #region Constructors
-        public Receptionist() { }
+        public Receptionist()
+        {
+        }
 
         public Receptionist(
             int receptionistID,
@@ -37,16 +63,19 @@ namespace Group5HotelsProject.Business
             DateTime dateHired
         ) : base(receptionistID, firstName, lastName, phoneNumber, email, address, city)
         {
-            ReceptionistID = receptionistID;
-            EmployeeNumber = employeeNumber;
-            Username = username;
-            PasswordHash = passwordHash;
-            DateHired = dateHired;
+            this.receptionistID = receptionistID;
+            this.employeeNumber = employeeNumber;
+            this.username = username;
+            this.passwordHash = passwordHash;
+            this.dateHired = dateHired;
         }
         #endregion
 
         #region Methods
-        public override string ToString() => $"{FullName} (Receptionist #{EmployeeNumber})";
+        public override string ToString()
+        {
+            return FullName + " (Receptionist #" + employeeNumber + ")";
+        }
         #endregion
     }
 }

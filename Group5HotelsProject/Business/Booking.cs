@@ -20,22 +20,83 @@ namespace Group5HotelsProject.Business
         #endregion
 
         #region Properties
-        public int BookingID { get => bookingID; set => bookingID = value; }
-        public int GuestID { get => guestID; set => guestID = value; }
-        public int RoomID { get => roomID; set => roomID = value; }
-        public int ReceptionistID { get => receptionistID; set => receptionistID = value; }
-        public string BookingReference { get => bookingReference; set => bookingReference = value; }
-        public DateTime CheckInDate { get => checkInDate; set => checkInDate = value; }
-        public DateTime CheckOutDate { get => checkOutDate; set => checkOutDate = value; }
-        public int NumberOfGuests { get => numberOfGuests; set => numberOfGuests = value; }
-        public int NumberOfNights { get => numberOfNights; set => numberOfNights = value; }
-        public decimal TotalAmount { get => totalAmount; set => totalAmount = value; }
-        public string BookingStatus { get => bookingStatus; set => bookingStatus = value; }
-        public DateTime CreatedDate { get => createdDate; set => createdDate = value; }
+        public int BookingID
+        {
+            get { return bookingID; }
+            set { bookingID = value; }
+        }
+
+        public int GuestID
+        {
+            get { return guestID; }
+            set { guestID = value; }
+        }
+
+        public int RoomID
+        {
+            get { return roomID; }
+            set { roomID = value; }
+        }
+
+        public int ReceptionistID
+        {
+            get { return receptionistID; }
+            set { receptionistID = value; }
+        }
+
+        public string BookingReference
+        {
+            get { return bookingReference; }
+            set { bookingReference = value; }
+        }
+
+        public DateTime CheckInDate
+        {
+            get { return checkInDate; }
+            set { checkInDate = value; }
+        }
+
+        public DateTime CheckOutDate
+        {
+            get { return checkOutDate; }
+            set { checkOutDate = value; }
+        }
+
+        public int NumberOfGuests
+        {
+            get { return numberOfGuests; }
+            set { numberOfGuests = value; }
+        }
+
+        public int NumberOfNights
+        {
+            get { return numberOfNights; }
+            set { numberOfNights = value; }
+        }
+
+        public decimal TotalAmount
+        {
+            get { return totalAmount; }
+            set { totalAmount = value; }
+        }
+
+        public string BookingStatus
+        {
+            get { return bookingStatus; }
+            set { bookingStatus = value; }
+        }
+
+        public DateTime CreatedDate
+        {
+            get { return createdDate; }
+            set { createdDate = value; }
+        }
         #endregion
 
         #region Constructors
-        public Booking() { }
+        public Booking()
+        {
+        }
 
         public Booking(
             int bookingID,
@@ -51,24 +112,28 @@ namespace Group5HotelsProject.Business
             string bookingStatus,
             DateTime createdDate)
         {
-            BookingID = bookingID;
-            GuestID = guestID;
-            RoomID = roomID;
-            ReceptionistID = receptionistID;
-            BookingReference = bookingReference;
-            CheckInDate = checkInDate;
-            CheckOutDate = checkOutDate;
-            NumberOfGuests = numberOfGuests;
-            NumberOfNights = numberOfNights;
-            TotalAmount = totalAmount;
-            BookingStatus = bookingStatus;
-            CreatedDate = createdDate;
+            this.bookingID = bookingID;
+            this.guestID = guestID;
+            this.roomID = roomID;
+            this.receptionistID = receptionistID;
+            this.bookingReference = bookingReference;
+            this.checkInDate = checkInDate;
+            this.checkOutDate = checkOutDate;
+            this.numberOfGuests = numberOfGuests;
+            this.numberOfNights = numberOfNights;
+            this.totalAmount = totalAmount;
+            this.bookingStatus = bookingStatus;
+            this.createdDate = createdDate;
         }
         #endregion
 
         #region Methods
-        public override string ToString() =>
-            $"Booking #{BookingID} ({BookingReference}) - Guest {GuestID}, Room {RoomID}, {CheckInDate:d} to {CheckOutDate:d}, Status: {BookingStatus}";
+        public override string ToString()
+        {
+            return "Booking #" + bookingID + " (" + bookingReference + ") - Guest " + guestID +
+                   ", Room " + roomID + ", " + checkInDate.ToShortDateString() +
+                   " to " + checkOutDate.ToShortDateString() + ", Status: " + bookingStatus;
+        }
         #endregion
     }
 }
