@@ -88,6 +88,7 @@
             backToMenuButton.TabIndex = 1;
             backToMenuButton.Text = "Back to Menu";
             backToMenuButton.UseVisualStyleBackColor = true;
+            backToMenuButton.Click += backToMenuButton_Click;
             // 
             // bookingConfirmationHeader
             // 
@@ -183,6 +184,7 @@
             searchButton.TabIndex = 5;
             searchButton.Text = "Search";
             searchButton.UseVisualStyleBackColor = true;
+            searchButton.Click += searchButton_Click;
             // 
             // dataRangeLabel
             // 

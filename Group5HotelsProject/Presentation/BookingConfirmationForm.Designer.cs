@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             bookingDetailsPanel = new Panel();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            numberOfGuestTextBox = new TextBox();
+            roomTypeTextBox = new TextBox();
+            phoneTextBox = new TextBox();
+            checkOutTextBox = new TextBox();
+            checkInTextBox = new TextBox();
+            emailTextBox = new TextBox();
+            nightsTextBox = new TextBox();
+            guestNameTextBox = new TextBox();
             numberOfGuestsLabel = new Label();
             roomTypeLabel = new Label();
             nightsLabel = new Label();
@@ -43,29 +47,20 @@
             nameLabel = new Label();
             label1 = new Label();
             importantInfoPanel = new Panel();
+            checkOutTimeTextBox = new TextBox();
+            checkOutTimeLabel = new Label();
+            checkInTimeTextBox = new TextBox();
+            checkInTimeLabel = new Label();
+            cancellationPolicyTextBox = new TextBox();
+            cancellationPolicyLabel = new Label();
+            bookingStatusTextBox = new TextBox();
+            bookingStatusLabel = new Label();
+            importantInfoLabel = new Label();
             bookingCreatedPanel = new Panel();
+            bookingNumberRichTextBox = new RichTextBox();
             referenceNumberLabel = new Label();
             bookingSuccessfulLabel = new Label();
             paymentSummaryPanel = new Panel();
-            confirmationLetterPanel = new Panel();
-            printConfirmationButton = new Button();
-            emailGuestButton = new Button();
-            makeAnotherBookingButton = new Button();
-            returnToMenuButton = new Button();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            importantInfoLabel = new Label();
-            bookingStatusTextBox = new TextBox();
-            bookingStatusLabel = new Label();
-            cancellationPolicyTextBox = new TextBox();
-            cancellationPolicyLabel = new Label();
-            checkInTimeTextBox = new TextBox();
-            checkInTimeLabel = new Label();
-            checkOutTimeTextBox = new TextBox();
-            checkOutTimeLabel = new Label();
-            paymentSummaryLabel = new Label();
             totalRoomChargesTextBox = new TextBox();
             paymentMethodTextBox = new TextBox();
             balanceDueTextBox = new TextBox();
@@ -78,13 +73,18 @@
             depositLabel = new Label();
             totalRoomChargesLabel = new Label();
             roomRateLabel = new Label();
-            confirmationLetterLabel = new Label();
-            confirmationReadyLabel = new Label();
+            paymentSummaryLabel = new Label();
+            confirmationLetterPanel = new Panel();
             confirmationLetterRichTextBox = new RichTextBox();
+            confirmationReadyLabel = new Label();
+            confirmationLetterLabel = new Label();
+            printConfirmationButton = new Button();
+            emailGuestButton = new Button();
+            makeAnotherBookingButton = new Button();
+            returnToMenuButton = new Button();
             bookingConfirmationHeadingPanel = new Panel();
-            bookingConfirmationHeader = new Label();
-            bookingNumberRichTextBox = new RichTextBox();
             backToMenuButton = new Button();
+            bookingConfirmationHeader = new Label();
             bookingDetailsPanel.SuspendLayout();
             importantInfoPanel.SuspendLayout();
             bookingCreatedPanel.SuspendLayout();
@@ -96,14 +96,14 @@
             // bookingDetailsPanel
             // 
             bookingDetailsPanel.BorderStyle = BorderStyle.FixedSingle;
-            bookingDetailsPanel.Controls.Add(textBox8);
-            bookingDetailsPanel.Controls.Add(textBox7);
-            bookingDetailsPanel.Controls.Add(textBox6);
-            bookingDetailsPanel.Controls.Add(textBox5);
-            bookingDetailsPanel.Controls.Add(textBox4);
-            bookingDetailsPanel.Controls.Add(textBox3);
-            bookingDetailsPanel.Controls.Add(textBox2);
-            bookingDetailsPanel.Controls.Add(textBox1);
+            bookingDetailsPanel.Controls.Add(numberOfGuestTextBox);
+            bookingDetailsPanel.Controls.Add(roomTypeTextBox);
+            bookingDetailsPanel.Controls.Add(phoneTextBox);
+            bookingDetailsPanel.Controls.Add(checkOutTextBox);
+            bookingDetailsPanel.Controls.Add(checkInTextBox);
+            bookingDetailsPanel.Controls.Add(emailTextBox);
+            bookingDetailsPanel.Controls.Add(nightsTextBox);
+            bookingDetailsPanel.Controls.Add(guestNameTextBox);
             bookingDetailsPanel.Controls.Add(numberOfGuestsLabel);
             bookingDetailsPanel.Controls.Add(roomTypeLabel);
             bookingDetailsPanel.Controls.Add(nightsLabel);
@@ -118,33 +118,61 @@
             bookingDetailsPanel.Size = new Size(606, 210);
             bookingDetailsPanel.TabIndex = 0;
             // 
-            // textBox4
+            // numberOfGuestTextBox
             // 
-            textBox4.Location = new Point(12, 123);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(155, 27);
-            textBox4.TabIndex = 12;
+            numberOfGuestTextBox.Location = new Point(206, 176);
+            numberOfGuestTextBox.Name = "numberOfGuestTextBox";
+            numberOfGuestTextBox.Size = new Size(111, 27);
+            numberOfGuestTextBox.TabIndex = 16;
             // 
-            // textBox3
+            // roomTypeTextBox
             // 
-            textBox3.Location = new Point(404, 70);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(183, 27);
-            textBox3.TabIndex = 11;
+            roomTypeTextBox.Location = new Point(12, 176);
+            roomTypeTextBox.Name = "roomTypeTextBox";
+            roomTypeTextBox.Size = new Size(155, 27);
+            roomTypeTextBox.TabIndex = 15;
             // 
-            // textBox2
+            // phoneTextBox
             // 
-            textBox2.Location = new Point(404, 123);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(99, 27);
-            textBox2.TabIndex = 10;
+            phoneTextBox.Location = new Point(206, 70);
+            phoneTextBox.Name = "phoneTextBox";
+            phoneTextBox.Size = new Size(183, 27);
+            phoneTextBox.TabIndex = 14;
             // 
-            // textBox1
+            // checkOutTextBox
             // 
-            textBox1.Location = new Point(12, 70);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(183, 27);
-            textBox1.TabIndex = 9;
+            checkOutTextBox.Location = new Point(206, 123);
+            checkOutTextBox.Name = "checkOutTextBox";
+            checkOutTextBox.Size = new Size(145, 27);
+            checkOutTextBox.TabIndex = 13;
+            // 
+            // checkInTextBox
+            // 
+            checkInTextBox.Location = new Point(12, 123);
+            checkInTextBox.Name = "checkInTextBox";
+            checkInTextBox.Size = new Size(155, 27);
+            checkInTextBox.TabIndex = 12;
+            // 
+            // emailTextBox
+            // 
+            emailTextBox.Location = new Point(404, 70);
+            emailTextBox.Name = "emailTextBox";
+            emailTextBox.Size = new Size(183, 27);
+            emailTextBox.TabIndex = 11;
+            // 
+            // nightsTextBox
+            // 
+            nightsTextBox.Location = new Point(404, 123);
+            nightsTextBox.Name = "nightsTextBox";
+            nightsTextBox.Size = new Size(99, 27);
+            nightsTextBox.TabIndex = 10;
+            // 
+            // guestNameTextBox
+            // 
+            guestNameTextBox.Location = new Point(12, 70);
+            guestNameTextBox.Name = "guestNameTextBox";
+            guestNameTextBox.Size = new Size(183, 27);
+            guestNameTextBox.TabIndex = 9;
             // 
             // numberOfGuestsLabel
             // 
@@ -245,6 +273,80 @@
             importantInfoPanel.Size = new Size(606, 171);
             importantInfoPanel.TabIndex = 1;
             // 
+            // checkOutTimeTextBox
+            // 
+            checkOutTimeTextBox.Location = new Point(296, 128);
+            checkOutTimeTextBox.Name = "checkOutTimeTextBox";
+            checkOutTimeTextBox.Size = new Size(155, 27);
+            checkOutTimeTextBox.TabIndex = 18;
+            // 
+            // checkOutTimeLabel
+            // 
+            checkOutTimeLabel.AutoSize = true;
+            checkOutTimeLabel.Location = new Point(296, 105);
+            checkOutTimeLabel.Name = "checkOutTimeLabel";
+            checkOutTimeLabel.Size = new Size(116, 20);
+            checkOutTimeLabel.TabIndex = 17;
+            checkOutTimeLabel.Text = "Check-out Time:";
+            // 
+            // checkInTimeTextBox
+            // 
+            checkInTimeTextBox.Location = new Point(12, 128);
+            checkInTimeTextBox.Name = "checkInTimeTextBox";
+            checkInTimeTextBox.Size = new Size(155, 27);
+            checkInTimeTextBox.TabIndex = 16;
+            // 
+            // checkInTimeLabel
+            // 
+            checkInTimeLabel.AutoSize = true;
+            checkInTimeLabel.Location = new Point(12, 105);
+            checkInTimeLabel.Name = "checkInTimeLabel";
+            checkInTimeLabel.Size = new Size(106, 20);
+            checkInTimeLabel.TabIndex = 14;
+            checkInTimeLabel.Text = "Check-in Time:";
+            // 
+            // cancellationPolicyTextBox
+            // 
+            cancellationPolicyTextBox.Location = new Point(296, 65);
+            cancellationPolicyTextBox.Name = "cancellationPolicyTextBox";
+            cancellationPolicyTextBox.Size = new Size(183, 27);
+            cancellationPolicyTextBox.TabIndex = 13;
+            // 
+            // cancellationPolicyLabel
+            // 
+            cancellationPolicyLabel.AutoSize = true;
+            cancellationPolicyLabel.Location = new Point(296, 42);
+            cancellationPolicyLabel.Name = "cancellationPolicyLabel";
+            cancellationPolicyLabel.Size = new Size(136, 20);
+            cancellationPolicyLabel.TabIndex = 12;
+            cancellationPolicyLabel.Text = "Cancellation Policy:";
+            // 
+            // bookingStatusTextBox
+            // 
+            bookingStatusTextBox.Location = new Point(12, 65);
+            bookingStatusTextBox.Name = "bookingStatusTextBox";
+            bookingStatusTextBox.Size = new Size(183, 27);
+            bookingStatusTextBox.TabIndex = 11;
+            // 
+            // bookingStatusLabel
+            // 
+            bookingStatusLabel.AutoSize = true;
+            bookingStatusLabel.Location = new Point(12, 42);
+            bookingStatusLabel.Name = "bookingStatusLabel";
+            bookingStatusLabel.Size = new Size(111, 20);
+            bookingStatusLabel.TabIndex = 10;
+            bookingStatusLabel.Text = "Booking Status:";
+            // 
+            // importantInfoLabel
+            // 
+            importantInfoLabel.AutoSize = true;
+            importantInfoLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            importantInfoLabel.Location = new Point(3, 9);
+            importantInfoLabel.Name = "importantInfoLabel";
+            importantInfoLabel.Size = new Size(182, 23);
+            importantInfoLabel.TabIndex = 1;
+            importantInfoLabel.Text = "Important Information";
+            // 
             // bookingCreatedPanel
             // 
             bookingCreatedPanel.BorderStyle = BorderStyle.FixedSingle;
@@ -255,6 +357,14 @@
             bookingCreatedPanel.Name = "bookingCreatedPanel";
             bookingCreatedPanel.Size = new Size(606, 146);
             bookingCreatedPanel.TabIndex = 2;
+            // 
+            // bookingNumberRichTextBox
+            // 
+            bookingNumberRichTextBox.Location = new Point(12, 57);
+            bookingNumberRichTextBox.Name = "bookingNumberRichTextBox";
+            bookingNumberRichTextBox.Size = new Size(284, 76);
+            bookingNumberRichTextBox.TabIndex = 2;
+            bookingNumberRichTextBox.Text = "";
             // 
             // referenceNumberLabel
             // 
@@ -295,165 +405,6 @@
             paymentSummaryPanel.Name = "paymentSummaryPanel";
             paymentSummaryPanel.Size = new Size(606, 166);
             paymentSummaryPanel.TabIndex = 3;
-            // 
-            // confirmationLetterPanel
-            // 
-            confirmationLetterPanel.BorderStyle = BorderStyle.FixedSingle;
-            confirmationLetterPanel.Controls.Add(confirmationLetterRichTextBox);
-            confirmationLetterPanel.Controls.Add(confirmationReadyLabel);
-            confirmationLetterPanel.Controls.Add(confirmationLetterLabel);
-            confirmationLetterPanel.Location = new Point(84, 817);
-            confirmationLetterPanel.Name = "confirmationLetterPanel";
-            confirmationLetterPanel.Size = new Size(606, 253);
-            confirmationLetterPanel.TabIndex = 4;
-            // 
-            // printConfirmationButton
-            // 
-            printConfirmationButton.Location = new Point(80, 1076);
-            printConfirmationButton.Name = "printConfirmationButton";
-            printConfirmationButton.Size = new Size(168, 29);
-            printConfirmationButton.TabIndex = 5;
-            printConfirmationButton.Text = "Print Confirmation";
-            printConfirmationButton.UseVisualStyleBackColor = true;
-            // 
-            // emailGuestButton
-            // 
-            emailGuestButton.Location = new Point(254, 1076);
-            emailGuestButton.Name = "emailGuestButton";
-            emailGuestButton.Size = new Size(123, 29);
-            emailGuestButton.TabIndex = 6;
-            emailGuestButton.Text = "Email to Guest";
-            emailGuestButton.UseVisualStyleBackColor = true;
-            // 
-            // makeAnotherBookingButton
-            // 
-            makeAnotherBookingButton.Location = new Point(383, 1076);
-            makeAnotherBookingButton.Name = "makeAnotherBookingButton";
-            makeAnotherBookingButton.Size = new Size(178, 29);
-            makeAnotherBookingButton.TabIndex = 7;
-            makeAnotherBookingButton.Text = "Make Another Booking";
-            makeAnotherBookingButton.UseVisualStyleBackColor = true;
-            // 
-            // returnToMenuButton
-            // 
-            returnToMenuButton.Location = new Point(567, 1076);
-            returnToMenuButton.Name = "returnToMenuButton";
-            returnToMenuButton.Size = new Size(123, 29);
-            returnToMenuButton.TabIndex = 8;
-            returnToMenuButton.Text = "Return to Menu";
-            returnToMenuButton.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(206, 123);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(145, 27);
-            textBox5.TabIndex = 13;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(206, 70);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(183, 27);
-            textBox6.TabIndex = 14;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(12, 176);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(155, 27);
-            textBox7.TabIndex = 15;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(206, 176);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(111, 27);
-            textBox8.TabIndex = 16;
-            // 
-            // importantInfoLabel
-            // 
-            importantInfoLabel.AutoSize = true;
-            importantInfoLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            importantInfoLabel.Location = new Point(3, 9);
-            importantInfoLabel.Name = "importantInfoLabel";
-            importantInfoLabel.Size = new Size(182, 23);
-            importantInfoLabel.TabIndex = 1;
-            importantInfoLabel.Text = "Important Information";
-            // 
-            // bookingStatusTextBox
-            // 
-            bookingStatusTextBox.Location = new Point(12, 65);
-            bookingStatusTextBox.Name = "bookingStatusTextBox";
-            bookingStatusTextBox.Size = new Size(183, 27);
-            bookingStatusTextBox.TabIndex = 11;
-            // 
-            // bookingStatusLabel
-            // 
-            bookingStatusLabel.AutoSize = true;
-            bookingStatusLabel.Location = new Point(12, 42);
-            bookingStatusLabel.Name = "bookingStatusLabel";
-            bookingStatusLabel.Size = new Size(111, 20);
-            bookingStatusLabel.TabIndex = 10;
-            bookingStatusLabel.Text = "Booking Status:";
-            // 
-            // cancellationPolicyTextBox
-            // 
-            cancellationPolicyTextBox.Location = new Point(296, 65);
-            cancellationPolicyTextBox.Name = "cancellationPolicyTextBox";
-            cancellationPolicyTextBox.Size = new Size(183, 27);
-            cancellationPolicyTextBox.TabIndex = 13;
-            // 
-            // cancellationPolicyLabel
-            // 
-            cancellationPolicyLabel.AutoSize = true;
-            cancellationPolicyLabel.Location = new Point(296, 42);
-            cancellationPolicyLabel.Name = "cancellationPolicyLabel";
-            cancellationPolicyLabel.Size = new Size(136, 20);
-            cancellationPolicyLabel.TabIndex = 12;
-            cancellationPolicyLabel.Text = "Cancellation Policy:";
-            // 
-            // checkInTimeTextBox
-            // 
-            checkInTimeTextBox.Location = new Point(12, 128);
-            checkInTimeTextBox.Name = "checkInTimeTextBox";
-            checkInTimeTextBox.Size = new Size(155, 27);
-            checkInTimeTextBox.TabIndex = 16;
-            // 
-            // checkInTimeLabel
-            // 
-            checkInTimeLabel.AutoSize = true;
-            checkInTimeLabel.Location = new Point(12, 105);
-            checkInTimeLabel.Name = "checkInTimeLabel";
-            checkInTimeLabel.Size = new Size(106, 20);
-            checkInTimeLabel.TabIndex = 14;
-            checkInTimeLabel.Text = "Check-in Time:";
-            // 
-            // checkOutTimeTextBox
-            // 
-            checkOutTimeTextBox.Location = new Point(296, 128);
-            checkOutTimeTextBox.Name = "checkOutTimeTextBox";
-            checkOutTimeTextBox.Size = new Size(155, 27);
-            checkOutTimeTextBox.TabIndex = 18;
-            // 
-            // checkOutTimeLabel
-            // 
-            checkOutTimeLabel.AutoSize = true;
-            checkOutTimeLabel.Location = new Point(296, 105);
-            checkOutTimeLabel.Name = "checkOutTimeLabel";
-            checkOutTimeLabel.Size = new Size(116, 20);
-            checkOutTimeLabel.TabIndex = 17;
-            checkOutTimeLabel.Text = "Check-out Time:";
-            // 
-            // paymentSummaryLabel
-            // 
-            paymentSummaryLabel.AutoSize = true;
-            paymentSummaryLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            paymentSummaryLabel.Location = new Point(3, 9);
-            paymentSummaryLabel.Name = "paymentSummaryLabel";
-            paymentSummaryLabel.Size = new Size(153, 23);
-            paymentSummaryLabel.TabIndex = 2;
-            paymentSummaryLabel.Text = "Payment Summary";
             // 
             // totalRoomChargesTextBox
             // 
@@ -551,15 +502,34 @@
             roomRateLabel.TabIndex = 15;
             roomRateLabel.Text = "Room Rate:";
             // 
-            // confirmationLetterLabel
+            // paymentSummaryLabel
             // 
-            confirmationLetterLabel.AutoSize = true;
-            confirmationLetterLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            confirmationLetterLabel.Location = new Point(3, 10);
-            confirmationLetterLabel.Name = "confirmationLetterLabel";
-            confirmationLetterLabel.Size = new Size(159, 23);
-            confirmationLetterLabel.TabIndex = 3;
-            confirmationLetterLabel.Text = "Confirmation Letter";
+            paymentSummaryLabel.AutoSize = true;
+            paymentSummaryLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            paymentSummaryLabel.Location = new Point(3, 9);
+            paymentSummaryLabel.Name = "paymentSummaryLabel";
+            paymentSummaryLabel.Size = new Size(153, 23);
+            paymentSummaryLabel.TabIndex = 2;
+            paymentSummaryLabel.Text = "Payment Summary";
+            // 
+            // confirmationLetterPanel
+            // 
+            confirmationLetterPanel.BorderStyle = BorderStyle.FixedSingle;
+            confirmationLetterPanel.Controls.Add(confirmationLetterRichTextBox);
+            confirmationLetterPanel.Controls.Add(confirmationReadyLabel);
+            confirmationLetterPanel.Controls.Add(confirmationLetterLabel);
+            confirmationLetterPanel.Location = new Point(84, 817);
+            confirmationLetterPanel.Name = "confirmationLetterPanel";
+            confirmationLetterPanel.Size = new Size(606, 253);
+            confirmationLetterPanel.TabIndex = 4;
+            // 
+            // confirmationLetterRichTextBox
+            // 
+            confirmationLetterRichTextBox.Location = new Point(12, 69);
+            confirmationLetterRichTextBox.Name = "confirmationLetterRichTextBox";
+            confirmationLetterRichTextBox.Size = new Size(575, 160);
+            confirmationLetterRichTextBox.TabIndex = 5;
+            confirmationLetterRichTextBox.Text = "";
             // 
             // confirmationReadyLabel
             // 
@@ -570,13 +540,52 @@
             confirmationReadyLabel.TabIndex = 4;
             confirmationReadyLabel.Text = "Confirmation letter ready for:";
             // 
-            // confirmationLetterRichTextBox
+            // confirmationLetterLabel
             // 
-            confirmationLetterRichTextBox.Location = new Point(12, 69);
-            confirmationLetterRichTextBox.Name = "confirmationLetterRichTextBox";
-            confirmationLetterRichTextBox.Size = new Size(575, 160);
-            confirmationLetterRichTextBox.TabIndex = 5;
-            confirmationLetterRichTextBox.Text = "";
+            confirmationLetterLabel.AutoSize = true;
+            confirmationLetterLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            confirmationLetterLabel.Location = new Point(3, 10);
+            confirmationLetterLabel.Name = "confirmationLetterLabel";
+            confirmationLetterLabel.Size = new Size(159, 23);
+            confirmationLetterLabel.TabIndex = 3;
+            confirmationLetterLabel.Text = "Confirmation Letter";
+            // 
+            // printConfirmationButton
+            // 
+            printConfirmationButton.Location = new Point(80, 1076);
+            printConfirmationButton.Name = "printConfirmationButton";
+            printConfirmationButton.Size = new Size(168, 29);
+            printConfirmationButton.TabIndex = 5;
+            printConfirmationButton.Text = "Print Confirmation";
+            printConfirmationButton.UseVisualStyleBackColor = true;
+            // 
+            // emailGuestButton
+            // 
+            emailGuestButton.Location = new Point(254, 1076);
+            emailGuestButton.Name = "emailGuestButton";
+            emailGuestButton.Size = new Size(123, 29);
+            emailGuestButton.TabIndex = 6;
+            emailGuestButton.Text = "Email to Guest";
+            emailGuestButton.UseVisualStyleBackColor = true;
+            // 
+            // makeAnotherBookingButton
+            // 
+            makeAnotherBookingButton.Location = new Point(383, 1076);
+            makeAnotherBookingButton.Name = "makeAnotherBookingButton";
+            makeAnotherBookingButton.Size = new Size(178, 29);
+            makeAnotherBookingButton.TabIndex = 7;
+            makeAnotherBookingButton.Text = "Make Another Booking";
+            makeAnotherBookingButton.UseVisualStyleBackColor = true;
+            // 
+            // returnToMenuButton
+            // 
+            returnToMenuButton.Location = new Point(567, 1076);
+            returnToMenuButton.Name = "returnToMenuButton";
+            returnToMenuButton.Size = new Size(123, 29);
+            returnToMenuButton.TabIndex = 8;
+            returnToMenuButton.Text = "Return to Menu";
+            returnToMenuButton.UseVisualStyleBackColor = true;
+            returnToMenuButton.Click += returnToMenuButton_Click;
             // 
             // bookingConfirmationHeadingPanel
             // 
@@ -588,6 +597,16 @@
             bookingConfirmationHeadingPanel.Size = new Size(738, 69);
             bookingConfirmationHeadingPanel.TabIndex = 9;
             // 
+            // backToMenuButton
+            // 
+            backToMenuButton.Location = new Point(622, 10);
+            backToMenuButton.Name = "backToMenuButton";
+            backToMenuButton.Size = new Size(111, 29);
+            backToMenuButton.TabIndex = 2;
+            backToMenuButton.Text = "Back to Menu";
+            backToMenuButton.UseVisualStyleBackColor = true;
+            backToMenuButton.Click += backToMenuButton_Click;
+            // 
             // bookingConfirmationHeader
             // 
             bookingConfirmationHeader.AutoSize = true;
@@ -597,23 +616,6 @@
             bookingConfirmationHeader.Size = new Size(378, 46);
             bookingConfirmationHeader.TabIndex = 0;
             bookingConfirmationHeader.Text = "Booking Confirmation";
-            // 
-            // bookingNumberRichTextBox
-            // 
-            bookingNumberRichTextBox.Location = new Point(12, 57);
-            bookingNumberRichTextBox.Name = "bookingNumberRichTextBox";
-            bookingNumberRichTextBox.Size = new Size(284, 76);
-            bookingNumberRichTextBox.TabIndex = 2;
-            bookingNumberRichTextBox.Text = "";
-            // 
-            // backToMenuButton
-            // 
-            backToMenuButton.Location = new Point(622, 10);
-            backToMenuButton.Name = "backToMenuButton";
-            backToMenuButton.Size = new Size(111, 29);
-            backToMenuButton.TabIndex = 2;
-            backToMenuButton.Text = "Back to Menu";
-            backToMenuButton.UseVisualStyleBackColor = true;
             // 
             // BookingConfirmationForm
             // 
@@ -669,14 +671,14 @@
         private Label numberOfGuestsLabel;
         private Label roomTypeLabel;
         private Label nightsLabel;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox8;
-        private TextBox textBox7;
+        private TextBox checkInTextBox;
+        private TextBox emailTextBox;
+        private TextBox nightsTextBox;
+        private TextBox guestNameTextBox;
+        private TextBox phoneTextBox;
+        private TextBox checkOutTextBox;
+        private TextBox numberOfGuestTextBox;
+        private TextBox roomTypeTextBox;
         private TextBox checkOutTimeTextBox;
         private Label checkOutTimeLabel;
         private TextBox checkInTimeTextBox;
