@@ -65,6 +65,30 @@ namespace Group5HotelsProject.Controllers
             bookingDB.DataSetChange(booking, DB.DBOperation.Delete);
             bookingDB.UpdateDataSource(booking);
         }
+
+        public void AddRoom(Room room)
+        {
+            if (room == null)
+                throw new ArgumentNullException(nameof(room), "Room cannot be null.");
+            roomDB.DataSetChange(room, DB.DBOperation.Add);
+            roomDB.UpdateDataSource(room);
+        }
+
+        public void EditRoom(Room updatedRoom)
+        {
+            if (updatedRoom == null)
+                throw new ArgumentNullException(nameof(updatedRoom), "Updated room cannot be null.");
+            roomDB.DataSetChange(updatedRoom, DB.DBOperation.Edit);
+            roomDB.UpdateDataSource(updatedRoom);
+        }
+
+        public void DeleteRoom(Room room)
+        {
+            if (room == null)
+                throw new ArgumentNullException(nameof(room), "Room to delete cannot be null.");
+            roomDB.DataSetChange(room, DB.DBOperation.Delete);
+            roomDB.UpdateDataSource(room);
+        }
         #endregion
 
         #region Lookup / Query Methods
@@ -185,6 +209,8 @@ namespace Group5HotelsProject.Controllers
         {
             bookingDB = new BookingDB();
             bookings = bookingDB.AllBookings;
+            roomDB = new RoomDB();
+            rooms = roomDB.AllRooms;
         }
         #endregion
     }

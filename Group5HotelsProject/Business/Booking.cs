@@ -103,11 +103,11 @@ namespace Group5HotelsProject.Business
             int guestID,
             int roomID,
             int receptionistID,
+
             string bookingReference,
             DateTime checkInDate,
             DateTime checkOutDate,
             int numberOfGuests,
-            int numberOfNights,
             decimal totalAmount,
             string bookingStatus,
             DateTime createdDate)
@@ -116,11 +116,13 @@ namespace Group5HotelsProject.Business
             this.guestID = guestID;
             this.roomID = roomID;
             this.receptionistID = receptionistID;
+
             this.bookingReference = bookingReference;
+
             this.checkInDate = checkInDate;
             this.checkOutDate = checkOutDate;
             this.numberOfGuests = numberOfGuests;
-            this.numberOfNights = numberOfNights;
+            
             this.totalAmount = totalAmount;
             this.bookingStatus = bookingStatus;
             this.createdDate = createdDate;

@@ -39,7 +39,7 @@ namespace Group5HotelsProject.Data
                         BookingID = Convert.ToInt32(row["BookingID"]),
                         GuestID = Convert.ToInt32(row["GuestID"]),
                         RoomID = Convert.ToInt32(row["RoomID"]),
-                        ReceptionistID = Convert.ToInt32(row["ReceptionistID"]),
+                    //    ReceptionistID = Convert.ToInt32(row["ReceptionistID"]),
                         BookingReference = row["BookingReference"].ToString(),
                         CheckInDate = Convert.ToDateTime(row["CheckInDate"]),
                         CheckOutDate = Convert.ToDateTime(row["CheckOutDate"]),
@@ -63,7 +63,7 @@ namespace Group5HotelsProject.Data
 
             row["GuestID"] = booking.GuestID;
             row["RoomID"] = booking.RoomID;
-            row["ReceptionistID"] = booking.ReceptionistID;
+          //  row["ReceptionistID"] = booking.ReceptionistID;
             row["BookingReference"] = booking.BookingReference;
             row["CheckInDate"] = booking.CheckInDate;
             row["CheckOutDate"] = booking.CheckOutDate;
