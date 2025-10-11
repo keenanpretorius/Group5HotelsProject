@@ -49,6 +49,7 @@ namespace Group5HotelsProject.Business
             get { return description; }
             set { description = value; }
         }
+        
         #endregion
 
         #region Constructors
@@ -56,7 +57,7 @@ namespace Group5HotelsProject.Business
         {
         }
 
-        public Room(int roomID, string roomNumber, string roomType, int maxOccupancy, string roomStatus, string description)
+        public Room(int roomID, string roomNumber, string roomType, int maxOccupancy, string roomStatus, string description, decimal pricePerNight)
         {
             this.roomID = roomID;
             this.roomNumber = roomNumber;

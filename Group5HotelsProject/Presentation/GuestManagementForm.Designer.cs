@@ -414,7 +414,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(801, 547);
+            ClientSize = new Size(801, 563);
             Controls.Add(bookingSummaryPanel);
             Controls.Add(guestResultsPanel);
             Controls.Add(searchGuestPanel);

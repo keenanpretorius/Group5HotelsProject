@@ -212,6 +212,11 @@ namespace Group5HotelsProject.Controllers
             roomDB = new RoomDB();
             rooms = roomDB.AllRooms;
         }
+
+        public decimal CalculateBaseCost(DateTime start, DateTime end)
+        {
+            return null;
+        }
         #endregion
     }
 }
