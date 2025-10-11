@@ -26,7 +26,7 @@ namespace Group5HotelsProject.Presentation
 
 
         private void ProgramMDI_Load(object sender, EventArgs e)
-        {   
+        {
 
             this.Text = "Group 5 Hotels Management System";
             this.WindowState = FormWindowState.Maximized;
@@ -45,7 +45,7 @@ namespace Group5HotelsProject.Presentation
         private void bookingEnquiryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CloseAllChildForms();
-            Form childForm = new BookingEnquiryForm(); 
+            Form childForm = new BookingEnquiryForm();
             childForm.MdiParent = this;
             childForm.Text = "Booking Enquiry";
             childForm.Show();
@@ -55,7 +55,7 @@ namespace Group5HotelsProject.Presentation
         {
 
             CloseAllChildForms();
-            Form childForm = new GuestManagementForm(); 
+            Form childForm = new GuestManagementForm();
             childForm.MdiParent = this;
             childForm.Text = "Guest Management";
             childForm.Show();
@@ -64,7 +64,7 @@ namespace Group5HotelsProject.Presentation
         private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CloseAllChildForms();
-            Form childForm = new OccupancyReportForm(); 
+            Form childForm = new OccupancyReportForm();
             childForm.MdiParent = this;
             childForm.Text = "Reports";
             childForm.Show();
@@ -73,9 +73,25 @@ namespace Group5HotelsProject.Presentation
         private void changeCancelBookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CloseAllChildForms();
-            Form childForm = new ChangeCancelBookingForm(); 
+            Form childForm = new ChangeCancelBookingForm();
             childForm.MdiParent = this;
             childForm.Text = "Change / Cancel Booking";
+            childForm.Show();
+        }
+
+        private void ProgramMDI_Load_1(object sender, EventArgs e)
+        {
+            this.Text = "Group 5 Hotels Management System";
+            this.WindowState = FormWindowState.Maximized;
+
+        }
+
+        private void tableViewerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForms();
+            Form childForm = new TableViewerForm();
+            childForm.MdiParent = this;
+            childForm.Text = "TableViewer";
             childForm.Show();
         }
     }

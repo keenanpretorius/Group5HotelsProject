@@ -51,14 +51,14 @@ namespace Group5HotelsProject.Business
             string address,
             string city,
             string postalCode,
-            string idPassportNumber,
-            string loyaltyStatus
+            string idPassportNumber
+             
         ) : base(guestID, firstName, lastName, phoneNumber, email, address, city)
         {
             this.guestID = guestID;
             this.postalCode = postalCode;
             this.idPassportNumber = idPassportNumber;
-            this.loyaltyStatus = loyaltyStatus;
+            this.loyaltyStatus = null;
         }
         #endregion
 

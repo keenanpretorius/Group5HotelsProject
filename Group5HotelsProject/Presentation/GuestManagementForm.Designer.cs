@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             bookingSummaryPanel = new Panel();
-            saveChangesButton = new Button();
+            addNewGuestButton = new Button();
+            PostalCodeTextBox = new TextBox();
+            CityTextBox = new TextBox();
+            CityLabel = new Label();
+            PostalCodeLabel = new Label();
+            SurnameLabel = new Label();
+            SurnameTextBox = new TextBox();
             cancelButton = new Button();
             idTextBox = new TextBox();
             guestIDLabel = new Label();
@@ -42,17 +48,11 @@
             nameTextBox = new TextBox();
             guestNameLabel = new Label();
             guestInformationLabel = new Label();
+            saveChangesButton = new Button();
             guestResultsPanel = new Panel();
             guestResultsGrid = new DataGridView();
-            guestIDColumn = new DataGridViewTextBoxColumn();
-            nameColumn = new DataGridViewTextBoxColumn();
-            phoneColumn = new DataGridViewTextBoxColumn();
-            emailColumn = new DataGridViewTextBoxColumn();
-            totalBookingsColumn = new DataGridViewTextBoxColumn();
-            actionsColumn = new DataGridViewTextBoxColumn();
             guestSearchResultsLabel = new Label();
             searchGuestPanel = new Panel();
-            addNewGuestButton = new Button();
             searchButton = new Button();
             searchByComboBox = new ComboBox();
             searchTermTextBox = new TextBox();
@@ -72,7 +72,13 @@
             // bookingSummaryPanel
             // 
             bookingSummaryPanel.BorderStyle = BorderStyle.FixedSingle;
-            bookingSummaryPanel.Controls.Add(saveChangesButton);
+            bookingSummaryPanel.Controls.Add(addNewGuestButton);
+            bookingSummaryPanel.Controls.Add(PostalCodeTextBox);
+            bookingSummaryPanel.Controls.Add(CityTextBox);
+            bookingSummaryPanel.Controls.Add(CityLabel);
+            bookingSummaryPanel.Controls.Add(PostalCodeLabel);
+            bookingSummaryPanel.Controls.Add(SurnameLabel);
+            bookingSummaryPanel.Controls.Add(SurnameTextBox);
             bookingSummaryPanel.Controls.Add(cancelButton);
             bookingSummaryPanel.Controls.Add(idTextBox);
             bookingSummaryPanel.Controls.Add(guestIDLabel);
@@ -91,15 +97,66 @@
             bookingSummaryPanel.Size = new Size(712, 189);
             bookingSummaryPanel.TabIndex = 17;
             // 
-            // saveChangesButton
+            // addNewGuestButton
             // 
-            saveChangesButton.Location = new Point(455, 142);
-            saveChangesButton.Margin = new Padding(3, 2, 3, 2);
-            saveChangesButton.Name = "saveChangesButton";
-            saveChangesButton.Size = new Size(141, 31);
-            saveChangesButton.TabIndex = 13;
-            saveChangesButton.Text = "Save Changes";
-            saveChangesButton.UseVisualStyleBackColor = true;
+            addNewGuestButton.Location = new Point(474, 142);
+            addNewGuestButton.Margin = new Padding(3, 2, 3, 2);
+            addNewGuestButton.Name = "addNewGuestButton";
+            addNewGuestButton.Size = new Size(145, 31);
+            addNewGuestButton.TabIndex = 9;
+            addNewGuestButton.Text = "Add New Guest";
+            addNewGuestButton.UseVisualStyleBackColor = true;
+            addNewGuestButton.Click += addNewGuestButton_Click;
+            // 
+            // PostalCodeTextBox
+            // 
+            PostalCodeTextBox.Location = new Point(287, 100);
+            PostalCodeTextBox.Name = "PostalCodeTextBox";
+            PostalCodeTextBox.Size = new Size(100, 23);
+            PostalCodeTextBox.TabIndex = 19;
+            // 
+            // CityTextBox
+            // 
+            CityTextBox.Location = new Point(151, 100);
+            CityTextBox.Name = "CityTextBox";
+            CityTextBox.Size = new Size(100, 23);
+            CityTextBox.TabIndex = 18;
+            // 
+            // CityLabel
+            // 
+            CityLabel.AutoSize = true;
+            CityLabel.Location = new Point(151, 82);
+            CityLabel.Name = "CityLabel";
+            CityLabel.Size = new Size(31, 15);
+            CityLabel.TabIndex = 17;
+            CityLabel.Text = "City:";
+            // 
+            // PostalCodeLabel
+            // 
+            PostalCodeLabel.AutoSize = true;
+            PostalCodeLabel.Location = new Point(287, 82);
+            PostalCodeLabel.Name = "PostalCodeLabel";
+            PostalCodeLabel.Size = new Size(73, 15);
+            PostalCodeLabel.TabIndex = 16;
+            PostalCodeLabel.Text = "Postal Code:";
+            // 
+            // SurnameLabel
+            // 
+            SurnameLabel.AutoSize = true;
+            SurnameLabel.Location = new Point(242, 37);
+            SurnameLabel.Name = "SurnameLabel";
+            SurnameLabel.Size = new Size(57, 15);
+            SurnameLabel.TabIndex = 15;
+            SurnameLabel.Text = "Surname:";
+            SurnameLabel.Click += label1_Click;
+            // 
+            // SurnameTextBox
+            // 
+            SurnameTextBox.Location = new Point(242, 54);
+            SurnameTextBox.Margin = new Padding(3, 2, 3, 2);
+            SurnameTextBox.Name = "SurnameTextBox";
+            SurnameTextBox.Size = new Size(202, 23);
+            SurnameTextBox.TabIndex = 14;
             // 
             // cancelButton
             // 
@@ -130,16 +187,16 @@
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(325, 94);
+            emailTextBox.Location = new Point(474, 99);
             emailTextBox.Margin = new Padding(3, 2, 3, 2);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(110, 23);
+            emailTextBox.Size = new Size(202, 23);
             emailTextBox.TabIndex = 9;
             // 
             // guestEmailLabel
             // 
             guestEmailLabel.AutoSize = true;
-            guestEmailLabel.Location = new Point(325, 76);
+            guestEmailLabel.Location = new Point(471, 82);
             guestEmailLabel.Name = "guestEmailLabel";
             guestEmailLabel.Size = new Size(39, 15);
             guestEmailLabel.TabIndex = 8;
@@ -147,7 +204,7 @@
             // 
             // addressTextBox
             // 
-            addressTextBox.Location = new Point(12, 94);
+            addressTextBox.Location = new Point(12, 99);
             addressTextBox.Margin = new Padding(3, 2, 3, 2);
             addressTextBox.Name = "addressTextBox";
             addressTextBox.Size = new Size(110, 23);
@@ -156,7 +213,7 @@
             // guestAddressLabel
             // 
             guestAddressLabel.AutoSize = true;
-            guestAddressLabel.Location = new Point(12, 76);
+            guestAddressLabel.Location = new Point(12, 79);
             guestAddressLabel.Name = "guestAddressLabel";
             guestAddressLabel.Size = new Size(52, 15);
             guestAddressLabel.TabIndex = 6;
@@ -164,7 +221,7 @@
             // 
             // phoneTextBox
             // 
-            phoneTextBox.Location = new Point(325, 54);
+            phoneTextBox.Location = new Point(474, 54);
             phoneTextBox.Margin = new Padding(3, 2, 3, 2);
             phoneTextBox.Name = "phoneTextBox";
             phoneTextBox.Size = new Size(202, 23);
@@ -173,7 +230,7 @@
             // guestPhoneLabel
             // 
             guestPhoneLabel.AutoSize = true;
-            guestPhoneLabel.Location = new Point(325, 37);
+            guestPhoneLabel.Location = new Point(474, 37);
             guestPhoneLabel.Name = "guestPhoneLabel";
             guestPhoneLabel.Size = new Size(91, 15);
             guestPhoneLabel.TabIndex = 4;
@@ -206,6 +263,16 @@
             guestInformationLabel.TabIndex = 1;
             guestInformationLabel.Text = "Guest information";
             // 
+            // saveChangesButton
+            // 
+            saveChangesButton.Location = new Point(551, 41);
+            saveChangesButton.Margin = new Padding(3, 2, 3, 2);
+            saveChangesButton.Name = "saveChangesButton";
+            saveChangesButton.Size = new Size(141, 31);
+            saveChangesButton.TabIndex = 13;
+            saveChangesButton.Text = "Save Changes";
+            saveChangesButton.UseVisualStyleBackColor = true;
+            // 
             // guestResultsPanel
             // 
             guestResultsPanel.BorderStyle = BorderStyle.FixedSingle;
@@ -220,55 +287,13 @@
             // guestResultsGrid
             // 
             guestResultsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            guestResultsGrid.Columns.AddRange(new DataGridViewColumn[] { guestIDColumn, nameColumn, phoneColumn, emailColumn, totalBookingsColumn, actionsColumn });
-            guestResultsGrid.Location = new Point(12, 29);
+            guestResultsGrid.EditMode = DataGridViewEditMode.EditOnEnter;
+            guestResultsGrid.Location = new Point(12, 31);
             guestResultsGrid.Margin = new Padding(3, 2, 3, 2);
             guestResultsGrid.Name = "guestResultsGrid";
             guestResultsGrid.RowHeadersWidth = 51;
-            guestResultsGrid.Size = new Size(683, 141);
+            guestResultsGrid.Size = new Size(680, 141);
             guestResultsGrid.TabIndex = 2;
-            // 
-            // guestIDColumn
-            // 
-            guestIDColumn.HeaderText = "GuestID";
-            guestIDColumn.MinimumWidth = 6;
-            guestIDColumn.Name = "guestIDColumn";
-            guestIDColumn.Width = 125;
-            // 
-            // nameColumn
-            // 
-            nameColumn.HeaderText = "Name";
-            nameColumn.MinimumWidth = 6;
-            nameColumn.Name = "nameColumn";
-            nameColumn.Width = 125;
-            // 
-            // phoneColumn
-            // 
-            phoneColumn.HeaderText = "Phone";
-            phoneColumn.MinimumWidth = 6;
-            phoneColumn.Name = "phoneColumn";
-            phoneColumn.Width = 125;
-            // 
-            // emailColumn
-            // 
-            emailColumn.HeaderText = "Email";
-            emailColumn.MinimumWidth = 6;
-            emailColumn.Name = "emailColumn";
-            emailColumn.Width = 125;
-            // 
-            // totalBookingsColumn
-            // 
-            totalBookingsColumn.HeaderText = "Total";
-            totalBookingsColumn.MinimumWidth = 6;
-            totalBookingsColumn.Name = "totalBookingsColumn";
-            totalBookingsColumn.Width = 125;
-            // 
-            // actionsColumn
-            // 
-            actionsColumn.HeaderText = "Actions";
-            actionsColumn.MinimumWidth = 6;
-            actionsColumn.Name = "actionsColumn";
-            actionsColumn.Width = 125;
             // 
             // guestSearchResultsLabel
             // 
@@ -283,28 +308,18 @@
             // searchGuestPanel
             // 
             searchGuestPanel.BorderStyle = BorderStyle.FixedSingle;
-            searchGuestPanel.Controls.Add(addNewGuestButton);
             searchGuestPanel.Controls.Add(searchButton);
             searchGuestPanel.Controls.Add(searchByComboBox);
             searchGuestPanel.Controls.Add(searchTermTextBox);
             searchGuestPanel.Controls.Add(searchTermLabel);
             searchGuestPanel.Controls.Add(seachByLabel);
             searchGuestPanel.Controls.Add(searchGuestHeadingLabel);
+            searchGuestPanel.Controls.Add(saveChangesButton);
             searchGuestPanel.Location = new Point(43, 65);
             searchGuestPanel.Margin = new Padding(3, 2, 3, 2);
             searchGuestPanel.Name = "searchGuestPanel";
             searchGuestPanel.Size = new Size(712, 89);
             searchGuestPanel.TabIndex = 15;
-            // 
-            // addNewGuestButton
-            // 
-            addNewGuestButton.Location = new Point(546, 50);
-            addNewGuestButton.Margin = new Padding(3, 2, 3, 2);
-            addNewGuestButton.Name = "addNewGuestButton";
-            addNewGuestButton.Size = new Size(121, 22);
-            addNewGuestButton.TabIndex = 9;
-            addNewGuestButton.Text = "Add New Guest";
-            addNewGuestButton.UseVisualStyleBackColor = true;
             // 
             // searchButton
             // 
@@ -315,6 +330,7 @@
             searchButton.TabIndex = 8;
             searchButton.Text = "Search";
             searchButton.UseVisualStyleBackColor = true;
+            searchButton.Click += searchButton_Click;
             // 
             // searchByComboBox
             // 
@@ -406,6 +422,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "GuestManagementForm";
             Text = "GuestManagementForm";
+            Load += GuestManagementForm_Load;
             bookingSummaryPanel.ResumeLayout(false);
             bookingSummaryPanel.PerformLayout();
             guestResultsPanel.ResumeLayout(false);
@@ -423,7 +440,6 @@
         private Panel bookingSummaryPanel;
         private Label guestInformationLabel;
         private Panel guestResultsPanel;
-        private DataGridView guestResultsGrid;
         private Label guestSearchResultsLabel;
         private Panel searchGuestPanel;
         private ComboBox searchByComboBox;
@@ -434,12 +450,6 @@
         private Panel guestMangementHeadingPanel;
         private Button backToMenuButton;
         private Label guestManagementHeader;
-        private DataGridViewTextBoxColumn guestIDColumn;
-        private DataGridViewTextBoxColumn nameColumn;
-        private DataGridViewTextBoxColumn phoneColumn;
-        private DataGridViewTextBoxColumn emailColumn;
-        private DataGridViewTextBoxColumn totalBookingsColumn;
-        private DataGridViewTextBoxColumn actionsColumn;
         private Button addNewGuestButton;
         private Button searchButton;
         private TextBox idTextBox;
@@ -454,5 +464,12 @@
         private Label guestNameLabel;
         private Button saveChangesButton;
         private Button cancelButton;
+        private Label SurnameLabel;
+        private TextBox SurnameTextBox;
+        private TextBox CityTextBox;
+        private Label CityLabel;
+        private Label PostalCodeLabel;
+        private TextBox PostalCodeTextBox;
+        public DataGridView guestResultsGrid;
     }
 }

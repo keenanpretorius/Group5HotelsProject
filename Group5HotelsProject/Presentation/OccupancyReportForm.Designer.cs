@@ -31,9 +31,9 @@
             panel1 = new Panel();
             GenerateReportButton = new Button();
             endLabel = new Label();
-            dateTimePicker2 = new DateTimePicker();
+            endDateTimePicker = new DateTimePicker();
             FromLabel = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            startDateTimePicker = new DateTimePicker();
             panel2 = new Panel();
             AverageOccupancyTextBox = new TextBox();
             totalRevenueTextBox = new TextBox();
@@ -57,61 +57,58 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(GenerateReportButton);
             panel1.Controls.Add(endLabel);
-            panel1.Controls.Add(dateTimePicker2);
+            panel1.Controls.Add(endDateTimePicker);
             panel1.Controls.Add(FromLabel);
-            panel1.Controls.Add(dateTimePicker1);
-            panel1.Location = new Point(14, 156);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Controls.Add(startDateTimePicker);
+            panel1.Location = new Point(12, 117);
             panel1.Name = "panel1";
-            panel1.Size = new Size(895, 144);
+            panel1.Size = new Size(783, 108);
             panel1.TabIndex = 0;
             // 
             // GenerateReportButton
             // 
-            GenerateReportButton.Location = new Point(727, 96);
-            GenerateReportButton.Margin = new Padding(3, 4, 3, 4);
+            GenerateReportButton.Location = new Point(636, 72);
             GenerateReportButton.Name = "GenerateReportButton";
-            GenerateReportButton.Size = new Size(133, 31);
+            GenerateReportButton.Size = new Size(116, 23);
             GenerateReportButton.TabIndex = 4;
             GenerateReportButton.Text = "Generate Report";
             GenerateReportButton.UseVisualStyleBackColor = true;
+            GenerateReportButton.Click += GenerateReportButton_Click;
             // 
             // endLabel
             // 
             endLabel.AutoSize = true;
-            endLabel.Location = new Point(297, 36);
+            endLabel.Location = new Point(260, 27);
             endLabel.Name = "endLabel";
-            endLabel.Size = new Size(64, 20);
+            endLabel.Size = new Size(50, 15);
             endLabel.TabIndex = 3;
             endLabel.Text = "To Date:";
             // 
-            // dateTimePicker2
+            // endDateTimePicker
             // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(297, 60);
-            dateTimePicker2.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(228, 27);
-            dateTimePicker2.TabIndex = 2;
+            endDateTimePicker.Format = DateTimePickerFormat.Short;
+            endDateTimePicker.Location = new Point(260, 45);
+            endDateTimePicker.Name = "endDateTimePicker";
+            endDateTimePicker.Size = new Size(200, 23);
+            endDateTimePicker.TabIndex = 2;
             // 
             // FromLabel
             // 
             FromLabel.AutoSize = true;
-            FromLabel.Location = new Point(29, 36);
+            FromLabel.Location = new Point(25, 27);
             FromLabel.Name = "FromLabel";
-            FromLabel.Size = new Size(82, 20);
+            FromLabel.Size = new Size(65, 15);
             FromLabel.TabIndex = 1;
             FromLabel.Text = "From Date:";
             FromLabel.Click += label1_Click;
             // 
-            // dateTimePicker1
+            // startDateTimePicker
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(29, 60);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(228, 27);
-            dateTimePicker1.TabIndex = 0;
+            startDateTimePicker.Format = DateTimePickerFormat.Short;
+            startDateTimePicker.Location = new Point(25, 45);
+            startDateTimePicker.Name = "startDateTimePicker";
+            startDateTimePicker.Size = new Size(200, 23);
+            startDateTimePicker.TabIndex = 0;
             // 
             // panel2
             // 
@@ -122,60 +119,56 @@
             panel2.Controls.Add(peakOccupancyDayLabel);
             panel2.Controls.Add(totalRevenueLabel);
             panel2.Controls.Add(AverageOccupancyLabel);
-            panel2.Location = new Point(14, 900);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(12, 675);
             panel2.Name = "panel2";
-            panel2.Size = new Size(895, 112);
+            panel2.Size = new Size(783, 84);
             panel2.TabIndex = 1;
             // 
             // AverageOccupancyTextBox
             // 
-            AverageOccupancyTextBox.Location = new Point(58, 60);
-            AverageOccupancyTextBox.Margin = new Padding(3, 4, 3, 4);
+            AverageOccupancyTextBox.Location = new Point(51, 45);
             AverageOccupancyTextBox.Name = "AverageOccupancyTextBox";
-            AverageOccupancyTextBox.Size = new Size(178, 27);
+            AverageOccupancyTextBox.Size = new Size(156, 23);
             AverageOccupancyTextBox.TabIndex = 5;
             // 
             // totalRevenueTextBox
             // 
-            totalRevenueTextBox.Location = new Point(282, 60);
-            totalRevenueTextBox.Margin = new Padding(3, 4, 3, 4);
+            totalRevenueTextBox.Location = new Point(247, 45);
             totalRevenueTextBox.Name = "totalRevenueTextBox";
-            totalRevenueTextBox.Size = new Size(198, 27);
+            totalRevenueTextBox.Size = new Size(174, 23);
             totalRevenueTextBox.TabIndex = 4;
             // 
             // peakOccuptancyTextBox
             // 
-            peakOccuptancyTextBox.Location = new Point(575, 60);
-            peakOccuptancyTextBox.Margin = new Padding(3, 4, 3, 4);
+            peakOccuptancyTextBox.Location = new Point(503, 45);
             peakOccuptancyTextBox.Name = "peakOccuptancyTextBox";
-            peakOccuptancyTextBox.Size = new Size(198, 27);
+            peakOccuptancyTextBox.Size = new Size(174, 23);
             peakOccuptancyTextBox.TabIndex = 3;
             // 
             // peakOccupancyDayLabel
             // 
             peakOccupancyDayLabel.AutoSize = true;
-            peakOccupancyDayLabel.Location = new Point(575, 36);
+            peakOccupancyDayLabel.Location = new Point(503, 27);
             peakOccupancyDayLabel.Name = "peakOccupancyDayLabel";
-            peakOccupancyDayLabel.Size = new Size(148, 20);
+            peakOccupancyDayLabel.Size = new Size(121, 15);
             peakOccupancyDayLabel.TabIndex = 2;
             peakOccupancyDayLabel.Text = "Peak Occupancy Day:";
             // 
             // totalRevenueLabel
             // 
             totalRevenueLabel.AutoSize = true;
-            totalRevenueLabel.Location = new Point(282, 36);
+            totalRevenueLabel.Location = new Point(247, 27);
             totalRevenueLabel.Name = "totalRevenueLabel";
-            totalRevenueLabel.Size = new Size(105, 20);
+            totalRevenueLabel.Size = new Size(84, 15);
             totalRevenueLabel.TabIndex = 1;
             totalRevenueLabel.Text = "Total Revenue:";
             // 
             // AverageOccupancyLabel
             // 
             AverageOccupancyLabel.AutoSize = true;
-            AverageOccupancyLabel.Location = new Point(58, 36);
+            AverageOccupancyLabel.Location = new Point(51, 27);
             AverageOccupancyLabel.Name = "AverageOccupancyLabel";
-            AverageOccupancyLabel.Size = new Size(140, 20);
+            AverageOccupancyLabel.Size = new Size(113, 15);
             AverageOccupancyLabel.TabIndex = 0;
             AverageOccupancyLabel.Text = " Average Occupany:";
             // 
@@ -184,28 +177,26 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(reportNameLabel);
             panel3.Controls.Add(OccupancyListView);
-            panel3.Location = new Point(14, 304);
-            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Location = new Point(12, 228);
             panel3.Name = "panel3";
-            panel3.Size = new Size(895, 588);
+            panel3.Size = new Size(783, 442);
             panel3.TabIndex = 2;
             // 
             // reportNameLabel
             // 
             reportNameLabel.AutoSize = true;
             reportNameLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            reportNameLabel.Location = new Point(3, 12);
+            reportNameLabel.Location = new Point(3, 9);
             reportNameLabel.Name = "reportNameLabel";
-            reportNameLabel.Size = new Size(166, 32);
+            reportNameLabel.Size = new Size(131, 25);
             reportNameLabel.TabIndex = 1;
             reportNameLabel.Text = "Name Report";
             // 
             // OccupancyListView
             // 
-            OccupancyListView.Location = new Point(3, 49);
-            OccupancyListView.Margin = new Padding(3, 4, 3, 4);
+            OccupancyListView.Location = new Point(3, 37);
             OccupancyListView.Name = "OccupancyListView";
-            OccupancyListView.Size = new Size(887, 533);
+            OccupancyListView.Size = new Size(777, 401);
             OccupancyListView.TabIndex = 0;
             OccupancyListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -213,10 +204,9 @@
             // 
             titlePanel.BorderStyle = BorderStyle.FixedSingle;
             titlePanel.Controls.Add(occupancyReportLabel);
-            titlePanel.Location = new Point(160, 16);
-            titlePanel.Margin = new Padding(3, 4, 3, 4);
+            titlePanel.Location = new Point(140, 12);
             titlePanel.Name = "titlePanel";
-            titlePanel.Size = new Size(600, 133);
+            titlePanel.Size = new Size(525, 100);
             titlePanel.TabIndex = 3;
             titlePanel.Paint += titlePanel_Paint;
             // 
@@ -224,24 +214,24 @@
             // 
             occupancyReportLabel.AutoSize = true;
             occupancyReportLabel.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            occupancyReportLabel.Location = new Point(37, 23);
+            occupancyReportLabel.Location = new Point(32, 17);
             occupancyReportLabel.Name = "occupancyReportLabel";
-            occupancyReportLabel.Size = new Size(549, 81);
+            occupancyReportLabel.Size = new Size(440, 65);
             occupancyReportLabel.TabIndex = 0;
             occupancyReportLabel.Text = "Occupancy Report";
             // 
             // OccupancyReportForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(928, 1076);
+            ClientSize = new Size(812, 796);
             Controls.Add(titlePanel);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "OccupancyReportForm";
             Text = "Occupancy Report";
+            Load += OccupancyReportForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -258,9 +248,9 @@
         private Panel panel1;
         private Panel panel2;
         private Label FromLabel;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker startDateTimePicker;
         private Label endLabel;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker endDateTimePicker;
         private Button GenerateReportButton;
         private Panel panel3;
         private ListView OccupancyListView;

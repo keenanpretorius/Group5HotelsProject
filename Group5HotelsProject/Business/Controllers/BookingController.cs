@@ -10,12 +10,19 @@ namespace Group5HotelsProject.Controllers
         #region Attributes
         private BookingDB bookingDB;
         private Collection<Booking> bookings;
+        private RoomDB roomDB;
+        private Collection<Room> rooms;
         #endregion
 
         #region Properties
         public Collection<Booking> AllBookings
         {
             get { return bookings; }
+        }
+
+        public Collection<Room> AllRooms
+        {
+            get { return rooms; }
         }
         #endregion
 
@@ -24,6 +31,10 @@ namespace Group5HotelsProject.Controllers
         {
             bookingDB = new BookingDB();
             bookings = bookingDB.AllBookings;
+
+
+            roomDB = new RoomDB();
+            rooms = roomDB.AllRooms;
         }
         #endregion
 
@@ -68,6 +79,19 @@ namespace Group5HotelsProject.Controllers
             }
             return null;
         }
+        
+        public Room FindRoom(int roomID)
+        {
+            foreach (Room r in rooms)
+            {
+                if (r.RoomID == roomID)
+                {
+                    return r;
+                }
+            }
+
+            return null;
+        }
 
         public Collection<Booking> GetBookingsByGuest(int guestID)
         {
@@ -107,6 +131,26 @@ namespace Group5HotelsProject.Controllers
             }
             return results;
         }
+
+        public Collection<Room> GetAvailableRoomsInDateRange(DateTime start, DateTime end)
+        {
+            Collection<Booking> bookingsInRange = new Collection<Booking>();
+            bookingsInRange = GetBookingsInDateRange(start, end);
+
+            Collection<Room> result = new Collection<Room>(rooms);
+            
+            foreach (Booking b in bookingsInRange)
+                {
+                Room room = FindRoom(b.RoomID);
+                if (room != null)
+                {
+                    result.Remove(room);
+                }
+            }
+            return result;
+        }
+
+
 
         public decimal GetTotalRevenue()
         {

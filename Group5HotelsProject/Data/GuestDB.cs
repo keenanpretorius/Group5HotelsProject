@@ -46,7 +46,7 @@ namespace Group5HotelsProject.Data
                     guest.PhoneNumber = row["Phonenumber"].ToString();
                     guest.Email = row["Email"].ToString();
                     guest.IDPassportNumber = row["idpassportnumber"].ToString();
-                    guest.LoyaltyStatus = row["LoyaltyStatus"].ToString();
+            //        guest.LoyaltyStatus = row["LoyaltyStatus"].ToString();
 
                     guests.Add(guest);
                 }
@@ -72,7 +72,7 @@ namespace Group5HotelsProject.Data
                     row["Phonenumber"] = guest.PhoneNumber;
                     row["Email"] = guest.Email;
                     row["idpassportnumber"] = guest.IDPassportNumber;
-                    row["LoyaltyStatus"] = guest.LoyaltyStatus;
+                //    row["LoyaltyStatus"] = guest.LoyaltyStatus;
                     dsMain.Tables[table].Rows.Add(row);
                     guests.Add(guest);
                     break;

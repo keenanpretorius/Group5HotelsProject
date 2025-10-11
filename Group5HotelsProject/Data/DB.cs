@@ -26,7 +26,7 @@ namespace Group5HotelsProject.Data
         #region Constructors
         public DB()
         {
-            string connectionString = Settings.Default.ConnectionString;
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\timsa\\source\\repos\\keenanpretorius\\Group5HotelsProject\\Group5HotelsProject\\Data\\PKH Database.mdf\";Integrated Security=True";
             cnMain = new SqlConnection(connectionString);
             dsMain = new DataSet();
         }

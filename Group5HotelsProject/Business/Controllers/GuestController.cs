@@ -79,6 +79,86 @@ namespace Group5HotelsProject.Controllers
             }
             return results;
         }
+
+        public Collection<Guest> GetGuestsByCity(string city)
+        {
+            Collection<Guest> results = new Collection<Guest>();
+            foreach (Guest g in guests)
+            {
+                if (string.Equals(g.City, city, StringComparison.OrdinalIgnoreCase))
+                {
+                    results.Add(g);
+                }
+            }
+            return results;
+        }
+
+        public Collection<Guest> GetGuestsByLastName(string lastName)
+        {
+            Collection<Guest> results = new Collection<Guest>();
+            foreach (Guest g in guests)
+            {
+                if (string.Equals(g.LastName, lastName, StringComparison.OrdinalIgnoreCase))
+                {
+                    results.Add(g);
+                }
+            }
+            return results;
+        }
+
+        public Collection<Guest> GetGuestsByFirstName(string firstName)
+        {
+            Collection<Guest> results = new Collection<Guest>();
+            foreach (Guest g in guests)
+            {
+                if (string.Equals(g.FirstName, firstName, StringComparison.OrdinalIgnoreCase))
+                {
+                    results.Add(g);
+                }
+            }
+            return results;
+        }
+
+        public Collection<Guest> GetGuestsByEmail(string email)
+        {
+            foreach (Guest g in guests)
+            {
+                if (string.Equals(g.Email, email, StringComparison.OrdinalIgnoreCase))
+                {
+                    return new Collection<Guest> { g };
+                }
+            }
+            return new Collection<Guest>();
+        }
+
+        public Collection<Guest> GetGuestsByPhoneNumber(string phone)
+        {
+            Collection<Guest> results = new Collection<Guest>();
+            foreach (Guest g in guests)
+            {
+                if (string.Equals(g.PhoneNumber, phone, StringComparison.OrdinalIgnoreCase))
+                {
+                    results.Add(g);
+                }
+            }
+            return null;
+        }
+
+        public Collection<Guest> GetGuestsByIDNumber(string idNumber)
+        {
+            Collection<Guest> results = new Collection<Guest>();
+            foreach (Guest g in guests)
+            {
+                if (string.Equals(g.IDPassportNumber, idNumber, StringComparison.OrdinalIgnoreCase))
+                {
+                    results.Add(g);
+                }
+            }
+            return results;
+        }
+
+
+
         #endregion
 
         #region Utility Methods
