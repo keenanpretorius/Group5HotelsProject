@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using Group5HotelsProject.Business;
+﻿using Group5HotelsProject.Business;
 using Group5HotelsProject.Data;
+using System;
+using System.Collections.ObjectModel;
+using System.Windows.Forms;
 
 namespace Group5HotelsProject.Controllers
 {
@@ -215,7 +216,30 @@ namespace Group5HotelsProject.Controllers
 
         public decimal CalculateBaseCost(DateTime start, DateTime end)
         {
-            return null;
+       
+            decimal totalCost = 0;
+
+            while (start.CompareTo(end) == -1) { 
+                if (start.Month == 12)
+                {
+                    if (start.Day >= 1 && start.Day <= 7)
+                    {
+                        totalCost += 550;
+                    }
+                    else if (start.Day >= 8 && start.Day <= 15)
+                    {
+                        totalCost += 750;
+                    }
+                    else if (start.Day >= 16 && start.Day <= 31)
+                    {
+                        totalCost += 995;
+                    }
+                }
+                start = start.AddDays(1);
+            }
+
+            return totalCost;
+
         }
         #endregion
     }
