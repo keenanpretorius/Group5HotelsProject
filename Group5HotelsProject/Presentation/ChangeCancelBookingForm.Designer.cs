@@ -143,6 +143,7 @@
             checkInDatePicker.Name = "checkInDatePicker";
             checkInDatePicker.Size = new Size(154, 23);
             checkInDatePicker.TabIndex = 26;
+            checkInDatePicker.ValueChanged += checkInDatePicker_ValueChanged;
             // 
             // checkOutDatePicker
             // 
@@ -151,6 +152,7 @@
             checkOutDatePicker.Name = "checkOutDatePicker";
             checkOutDatePicker.Size = new Size(157, 23);
             checkOutDatePicker.TabIndex = 25;
+            checkOutDatePicker.ValueChanged += checkOutDatePicker_ValueChanged;
             // 
             // nightsTextBox
             // 

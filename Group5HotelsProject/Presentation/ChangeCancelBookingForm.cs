@@ -31,6 +31,23 @@ namespace Group5HotelsProject.Presentation
             currentMode = FormMode.View;
         }
 
+        public void calculateNights()
+        {
+            DateTime checkIn = checkInDatePicker.Value.Date;
+            DateTime checkOut = checkOutDatePicker.Value.Date;
+
+            if (checkOut > checkIn)
+            {
+                int nights = (checkOut - checkIn).Days;
+                nightsTextBox.Text = nights.ToString();
+            }
+            else
+            {
+                nightsTextBox.Text = "0";
+            }
+        }
+
+
         public void ClearForm()
         {
             IDTextBox.Clear();
@@ -189,6 +206,16 @@ namespace Group5HotelsProject.Presentation
         {
             this.Close();
 
+        }
+
+        private void checkInDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            calculateNights();
+        }
+
+        private void checkOutDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            calculateNights();
         }
     }
 }
