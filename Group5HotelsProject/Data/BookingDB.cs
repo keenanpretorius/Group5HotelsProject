@@ -22,6 +22,10 @@ namespace Group5HotelsProject.Data
         {
             bookings = new Collection<Booking>();
             FillDataSet(sql, table);
+
+            // After FillDataSet(sql, table);
+            DataTable bookingTable = dsMain.Tables["Booking"];
+            bookingTable.PrimaryKey = new DataColumn[] { bookingTable.Columns["BookingID"] };
             Add2Collection();
         }
         #endregion

@@ -57,7 +57,7 @@ namespace Group5HotelsProject.Business
         {
         }
 
-        public Room(int roomID, string roomNumber, string roomType, int maxOccupancy, string roomStatus, string description, decimal pricePerNight)
+        public Room(int roomID, string roomNumber, string roomType, int maxOccupancy, string roomStatus, string description)
         {
             this.roomID = roomID;
             this.roomNumber = roomNumber;

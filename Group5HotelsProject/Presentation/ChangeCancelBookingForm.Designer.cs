@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            NumOfGuestLabel = new Label();
+            NumGuestsTextBox = new TextBox();
             statusTextBox = new TextBox();
             bookingDetailsLabel = new Label();
             checkInDatePicker = new DateTimePicker();
@@ -76,6 +78,8 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(NumOfGuestLabel);
+            panel2.Controls.Add(NumGuestsTextBox);
             panel2.Controls.Add(statusTextBox);
             panel2.Controls.Add(bookingDetailsLabel);
             panel2.Controls.Add(checkInDatePicker);
@@ -98,6 +102,22 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(612, 250);
             panel2.TabIndex = 4;
+            // 
+            // NumOfGuestLabel
+            // 
+            NumOfGuestLabel.AutoSize = true;
+            NumOfGuestLabel.Location = new Point(437, 35);
+            NumOfGuestLabel.Name = "NumOfGuestLabel";
+            NumOfGuestLabel.Size = new Size(106, 15);
+            NumOfGuestLabel.TabIndex = 30;
+            NumOfGuestLabel.Text = "Number of Guests:";
+            // 
+            // NumGuestsTextBox
+            // 
+            NumGuestsTextBox.Location = new Point(434, 60);
+            NumGuestsTextBox.Name = "NumGuestsTextBox";
+            NumGuestsTextBox.Size = new Size(154, 23);
+            NumGuestsTextBox.TabIndex = 29;
             // 
             // statusTextBox
             // 
@@ -257,7 +277,7 @@
             panel3.Controls.Add(checkAvailabilityButton);
             panel3.Controls.Add(newCheckOutLabel);
             panel3.Controls.Add(newCheckInLabel);
-            panel3.Location = new Point(94, 431);
+            panel3.Location = new Point(94, 600);
             panel3.Name = "panel3";
             panel3.Size = new Size(612, 100);
             panel3.TabIndex = 5;
@@ -318,30 +338,33 @@
             // 
             // cancelBookingbutton
             // 
-            cancelBookingbutton.Location = new Point(56, 537);
+            cancelBookingbutton.Location = new Point(80, 446);
             cancelBookingbutton.Name = "cancelBookingbutton";
             cancelBookingbutton.Size = new Size(217, 57);
             cancelBookingbutton.TabIndex = 6;
             cancelBookingbutton.Text = "Cancel Selected Booking";
             cancelBookingbutton.UseVisualStyleBackColor = true;
+            cancelBookingbutton.Click += cancelBookingbutton_Click;
             // 
             // editButton
             // 
-            editButton.Location = new Point(511, 537);
+            editButton.Location = new Point(529, 446);
             editButton.Name = "editButton";
             editButton.Size = new Size(217, 57);
             editButton.TabIndex = 19;
             editButton.Text = "Edit Selected Booking";
             editButton.UseVisualStyleBackColor = true;
+            editButton.Click += editButton_Click;
             // 
             // SaveSelectedButton
             // 
-            SaveSelectedButton.Location = new Point(279, 537);
+            SaveSelectedButton.Location = new Point(305, 446);
             SaveSelectedButton.Name = "SaveSelectedButton";
             SaveSelectedButton.Size = new Size(217, 57);
             SaveSelectedButton.TabIndex = 20;
             SaveSelectedButton.Text = "Save Selected Booking";
             SaveSelectedButton.UseVisualStyleBackColor = true;
+            SaveSelectedButton.Click += SaveSelectedButton_Click;
             // 
             // searchGuestPanel
             // 
@@ -460,6 +483,7 @@
             Controls.Add(panel2);
             Name = "ChangeCancelBookingForm";
             Text = "Form1";
+            Activated += ChangeCancelBookingForm_Activated;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
@@ -513,5 +537,7 @@
         private Label label1;
         private Label SelectBookingLabel;
         private ComboBox SelectBookingComboBox;
+        private Label NumOfGuestLabel;
+        private TextBox NumGuestsTextBox;
     }
 }

@@ -105,6 +105,7 @@ namespace Group5HotelsProject.Business
             int receptionistID,
 
             string bookingReference,
+
             DateTime checkInDate,
             DateTime checkOutDate,
             int numberOfGuests,
