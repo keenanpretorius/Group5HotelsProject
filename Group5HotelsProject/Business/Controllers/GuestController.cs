@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using Group5HotelsProject.Business;
 using Group5HotelsProject.Data;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Group5HotelsProject.Controllers
 {
@@ -157,7 +158,20 @@ namespace Group5HotelsProject.Controllers
             return results;
         }
 
+        public Boolean Exists(Guest guest)
+        {
+            Collection<Guest> results = new Collection<Guest>();
+            results.Add(GetGuestsByIDNumber(guest.IDPassportNumber)[0]);
+            results.Add(GetGuestsByPhoneNumber(guest.PhoneNumber)[0]);
+            results.Add(GetGuestsByEmail(guest.Email)[0]);
 
+            if (results.IsNullOrEmpty())
+            {
+                return false;
+            }
+            else { return true; }
+
+        }
 
         #endregion
 
