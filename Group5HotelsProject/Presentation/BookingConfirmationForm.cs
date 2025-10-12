@@ -10,6 +10,8 @@ namespace Group5HotelsProject.Presentation
     {
         private BookingController bookingController;
         private GuestController guestController;
+        private RoomController roomController;
+        private Booking latestBooking;
 
         public BookingConfirmationForm()
         {
@@ -17,6 +19,7 @@ namespace Group5HotelsProject.Presentation
 
             bookingController = new BookingController();
             guestController = new GuestController();
+            roomController = new RoomController();
 
             LoadMostRecentBooking();
         }
@@ -36,7 +39,7 @@ namespace Group5HotelsProject.Presentation
             {
                 if (bookingController.AllBookings[i].CreatedDate > latestBooking.CreatedDate)
                 {
-                    latestBooking = bookingController.AllBookings[i];
+                   this.latestBooking = bookingController.AllBookings[i];
                 }
             }
 
@@ -81,8 +84,11 @@ namespace Group5HotelsProject.Presentation
             balanceDueTextBox.Enabled = false;
             paymentMethodTextBox.Enabled = false;
 
-            // Confirmation Letter
-            GenerateConfirmationLetter(latestBooking, guest);
+            Room room = roomController.FindRoom(latestBooking.RoomID);
+            if (room != null) { roomTypeTextBox.Text = room.RoomType; } else { MessageBox.Show("Error! "); }
+
+                // Confirmation Letter
+                GenerateConfirmationLetter(latestBooking, guest);
         }
 
         private void GenerateConfirmationLetter(Booking booking, dynamic guest)
