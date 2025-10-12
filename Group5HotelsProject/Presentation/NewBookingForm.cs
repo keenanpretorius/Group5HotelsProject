@@ -13,6 +13,7 @@ namespace Group5HotelsProject.Presentation
         private GuestController guestController = new GuestController();
         private RoomController roomController = new RoomController();
         private PaymentController paymentController = new PaymentController();
+        private BookingController bookingController = new BookingController();
         public NewBookingForm()
         {
             InitializeComponent();
@@ -115,7 +116,8 @@ namespace Group5HotelsProject.Presentation
 
             if (selectedRoom != null)
             {
-                if (selectedRoom.RoomStatus.Equals("Available", StringComparison.OrdinalIgnoreCase))
+
+                if (bookingController.CheckAvailableRoomInDateRange(checkIn,checkOut,selectedRoom))
                 {
                     MessageBox.Show($"Room {selectedRoom.RoomNumber} is available from {checkIn:d} to {checkOut:d}.", "Availability", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
@@ -283,7 +285,7 @@ namespace Group5HotelsProject.Presentation
                     }
                 }
 
-                if (selectedRoom == null || !selectedRoom.RoomStatus.Equals("Available", StringComparison.OrdinalIgnoreCase))
+                if (selectedRoom == null || bookingController.CheckAvailableRoomInDateRange(checkIn,checkOut,selectedRoom))
                 {
                     MessageBox.Show("Selected room is not available.", "Room Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -325,7 +327,6 @@ namespace Group5HotelsProject.Presentation
                     };
 
                 // Add booking
-                BookingController bookingController = new BookingController();
                 bookingController.AddBooking(newBooking);
 
                 Payment newPayment = new Payment()

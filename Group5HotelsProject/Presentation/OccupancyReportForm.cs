@@ -51,29 +51,31 @@ namespace Group5HotelsProject.Presentation
             OccupancyListView.Items.Clear();
 
 
-            // Fix: Add each room as a ListViewItem instead of assigning to Items
             int occupiedCount = 0;
             foreach (Room room in allRooms)
             {
-                
-                var item = new ListViewItem(room.RoomNumber);
-                item.SubItems.Add(room.RoomType);
-                if (bookingsInRange.Any(b => b.RoomID == room.RoomID))
+                if (room == null)
                 {
-                    item.SubItems.Add("Occupied");
-                    occupiedCount++;
-                    
+                    return;
+                }
+
+                ListViewItem item = new ListViewItem(room.RoomNumber);
+                item.SubItems.Add(room.RoomType);
+                if (bookingController.CheckAvailableRoomInDateRange(startDate, endDate, room))
+                {
+                    item.SubItems.Add("Available");
                 }
                 else
                 {
+                    item.SubItems.Add("Occupied");
+                    occupiedCount++;
 
-                    item.SubItems.Add("Available");
                 }
                 item.SubItems.Add(room.Description);
                 OccupancyListView.Items.Add(item);
             }
 
-            //find day with most occupi
+            //find day with most occupied
 
             AverageOccupancyTextBox.Text = (occupiedCount / allRooms.Count).ToString("P2");
 
