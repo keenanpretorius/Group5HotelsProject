@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Group5HotelsProject.Business;
 using Group5HotelsProject.Controllers;
 using System.Collections.ObjectModel;
+using Microsoft.IdentityModel.Tokens;
 
 
 namespace Group5HotelsProject.Presentation
@@ -170,6 +171,11 @@ namespace Group5HotelsProject.Presentation
             string selectedBookingID = SelectBookingComboBox.SelectedItem.ToString();
 
             Booking booking = bookingController.FindBooking(int.Parse(selectedBookingID));
+            DateTime checkIn= checkOutDatePicker.Value;
+            DateTime checkOut = checkOutDatePicker.Value;
+
+           
+
 
             booking.BookingReference = bookingReferenceTextBox.Text;
             booking.BookingStatus = statusTextBox.Text;
@@ -179,7 +185,7 @@ namespace Group5HotelsProject.Presentation
             booking.TotalAmount = decimal.Parse(roomCostTextBox.Text);
             booking.NumberOfGuests = int.Parse(NumGuestsTextBox.Text);
             bookingController.EditBooking(booking);
-            ChangeMode(FormMode.View);
+            ChangeMode(FormMode.PreSelect);
         }
 
         private void ChangeCancelBookingForm_Activated(object sender, EventArgs e)
