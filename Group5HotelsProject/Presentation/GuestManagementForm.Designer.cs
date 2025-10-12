@@ -48,7 +48,6 @@
             nameTextBox = new TextBox();
             guestNameLabel = new Label();
             guestInformationLabel = new Label();
-            saveChangesButton = new Button();
             guestResultsPanel = new Panel();
             guestResultsGrid = new DataGridView();
             guestSearchResultsLabel = new Label();
@@ -263,16 +262,6 @@
             guestInformationLabel.TabIndex = 1;
             guestInformationLabel.Text = "Guest information";
             // 
-            // saveChangesButton
-            // 
-            saveChangesButton.Location = new Point(551, 41);
-            saveChangesButton.Margin = new Padding(3, 2, 3, 2);
-            saveChangesButton.Name = "saveChangesButton";
-            saveChangesButton.Size = new Size(141, 31);
-            saveChangesButton.TabIndex = 13;
-            saveChangesButton.Text = "Save Changes";
-            saveChangesButton.UseVisualStyleBackColor = true;
-            // 
             // guestResultsPanel
             // 
             guestResultsPanel.BorderStyle = BorderStyle.FixedSingle;
@@ -314,7 +303,6 @@
             searchGuestPanel.Controls.Add(searchTermLabel);
             searchGuestPanel.Controls.Add(seachByLabel);
             searchGuestPanel.Controls.Add(searchGuestHeadingLabel);
-            searchGuestPanel.Controls.Add(saveChangesButton);
             searchGuestPanel.Location = new Point(43, 65);
             searchGuestPanel.Margin = new Padding(3, 2, 3, 2);
             searchGuestPanel.Name = "searchGuestPanel";
@@ -399,6 +387,7 @@
             backToMenuButton.TabIndex = 1;
             backToMenuButton.Text = "Back to Menu";
             backToMenuButton.UseVisualStyleBackColor = true;
+            backToMenuButton.Click += backToMenuButton_Click;
             // 
             // guestManagementHeader
             // 
@@ -462,7 +451,6 @@
         private Label guestPhoneLabel;
         private TextBox nameTextBox;
         private Label guestNameLabel;
-        private Button saveChangesButton;
         private Button cancelButton;
         private Label SurnameLabel;
         private TextBox SurnameTextBox;

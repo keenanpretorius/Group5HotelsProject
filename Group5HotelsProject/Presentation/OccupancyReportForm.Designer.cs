@@ -46,6 +46,7 @@
             OccupancyListView = new ListView();
             titlePanel = new Panel();
             occupancyReportLabel = new Label();
+            MenuButton = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -222,11 +223,22 @@
             occupancyReportLabel.TabIndex = 0;
             occupancyReportLabel.Text = "Occupancy Report";
             // 
+            // MenuButton
+            // 
+            MenuButton.Location = new Point(683, 30);
+            MenuButton.Name = "MenuButton";
+            MenuButton.Size = new Size(112, 23);
+            MenuButton.TabIndex = 4;
+            MenuButton.Text = "Back to menu";
+            MenuButton.UseVisualStyleBackColor = true;
+            MenuButton.Click += MenuButton_Click;
+            // 
             // OccupancyReportForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(812, 796);
+            Controls.Add(MenuButton);
             Controls.Add(titlePanel);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -265,5 +277,6 @@
         private Panel titlePanel;
         private Label occupancyReportLabel;
         private Label reportNameLabel;
+        private Button MenuButton;
     }
 }

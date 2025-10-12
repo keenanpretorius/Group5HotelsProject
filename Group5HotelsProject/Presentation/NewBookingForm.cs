@@ -285,7 +285,7 @@ namespace Group5HotelsProject.Presentation
                     }
                 }
 
-                if (selectedRoom == null || bookingController.CheckAvailableRoomInDateRange(checkIn,checkOut,selectedRoom))
+                if (selectedRoom == null || !bookingController.CheckAvailableRoomInDateRange(checkIn, checkOut, selectedRoom))
                 {
                     MessageBox.Show("Selected room is not available.", "Room Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
