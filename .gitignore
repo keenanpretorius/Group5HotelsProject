@@ -363,3 +363,4 @@ FodyWeavers.xsd
 !Data/
 /Group5HotelsProject/Data/PKH Database.mdf
 /Group5HotelsProject/Data/PKH Database_log.ldf
+/Group5HotelsProject/Data/DB.cs
