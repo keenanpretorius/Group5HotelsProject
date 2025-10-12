@@ -458,6 +458,7 @@
             backToMenuButton.TabIndex = 1;
             backToMenuButton.Text = "Back to Menu";
             backToMenuButton.UseVisualStyleBackColor = true;
+            backToMenuButton.Click += backToMenuButton_Click;
             // 
             // changeBookingHeader
             // 

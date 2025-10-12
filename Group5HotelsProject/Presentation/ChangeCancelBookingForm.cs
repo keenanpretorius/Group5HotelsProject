@@ -150,6 +150,18 @@ namespace Group5HotelsProject.Presentation
 
         private void SaveSelectedButton_Click(object sender, EventArgs e)
         {
+            string selectedBookingID = SelectBookingComboBox.SelectedItem.ToString();
+
+            Booking booking = bookingController.FindBooking(int.Parse(selectedBookingID));
+
+            booking.BookingReference = bookingReferenceTextBox.Text;
+            booking.BookingStatus = statusTextBox.Text;
+            booking.CheckInDate = checkInDatePicker.Value;
+            booking.CheckOutDate = checkOutDatePicker.Value;
+            booking.NumberOfNights = int.Parse(nightsTextBox.Text);
+            booking.TotalAmount = decimal.Parse(roomCostTextBox.Text);
+            booking.NumberOfGuests = int.Parse(NumGuestsTextBox.Text);
+            bookingController.EditBooking(booking);
             ChangeMode(FormMode.View);
         }
 
@@ -160,7 +172,7 @@ namespace Group5HotelsProject.Presentation
 
         private void cancelBookingbutton_Click(object sender, EventArgs e)
         {
-           DialogResult result= MessageBox.Show("Are you sure you want to cancel this booking?","Confirmation",MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure you want to cancel this booking?", "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 string selectedBookingID = SelectBookingComboBox.SelectedItem.ToString();
@@ -171,6 +183,12 @@ namespace Group5HotelsProject.Presentation
             }
             ClearForm();
             ChangeMode(FormMode.PreSelect);
+        }
+
+        private void backToMenuButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

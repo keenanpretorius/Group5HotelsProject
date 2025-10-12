@@ -194,6 +194,8 @@
             // 
             // OccupancyListView
             // 
+            OccupancyListView.Alignment = ListViewAlignment.SnapToGrid;
+            OccupancyListView.GridLines = true;
             OccupancyListView.Location = new Point(3, 37);
             OccupancyListView.Name = "OccupancyListView";
             OccupancyListView.Size = new Size(777, 401);
