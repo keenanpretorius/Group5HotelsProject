@@ -56,7 +56,7 @@ namespace Group5HotelsProject.Presentation
                     return;
                 }
 
-                Guest existingGuest = guestController.FindGuest(Convert.ToInt32(id)); // Use instance
+                Guest existingGuest = guestController.GetGuestsByIDNumber(id)[0]; // Use instance
                 if (existingGuest != null)
                 {
                     nameTextBox.Text = existingGuest.FirstName;
