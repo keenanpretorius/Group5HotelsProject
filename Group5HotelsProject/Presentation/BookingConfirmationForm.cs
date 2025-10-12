@@ -56,10 +56,12 @@ namespace Group5HotelsProject.Presentation
             bookingStatusTextBox.Text = latestBooking.BookingStatus;
             bookingNumberRichTextBox.Text = latestBooking.BookingReference;
             checkInTextBox.Text = "15:00";
-            checkOutTextBox.Text = "10:00";
-            totalRoomChargesTextBox.Text = latestBooking.TotalAmount.ToString("C");
-            depositTextBox.Text = (Convert.ToInt32(totalRoomChargesTextBox.Text) * 0.1).ToString();
+            checkOutTextBox.Text = "10:00";  
+            decimal total = latestBooking.TotalAmount;
+            totalRoomChargesTextBox.Text = total.ToString("C");
+            depositTextBox.Text = (total * 0.1m).ToString("C");
 
+             
 
             // Confirmation Letter
             GenerateConfirmationLetter(latestBooking, guest);

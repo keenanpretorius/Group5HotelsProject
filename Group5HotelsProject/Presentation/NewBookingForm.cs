@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Globalization;
 using Group5HotelsProject.Business;
 using Group5HotelsProject.Controllers;
 using Microsoft.IdentityModel.Tokens;
@@ -116,10 +117,13 @@ namespace Group5HotelsProject.Presentation
                 if (selectedRoom.RoomStatus.Equals("Available", StringComparison.OrdinalIgnoreCase))
                 {
                     MessageBox.Show($"Room {selectedRoom.RoomNumber} is available from {checkIn:d} to {checkOut:d}.", "Availability", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    totalCostTextBox.Text = new BookingController().CalculateBaseCost(checkIn, checkOut).ToString();
-                    depositTextBox.Text = (Convert.ToInt32(totalCostTextBox.Text) * 0.1).ToString();
+                    
+                    decimal total = new BookingController().CalculateBaseCost(checkIn, checkOut);
+                    totalCostTextBox.Text = total.ToString("C");                     
+                    depositTextBox.Text = (total * 0.1m).ToString("C");              
                     depositTextBox.Enabled = false;
                     totalCostTextBox.Enabled = false;
+
                 }
                 else
                     MessageBox.Show($"Room {selectedRoom.RoomNumber} is not available.", "Availability", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -328,11 +332,12 @@ namespace Group5HotelsProject.Presentation
                 // Clear form
                 Form parent = this.MdiParent;
                 this.Close();
-                BookingConfirmationForm bookingConfirmationForm = new BookingConfirmationForm();
-                bookingConfirmationForm.MdiParent = parent;
-                bookingConfirmationForm.Show();
-                bookingConfirmationForm.BringToFront();
-                bookingConfirmationForm.Activate();
+
+                BookingConfirmationForm confirmationForm = new BookingConfirmationForm();
+                confirmationForm.MdiParent = parent;
+                confirmationForm.Show();
+                confirmationForm.BringToFront();
+                confirmationForm.Activate();
             }
             catch (Exception ex)
             {
