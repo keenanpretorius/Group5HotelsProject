@@ -40,6 +40,14 @@ namespace Group5HotelsProject.Controllers
         #endregion
 
         #region CRUD Methods
+        public void CancelBooking(Booking booking)
+        {
+            if (booking == null)
+                throw new ArgumentNullException(nameof(booking), "Booking to cancel cannot be null.");
+            booking.BookingStatus = "Cancelled";
+            bookingDB.DataSetChange(booking, DB.DBOperation.Edit);
+            bookingDB.UpdateDataSource(booking);
+        }
         public void AddBooking(Booking booking)
         {
             if (booking == null)
@@ -167,7 +175,7 @@ namespace Group5HotelsProject.Controllers
             foreach (Booking b in bookingsInRange)
                 {
                 Room room = FindRoom(b.RoomID);
-                if (room != null)
+                if (room != null && !(b.BookingStatus.Equals("Cancelled")))
                 {
                     result.Remove(room);
                 }

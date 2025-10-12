@@ -178,7 +178,7 @@ namespace Group5HotelsProject.Presentation
                 string selectedBookingID = SelectBookingComboBox.SelectedItem.ToString();
                 Booking booking = bookingController.FindBooking(int.Parse(selectedBookingID));
                 booking.BookingStatus = "Cancelled";
-                bookingController.DeleteBooking(booking);
+                bookingController.CancelBooking(booking);
                 MessageBox.Show("Booking Cancelled Successfully");
             }
             ClearForm();

@@ -139,7 +139,7 @@
             // checkInDatePicker
             // 
             checkInDatePicker.Format = DateTimePickerFormat.Short;
-            checkInDatePicker.Location = new Point(12, 158);
+            checkInDatePicker.Location = new Point(14, 111);
             checkInDatePicker.Name = "checkInDatePicker";
             checkInDatePicker.Size = new Size(154, 23);
             checkInDatePicker.TabIndex = 26;
@@ -147,35 +147,35 @@
             // checkOutDatePicker
             // 
             checkOutDatePicker.Format = DateTimePickerFormat.Short;
-            checkOutDatePicker.Location = new Point(222, 158);
+            checkOutDatePicker.Location = new Point(224, 111);
             checkOutDatePicker.Name = "checkOutDatePicker";
             checkOutDatePicker.Size = new Size(157, 23);
             checkOutDatePicker.TabIndex = 25;
             // 
             // nightsTextBox
             // 
-            nightsTextBox.Location = new Point(434, 161);
+            nightsTextBox.Location = new Point(436, 114);
             nightsTextBox.Name = "nightsTextBox";
             nightsTextBox.Size = new Size(124, 23);
             nightsTextBox.TabIndex = 23;
             // 
             // roomCostTextBox
             // 
-            roomCostTextBox.Location = new Point(434, 212);
+            roomCostTextBox.Location = new Point(437, 162);
             roomCostTextBox.Name = "roomCostTextBox";
             roomCostTextBox.Size = new Size(124, 23);
             roomCostTextBox.TabIndex = 21;
             // 
             // depositPaidTextBox
             // 
-            depositPaidTextBox.Location = new Point(222, 212);
+            depositPaidTextBox.Location = new Point(225, 162);
             depositPaidTextBox.Name = "depositPaidTextBox";
             depositPaidTextBox.Size = new Size(157, 23);
             depositPaidTextBox.TabIndex = 20;
             // 
             // totalCostTextBox
             // 
-            totalCostTextBox.Location = new Point(12, 212);
+            totalCostTextBox.Location = new Point(15, 162);
             totalCostTextBox.Name = "totalCostTextBox";
             totalCostTextBox.Size = new Size(129, 23);
             totalCostTextBox.TabIndex = 18;
@@ -190,7 +190,7 @@
             // checkOutLabel
             // 
             checkOutLabel.AutoSize = true;
-            checkOutLabel.Location = new Point(222, 140);
+            checkOutLabel.Location = new Point(224, 93);
             checkOutLabel.Name = "checkOutLabel";
             checkOutLabel.Size = new Size(66, 15);
             checkOutLabel.TabIndex = 15;
@@ -199,7 +199,7 @@
             // checkInLabel
             // 
             checkInLabel.AutoSize = true;
-            checkInLabel.Location = new Point(12, 140);
+            checkInLabel.Location = new Point(14, 93);
             checkInLabel.Name = "checkInLabel";
             checkInLabel.Size = new Size(58, 15);
             checkInLabel.TabIndex = 14;
@@ -209,7 +209,7 @@
             // nightsLabel
             // 
             nightsLabel.AutoSize = true;
-            nightsLabel.Location = new Point(434, 140);
+            nightsLabel.Location = new Point(436, 93);
             nightsLabel.Name = "nightsLabel";
             nightsLabel.Size = new Size(45, 15);
             nightsLabel.TabIndex = 13;
@@ -218,7 +218,7 @@
             // roomCostLabel
             // 
             roomCostLabel.AutoSize = true;
-            roomCostLabel.Location = new Point(434, 194);
+            roomCostLabel.Location = new Point(437, 144);
             roomCostLabel.Name = "roomCostLabel";
             roomCostLabel.Size = new Size(69, 15);
             roomCostLabel.TabIndex = 11;
@@ -227,7 +227,7 @@
             // depositPaidLabel
             // 
             depositPaidLabel.AutoSize = true;
-            depositPaidLabel.Location = new Point(222, 194);
+            depositPaidLabel.Location = new Point(225, 144);
             depositPaidLabel.Name = "depositPaidLabel";
             depositPaidLabel.Size = new Size(76, 15);
             depositPaidLabel.TabIndex = 10;
@@ -236,7 +236,7 @@
             // totalCostlabel
             // 
             totalCostlabel.AutoSize = true;
-            totalCostlabel.Location = new Point(12, 194);
+            totalCostlabel.Location = new Point(15, 144);
             totalCostlabel.Name = "totalCostlabel";
             totalCostlabel.Size = new Size(63, 15);
             totalCostlabel.TabIndex = 4;
