@@ -71,7 +71,7 @@
             backToMenuButton = new Button();
             makeNewBookingHeader = new Label();
             roomAvailabilityPanel = new Panel();
-            textBox2 = new TextBox();
+            depositTextBox = new TextBox();
             depositRequiredLabel = new Label();
             totalCostTextBox = new TextBox();
             totalCostLabel = new Label();
@@ -510,7 +510,7 @@
             // roomAvailabilityPanel
             // 
             roomAvailabilityPanel.BorderStyle = BorderStyle.FixedSingle;
-            roomAvailabilityPanel.Controls.Add(textBox2);
+            roomAvailabilityPanel.Controls.Add(depositTextBox);
             roomAvailabilityPanel.Controls.Add(depositRequiredLabel);
             roomAvailabilityPanel.Controls.Add(totalCostTextBox);
             roomAvailabilityPanel.Controls.Add(totalCostLabel);
@@ -521,13 +521,13 @@
             roomAvailabilityPanel.Size = new Size(679, 309);
             roomAvailabilityPanel.TabIndex = 23;
             // 
-            // textBox2
+            // depositTextBox
             // 
-            textBox2.Location = new Point(251, 267);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(114, 27);
-            textBox2.TabIndex = 18;
+            depositTextBox.Location = new Point(251, 267);
+            depositTextBox.Margin = new Padding(3, 4, 3, 4);
+            depositTextBox.Name = "depositTextBox";
+            depositTextBox.Size = new Size(114, 27);
+            depositTextBox.TabIndex = 18;
             // 
             // depositRequiredLabel
             // 
@@ -659,7 +659,7 @@
         private TextBox cardNumberTextBox;
         private TextBox cardNameTextBox;
         private TextBox TextBox;
-        private TextBox textBox2;
+        private TextBox depositTextBox;
         private TextBox CVVTextBox;
         private Button searchGuestButton;
         private Button clearButton;

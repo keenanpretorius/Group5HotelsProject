@@ -36,8 +36,12 @@ namespace Group5HotelsProject.Presentation
                     PostalCode = "" // Optional: add postal code TextBox if needed
                 };
 
-                guestController.AddGuest(newGuest); // Assuming you have this method in your controller
-                MessageBox.Show("New guest added successfully!");
+                if (!guestController.Exists(newGuest))
+                {
+                    guestController.AddGuest(newGuest); // Assuming you have this method in your controller
+                    MessageBox.Show("New guest added successfully!");
+                }
+                else { MessageBox.Show("Guest already exists!"); }
             }
             catch (Exception ex)
             {
@@ -109,7 +113,13 @@ namespace Group5HotelsProject.Presentation
             if (selectedRoom != null)
             {
                 if (selectedRoom.RoomStatus.Equals("Available", StringComparison.OrdinalIgnoreCase))
+                {
                     MessageBox.Show($"Room {selectedRoom.RoomNumber} is available from {checkIn:d} to {checkOut:d}.", "Availability", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    totalCostTextBox.Text = new BookingController().CalculateBaseCost(checkIn, checkOut).ToString();
+                    depositTextBox.Text = (Convert.ToInt32(totalCostTextBox.Text) * 0.1).ToString();
+                    depositTextBox.Enabled = false;
+                    totalCostTextBox.Enabled = false;
+                }
                 else
                     MessageBox.Show($"Room {selectedRoom.RoomNumber} is not available.", "Availability", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -146,7 +156,7 @@ namespace Group5HotelsProject.Presentation
 
             // Deposit/Total
             totalCostTextBox.Clear();
-            textBox2.Clear(); // deposit field
+            depositTextBox.Clear(); // deposit field
         }
 
         private void NewBookingForm_Load(object sender, EventArgs e)
@@ -176,7 +186,7 @@ namespace Group5HotelsProject.Presentation
 
             // Deposit/Total
             totalCostTextBox.Clear();
-            textBox2.Clear(); // deposit field
+            depositTextBox.Clear(); // deposit field
 
             // Populate Rooms ComboBox
             roomsComboBox.Items.Clear();
