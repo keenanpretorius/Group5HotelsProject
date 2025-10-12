@@ -57,6 +57,9 @@ namespace Group5HotelsProject.Data
             row["PaymentDate"] = payment.PaymentDate;
             row["AmountPaid"] = payment.AmountPaid;
             row["PaymentMethod"] = payment.PaymentMethod;
+            row["TransactionID"] = Guid.NewGuid().ToString("N").Substring(0, 12).ToUpper();
+            row["AccountID"] = payment.BookingID;
+            row["CardNumber"] = payment.CardNumber;
         }
         #endregion
 

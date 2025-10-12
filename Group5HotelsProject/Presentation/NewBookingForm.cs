@@ -334,7 +334,8 @@ namespace Group5HotelsProject.Presentation
                     BookingID = newBooking.BookingID,
                     PaymentDate = DateTime.Now,
                     AmountPaid = newBooking.TotalAmount * 0.1m,
-                    PaymentMethod = "Card"
+                    PaymentMethod = "Card",
+                    CardNumber = Convert.ToInt32(cardNumberTextBox.Text)
                 };
 
                 paymentController.AddPayment(newPayment);

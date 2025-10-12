@@ -10,6 +10,7 @@ namespace Group5HotelsProject.Business
         private DateTime paymentDate;
         private decimal amountPaid;
         private string paymentMethod;
+        private int cardNumber;
         #endregion
 
         #region Properties
@@ -18,7 +19,11 @@ namespace Group5HotelsProject.Business
             get { return paymentID; }
             set { paymentID = value; }
         }
-
+        public int CardNumber
+        {
+            get { return cardNumber; }
+            set { cardNumber = value; }
+        }
         public int BookingID
         {
             get { return bookingID; }
