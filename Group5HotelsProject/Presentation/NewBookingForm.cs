@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Group5HotelsProject.Business;
 using Group5HotelsProject.Controllers;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Group5HotelsProject.Presentation
 {
@@ -265,8 +266,10 @@ namespace Group5HotelsProject.Presentation
                 }
 
                 // Create or fetch guest
-                Guest bookingGuest = guestController.FindGuest(Convert.ToInt32(IDTextBox.Text));
-                if (bookingGuest == null)
+
+                Guest bookingGuest;
+                    
+                if (guestController.GetGuestsByIDNumber(IDTextBox.Text).IsNullOrEmpty())
                 {
                     bookingGuest = new Guest
                     {
@@ -278,21 +281,24 @@ namespace Group5HotelsProject.Presentation
                         IDPassportNumber = IDTextBox.Text
                     };
                     guestController.AddGuest(bookingGuest);
+                } else
+                {
+                    bookingGuest = guestController.GetGuestsByIDNumber(IDTextBox.Text)[0];
                 }
 
                 // Create Booking object with IDs
                 Booking newBooking = new Booking
-                {
-                    GuestID = bookingGuest.GuestID,
-                    RoomID = selectedRoom.RoomID,
-                    CheckInDate = checkIn,
-                    CheckOutDate = checkOut,
-                    NumberOfGuests = Convert.ToInt32(numberOfGuestsUpDown.Value), // adjust if you have a numeric input
-                    TotalAmount = new BookingController().CalculateBaseCost(checkIn, checkOut),
-                    BookingStatus = "Confirmed",
-                    CreatedDate = DateTime.Now,
-                    BookingReference = Guid.NewGuid().ToString().Substring(0, 8) // simple reference
-                };
+                    {
+                        GuestID = bookingGuest.GuestID,
+                        RoomID = selectedRoom.RoomID,
+                        CheckInDate = checkIn,
+                        CheckOutDate = checkOut,
+                        NumberOfGuests = Convert.ToInt32(numberOfGuestsUpDown.Value), // adjust if you have a numeric input
+                        TotalAmount = new BookingController().CalculateBaseCost(checkIn, checkOut),
+                        BookingStatus = "Confirmed",
+                        CreatedDate = DateTime.Now,
+                        BookingReference = Guid.NewGuid().ToString().Substring(0, 8) // simple reference
+                    };
 
                 // Add booking
                 BookingController bookingController = new BookingController();
