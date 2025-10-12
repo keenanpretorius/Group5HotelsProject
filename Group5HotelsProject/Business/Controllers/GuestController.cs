@@ -160,12 +160,8 @@ namespace Group5HotelsProject.Controllers
 
         public Boolean Exists(Guest guest)
         {
-            Collection<Guest> results = new Collection<Guest>();
-            results.Add(GetGuestsByIDNumber(guest.IDPassportNumber)[0]);
-            results.Add(GetGuestsByPhoneNumber(guest.PhoneNumber)[0]);
-            results.Add(GetGuestsByEmail(guest.Email)[0]);
-
-            if (results.IsNullOrEmpty())
+            
+            if (GetGuestsByIDNumber(guest.IDPassportNumber).IsNullOrEmpty() && GetGuestsByPhoneNumber(guest.PhoneNumber).IsNullOrEmpty() && GetGuestsByEmail(guest.Email).IsNullOrEmpty())
             {
                 return false;
             }
