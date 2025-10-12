@@ -235,7 +235,12 @@ namespace Group5HotelsProject.Controllers
                         totalCost += 995;
                     }
                 }
-                start = start.AddDays(1);
+                else
+                {
+                    totalCost += 550;
+                }
+                        
+                    start = start.AddDays(1);
             }
 
             return totalCost;
