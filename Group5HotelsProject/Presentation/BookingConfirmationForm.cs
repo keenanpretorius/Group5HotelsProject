@@ -10,6 +10,8 @@ namespace Group5HotelsProject.Presentation
     {
         private BookingController bookingController;
         private GuestController guestController;
+        private RoomController roomController;
+        private Booking latestBooking;
 
         public BookingConfirmationForm()
         {
@@ -17,6 +19,7 @@ namespace Group5HotelsProject.Presentation
 
             bookingController = new BookingController();
             guestController = new GuestController();
+            roomController = new RoomController();
 
             LoadMostRecentBooking();
         }
@@ -36,7 +39,7 @@ namespace Group5HotelsProject.Presentation
             {
                 if (bookingController.AllBookings[i].CreatedDate > latestBooking.CreatedDate)
                 {
-                    latestBooking = bookingController.AllBookings[i];
+                   this.latestBooking = bookingController.AllBookings[i];
                 }
             }
 
@@ -47,24 +50,45 @@ namespace Group5HotelsProject.Presentation
             guestNameTextBox.Text = guest.FirstName + " " + guest.LastName;
             phoneTextBox.Text = guest.PhoneNumber;
             emailTextBox.Text = guest.Email;
-
             checkInTextBox.Text = latestBooking.CheckInDate.ToShortDateString();
             checkOutTextBox.Text = latestBooking.CheckOutDate.ToShortDateString();
             nightsTextBox.Text = latestBooking.NumberOfNights.ToString();
             numberOfGuestTextBox.Text = latestBooking.NumberOfGuests.ToString();
-
             bookingStatusTextBox.Text = latestBooking.BookingStatus;
             bookingNumberRichTextBox.Text = latestBooking.BookingReference;
-            checkInTextBox.Text = "15:00";
-            checkOutTextBox.Text = "10:00";  
+            checkInTimeTextBox.Text = "15:00";
+            checkOutTimeTextBox.Text = "10:00";  
             decimal total = latestBooking.TotalAmount;
             totalRoomChargesTextBox.Text = total.ToString("C");
             depositTextBox.Text = (total * 0.1m).ToString("C");
+            balanceDueTextBox.Text = (total * 0.9m).ToString("C");
+            paymentMethodTextBox.Text = "Card Payment";
 
-             
+            bookingNumberRichTextBox.SelectAll();
+            bookingNumberRichTextBox.SelectionFont = new Font(bookingNumberRichTextBox.Font, FontStyle.Bold);
+            bookingNumberRichTextBox.SelectionAlignment = HorizontalAlignment.Center;
 
-            // Confirmation Letter
-            GenerateConfirmationLetter(latestBooking, guest);
+            guestNameTextBox.Enabled = false;
+            phoneTextBox.Enabled = false;
+            emailTextBox.Enabled = false;
+            checkInTextBox.Enabled = false;
+            checkOutTextBox.Enabled = false;
+            nightsTextBox.Enabled = false;
+            numberOfGuestTextBox.Enabled = false;
+            bookingStatusTextBox.Enabled = false;
+            bookingNumberRichTextBox.Enabled = false;
+            checkInTextBox.Enabled = false;
+            checkOutTimeTextBox.Enabled = false;
+            totalRoomChargesTextBox.Enabled = false;
+            depositTextBox.Enabled = false;
+            balanceDueTextBox.Enabled = false;
+            paymentMethodTextBox.Enabled = false;
+
+            Room room = roomController.FindRoom(latestBooking.RoomID);
+            if (room != null) { roomTypeTextBox.Text = room.RoomType; } else { MessageBox.Show("Error! "); }
+
+                // Confirmation Letter
+                GenerateConfirmationLetter(latestBooking, guest);
         }
 
         private void GenerateConfirmationLetter(Booking booking, dynamic guest)
