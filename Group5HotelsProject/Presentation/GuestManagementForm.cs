@@ -85,5 +85,15 @@ namespace Group5HotelsProject.Presentation
 
             }
         }
+
+        private void saveChangesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backToMenuButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

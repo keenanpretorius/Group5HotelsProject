@@ -55,7 +55,7 @@ namespace Group5HotelsProject.Data
             }
             row["BookingID"] = payment.BookingID;
             row["PaymentDate"] = payment.PaymentDate;
-            row["AmountPaid"] = payment.AmountPaid;
+            row["PaymentAmount"] = payment.AmountPaid;
             row["PaymentMethod"] = payment.PaymentMethod;
             row["TransactionID"] = Guid.NewGuid().ToString("N").Substring(0, 12).ToUpper();
             row["AccountID"] = payment.BookingID;

@@ -192,7 +192,7 @@ namespace Group5HotelsProject.Controllers
             Collection<Booking> bookingsInRange = GetBookingsInDateRange(start, end);
             foreach (Booking b in bookingsInRange)
                 {
-                if (b.RoomID == room.RoomID && !(b.BookingStatus.Equals("Cancelled")))
+                if (b.RoomID == room.RoomID)
                 {
                     
                     result = false;

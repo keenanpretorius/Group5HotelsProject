@@ -16,11 +16,11 @@ namespace Group5HotelsProject.Presentation
 {
     public partial class OccupancyReportForm : Form
     {
-        private BookingController bookingController =new BookingController();
+        private BookingController bookingController = new BookingController();
         public OccupancyReportForm()
         {
             InitializeComponent();
-          //  BookingController bookingController = new BookingController();
+            //  BookingController bookingController = new BookingController();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,6 +38,7 @@ namespace Group5HotelsProject.Presentation
             // Code to generate occupancy report based on selected dates
             DateTime startDate = startDateTimePicker.Value;
             DateTime endDate = endDateTimePicker.Value;
+            reportNameLabel.Text = $"Occupancy Report from {startDate.ToShortDateString()} to {endDate.ToShortDateString()}";
 
             if (startDate >= endDate)
             {
@@ -75,10 +76,8 @@ namespace Group5HotelsProject.Presentation
                 OccupancyListView.Items.Add(item);
             }
 
-            //find day with most occupied
-
-            AverageOccupancyTextBox.Text = (occupiedCount / allRooms.Count).ToString("P2");
-
+            AverageOccupancyLabel.Text = "Average Occupancy (out of "+allRooms.Count+" rooms): ";
+            AverageOccupancyTextBox.Text = ((double)occupiedCount / allRooms.Count * 100).ToString("F2") + "%";
         }
 
         private void OccupancyReportForm_Load(object sender, EventArgs e)
@@ -95,5 +94,9 @@ namespace Group5HotelsProject.Presentation
 
         }
 
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
