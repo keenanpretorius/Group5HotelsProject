@@ -12,6 +12,7 @@ namespace Group5HotelsProject.Presentation
         private GuestController guestController;
         private RoomController roomController;
         private Booking latestBooking;
+        private PaymentController paymentController;
 
         public BookingConfirmationForm()
         {
@@ -20,6 +21,7 @@ namespace Group5HotelsProject.Presentation
             bookingController = new BookingController();
             guestController = new GuestController();
             roomController = new RoomController();
+            paymentController = new PaymentController();
 
             LoadMostRecentBooking();
         }
@@ -45,6 +47,8 @@ namespace Group5HotelsProject.Presentation
 
             // Find guest info
             var guest = guestController.FindGuest(latestBooking.GuestID);
+            paymentController.RefreshFromDatabase();
+            var latestPayment = paymentController.AllPayments[^1];
 
             // Populate form controls
             guestNameTextBox.Text = guest.FirstName + " " + guest.LastName;
@@ -55,14 +59,16 @@ namespace Group5HotelsProject.Presentation
             nightsTextBox.Text = latestBooking.NumberOfNights.ToString();
             numberOfGuestTextBox.Text = latestBooking.NumberOfGuests.ToString();
             bookingStatusTextBox.Text = latestBooking.BookingStatus;
-            bookingNumberRichTextBox.Text = latestBooking.BookingReference;
+            bookingNumberRichTextBox.Text = "\n" + latestBooking.BookingReference;
             checkInTimeTextBox.Text = "15:00";
             checkOutTimeTextBox.Text = "10:00";  
             decimal total = latestBooking.TotalAmount;
             totalRoomChargesTextBox.Text = total.ToString("C");
             depositTextBox.Text = (total * 0.1m).ToString("C");
             balanceDueTextBox.Text = (total * 0.9m).ToString("C");
-            paymentMethodTextBox.Text = "Card Payment";
+            paymentMethodTextBox.Text = latestPayment.PaymentMethod + " Payment";
+            transactionIDTextBox.Text = latestPayment.PaymentID.ToString();
+            roomRateTextBox.Text = (latestBooking.TotalAmount / latestBooking.NumberOfNights).ToString();
 
             bookingNumberRichTextBox.SelectAll();
             bookingNumberRichTextBox.SelectionFont = new Font(bookingNumberRichTextBox.Font, FontStyle.Bold);
@@ -77,12 +83,15 @@ namespace Group5HotelsProject.Presentation
             numberOfGuestTextBox.Enabled = false;
             bookingStatusTextBox.Enabled = false;
             bookingNumberRichTextBox.Enabled = false;
-            checkInTextBox.Enabled = false;
+            checkInTimeTextBox.Enabled = false;
             checkOutTimeTextBox.Enabled = false;
             totalRoomChargesTextBox.Enabled = false;
             depositTextBox.Enabled = false;
             balanceDueTextBox.Enabled = false;
             paymentMethodTextBox.Enabled = false;
+            roomTypeTextBox.Enabled = false;
+            transactionIDTextBox.Enabled = false;
+            roomRateTextBox.Enabled = false;
 
             Room room = roomController.FindRoom(latestBooking.RoomID);
             if (room != null) { roomTypeTextBox.Text = room.RoomType; } else { MessageBox.Show("Error! "); }

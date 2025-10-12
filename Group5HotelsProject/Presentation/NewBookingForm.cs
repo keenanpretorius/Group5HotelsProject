@@ -12,6 +12,7 @@ namespace Group5HotelsProject.Presentation
     {
         private GuestController guestController = new GuestController();
         private RoomController roomController = new RoomController();
+        private PaymentController paymentController = new PaymentController();
         public NewBookingForm()
         {
             InitializeComponent();
@@ -326,6 +327,16 @@ namespace Group5HotelsProject.Presentation
                 // Add booking
                 BookingController bookingController = new BookingController();
                 bookingController.AddBooking(newBooking);
+
+                Payment newPayment = new Payment()
+                {
+                    BookingID = newBooking.BookingID,
+                    PaymentDate = DateTime.Now,
+                    AmountPaid = newBooking.TotalAmount * 0.1m,
+                    PaymentMethod = "Card"
+                };
+
+                paymentController.AddPayment(newPayment);
 
                 MessageBox.Show("Booking successfully created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
