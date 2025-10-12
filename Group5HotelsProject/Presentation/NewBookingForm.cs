@@ -204,6 +204,26 @@ namespace Group5HotelsProject.Presentation
             roomAvailabilityGrid.Columns.Clear();
 
             // Create columns
+            DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+            column.HeaderText = "Season";
+            column.Name = "seasonColumn";
+            roomAvailabilityGrid.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.HeaderText = "StartDate";
+            column.Name = "startDateColumn";
+            roomAvailabilityGrid.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.HeaderText = "EndDate";
+            column.Name = "endDateColumn";
+            roomAvailabilityGrid.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.HeaderText = "Rate per Night";
+            column.Name = "rateColumn";
+            roomAvailabilityGrid.Columns.Add(column);
+
             roomAvailabilityGrid.Rows.Add("Low", "01/12/" + DateTime.Now.Year, "07/12/" + DateTime.Now.Year, "R550 per room per night");
             roomAvailabilityGrid.Rows.Add("Mid", "08/12/" + DateTime.Now.Year, "15/12/" + DateTime.Now.Year, "R750 per room per night");
             roomAvailabilityGrid.Rows.Add("High", "16/12/" + DateTime.Now.Year, "31/12/" + DateTime.Now.Year, "R995 per room per night");
@@ -306,7 +326,13 @@ namespace Group5HotelsProject.Presentation
                 MessageBox.Show("Booking successfully created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Clear form
-                clearButton.PerformClick();
+                Form parent = this.MdiParent;
+                this.Close();
+                BookingConfirmationForm bookingConfirmationForm = new BookingConfirmationForm();
+                bookingConfirmationForm.MdiParent = parent;
+                bookingConfirmationForm.Show();
+                bookingConfirmationForm.BringToFront();
+                bookingConfirmationForm.Activate();
             }
             catch (Exception ex)
             {
