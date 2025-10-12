@@ -11,6 +11,7 @@ using Group5HotelsProject.Business;
 using Group5HotelsProject.Controllers;
 using System.Collections.ObjectModel;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.VisualBasic;
 
 
 namespace Group5HotelsProject.Presentation
@@ -171,10 +172,16 @@ namespace Group5HotelsProject.Presentation
             string selectedBookingID = SelectBookingComboBox.SelectedItem.ToString();
 
             Booking booking = bookingController.FindBooking(int.Parse(selectedBookingID));
-            DateTime checkIn= checkOutDatePicker.Value;
+            DateTime checkIn= checkInDatePicker.Value;
             DateTime checkOut = checkOutDatePicker.Value;
+            Room room = bookingController.FindRoom(booking.RoomID);
+            if (bookingController.CheckAvailableRoomInDateRange(checkIn, checkOut, room) == false)
+            {
+              MessageBox.Show("The room is not available for the selected date range. Please choose different dates.", "Room Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-           
+
 
 
             booking.BookingReference = bookingReferenceTextBox.Text;

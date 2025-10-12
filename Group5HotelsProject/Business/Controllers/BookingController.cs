@@ -1,5 +1,6 @@
 ﻿using Group5HotelsProject.Business;
 using Group5HotelsProject.Data;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Forms;
@@ -157,8 +158,12 @@ namespace Group5HotelsProject.Controllers
             Collection<Booking> results = new Collection<Booking>();
             foreach (Booking b in bookings)
             {
-                if (b.CheckInDate >= start && b.CheckOutDate <= end)
+               MessageBox.Show("Checking booking ID: " + b.BookingID + " CheckIn: " + b.CheckInDate.Day + " CheckOut: " + b.CheckOutDate.Day+"\n"+ "Against range Start: " + start.Day + " End: " + end.Day);
+
+                // Overlap condition: (A starts before B ends) && (A ends after B starts)
+                if (b.CheckInDate < end && b.CheckOutDate > start)
                 {
+                    MessageBox.Show("Booking ID " + b.BookingID + " is in range.");
                     results.Add(b);
                 }
             }
@@ -178,6 +183,23 @@ namespace Group5HotelsProject.Controllers
                 if (room != null && !(b.BookingStatus.Equals("Cancelled")))
                 {
                     result.Remove(room);
+                }
+            }
+            return result;
+        }
+
+        public bool CheckAvailableRoomInDateRange(DateTime start, DateTime end,Room room)
+        {
+            bool result = true;
+            Collection<Booking> bookingsInRange = GetBookingsInDateRange(start, end);
+            MessageBox.Show("Bookings in range: " + bookingsInRange.Count);
+            foreach (Booking b in bookingsInRange)
+                {
+                if (b.RoomID == room.RoomID && !(b.BookingStatus.Equals("Cancelled")))
+                {
+                    
+                    result = false;
+                    break;
                 }
             }
             return result;

@@ -119,6 +119,47 @@ namespace Group5HotelsProject.Presentation
                         }
                     }
                     break;
+            case "Guest":
+                    if (selectedAction.Equals("Add"))
+                    {
+                        string[] allInfo = allInfoTextBox.Text.Split(',');
+                        string guestID = allInfo[0];
+                        string firstName = allInfo[1];
+                        string lastName = allInfo[2];
+                        string email = allInfo[3];
+                        string phoneNumber = allInfo[4];
+                        string address = allInfo[5];
+                        string city = allInfo[6];
+                        string country = allInfo[7];
+                        string postalCode = allInfo[8];
+                        Guest newGuest = new Guest(int.Parse(guestID), firstName, lastName, email, phoneNumber, address, city, country, postalCode);
+                        guestController.AddGuest(newGuest);
+                    }
+                    else if (selectedAction.Equals("Edit"))
+                    {
+                        string[] allInfo = allInfoTextBox.Text.Split(',');
+                        string guestID = allInfo[0];
+                        string firstName = allInfo[1];
+                        string lastName = allInfo[2];
+                        string email = allInfo[3];
+                        string phoneNumber = allInfo[4];
+                        string address = allInfo[5];
+                        string city = allInfo[6];
+                        string country = allInfo[7];
+                        string postalCode = allInfo[8];
+                        Guest updatedGuest = new Guest(int.Parse(guestID), firstName, lastName, email, phoneNumber, address, city, country, postalCode);
+                        guestController.EditGuest(updatedGuest);
+                    }
+                    else if (selectedAction.Equals("Delete"))
+                    {
+                        int guestID = int.Parse(allInfoTextBox.Text);
+                        Guest guestToDelete = guestController.FindGuest(guestID);
+                        if (guestToDelete != null)
+                        {
+                            guestController.DeleteGuest(guestToDelete);
+                        }
+                    }
+                    break;
 
             }
             allInfoTextBox.Clear();
