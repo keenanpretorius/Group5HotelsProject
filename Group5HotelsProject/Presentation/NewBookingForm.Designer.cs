@@ -76,11 +76,11 @@
             totalCostTextBox = new TextBox();
             totalCostLabel = new Label();
             roomAvailabilityGrid = new DataGridView();
-            dateColumn = new DataGridViewTextBoxColumn();
-            seasonColumn = new DataGridViewTextBoxColumn();
-            ratePerNightColumn = new DataGridViewTextBoxColumn();
-            availableRoomsColumn = new DataGridViewTextBoxColumn();
             roomAvailabilityLabel = new Label();
+            seasonColumn = new DataGridViewTextBoxColumn();
+            startDateColumn = new DataGridViewTextBoxColumn();
+            endDateColumn = new DataGridViewTextBoxColumn();
+            ratePerNightColumn = new DataGridViewTextBoxColumn();
             bookingDatesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numberOfGuestsUpDown).BeginInit();
             paymentPanel.SuspendLayout();
@@ -558,40 +558,12 @@
             // roomAvailabilityGrid
             // 
             roomAvailabilityGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            roomAvailabilityGrid.Columns.AddRange(new DataGridViewColumn[] { dateColumn, seasonColumn, ratePerNightColumn, availableRoomsColumn });
+            roomAvailabilityGrid.Columns.AddRange(new DataGridViewColumn[] { seasonColumn, startDateColumn, endDateColumn, ratePerNightColumn });
             roomAvailabilityGrid.Location = new Point(14, 41);
             roomAvailabilityGrid.Name = "roomAvailabilityGrid";
             roomAvailabilityGrid.RowHeadersWidth = 51;
             roomAvailabilityGrid.Size = new Size(632, 188);
             roomAvailabilityGrid.TabIndex = 2;
-            // 
-            // dateColumn
-            // 
-            dateColumn.HeaderText = "Date";
-            dateColumn.MinimumWidth = 6;
-            dateColumn.Name = "dateColumn";
-            dateColumn.Width = 125;
-            // 
-            // seasonColumn
-            // 
-            seasonColumn.HeaderText = "Season";
-            seasonColumn.MinimumWidth = 6;
-            seasonColumn.Name = "seasonColumn";
-            seasonColumn.Width = 125;
-            // 
-            // ratePerNightColumn
-            // 
-            ratePerNightColumn.HeaderText = "Rate/Night";
-            ratePerNightColumn.MinimumWidth = 6;
-            ratePerNightColumn.Name = "ratePerNightColumn";
-            ratePerNightColumn.Width = 125;
-            // 
-            // availableRoomsColumn
-            // 
-            availableRoomsColumn.HeaderText = "Available Rooms";
-            availableRoomsColumn.MinimumWidth = 6;
-            availableRoomsColumn.Name = "availableRoomsColumn";
-            availableRoomsColumn.Width = 125;
             // 
             // roomAvailabilityLabel
             // 
@@ -602,6 +574,34 @@
             roomAvailabilityLabel.Size = new Size(232, 23);
             roomAvailabilityLabel.TabIndex = 1;
             roomAvailabilityLabel.Text = "Room Availability and Pricing";
+            // 
+            // seasonColumn
+            // 
+            seasonColumn.HeaderText = "Season";
+            seasonColumn.MinimumWidth = 6;
+            seasonColumn.Name = "seasonColumn";
+            seasonColumn.Width = 125;
+            // 
+            // startDateColumn
+            // 
+            startDateColumn.HeaderText = "StartDate";
+            startDateColumn.MinimumWidth = 6;
+            startDateColumn.Name = "startDateColumn";
+            startDateColumn.Width = 125;
+            // 
+            // endDateColumn
+            // 
+            endDateColumn.HeaderText = "EndDate";
+            endDateColumn.MinimumWidth = 6;
+            endDateColumn.Name = "endDateColumn";
+            endDateColumn.Width = 125;
+            // 
+            // ratePerNightColumn
+            // 
+            ratePerNightColumn.HeaderText = "Rate/Night";
+            ratePerNightColumn.MinimumWidth = 6;
+            ratePerNightColumn.Name = "ratePerNightColumn";
+            ratePerNightColumn.Width = 125;
             // 
             // NewBookingForm
             // 
@@ -674,10 +674,6 @@
         private Label makeNewBookingHeader;
         private Panel roomAvailabilityPanel;
         private DataGridView roomAvailabilityGrid;
-        private DataGridViewTextBoxColumn dateColumn;
-        private DataGridViewTextBoxColumn seasonColumn;
-        private DataGridViewTextBoxColumn ratePerNightColumn;
-        private DataGridViewTextBoxColumn availableRoomsColumn;
         private Label roomAvailabilityLabel;
         private Label label1;
         private Label depositRequiredLabel;
@@ -690,5 +686,9 @@
         private TextBox SurnameTextBox;
         private Label numberOfGuestsLabel;
         private NumericUpDown numberOfGuestsUpDown;
+        private DataGridViewTextBoxColumn seasonColumn;
+        private DataGridViewTextBoxColumn startDateColumn;
+        private DataGridViewTextBoxColumn endDateColumn;
+        private DataGridViewTextBoxColumn ratePerNightColumn;
     }
 }

@@ -204,10 +204,9 @@ namespace Group5HotelsProject.Presentation
             roomAvailabilityGrid.Columns.Clear();
 
             // Create columns
-            roomAvailabilityGrid.Columns.Add("dateColumn", "Date");
-            roomAvailabilityGrid.Columns.Add("seasonColumn", "Season");
-            roomAvailabilityGrid.Columns.Add("ratePerNightColumn", "Rate/Night");
-            roomAvailabilityGrid.Columns.Add("availableRoomsColumn", "Available Rooms");
+            roomAvailabilityGrid.Rows.Add("Low", "01/12/" + DateTime.Today.Year.ToString(), "07/12/" + DateTime.Today.Year.ToString(), "R550 per room per night");
+            roomAvailabilityGrid.Rows.Add("Mid", "08/12/" + DateTime.Today.Year.ToString(), "15/12/" + DateTime.Today.Year.ToString(), "R750 per room per night");
+            roomAvailabilityGrid.Rows.Add("High", "16/12/" + DateTime.Today.Year.ToString(), "31/12/" + DateTime.Today.Year.ToString(), "R995 per room per night");
 
             roomAvailabilityGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             roomAvailabilityGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
